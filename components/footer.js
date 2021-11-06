@@ -3,7 +3,7 @@ import { currentDayName } from '../utils/dateUtils'
 
 const Footer = () => {
   return (
-    <Box align="center" opacity={0.4} fontSize="sm">
+    <Box as="footer" maxW="7xl" py="12">
       &copy; {new Date().getFullYear()} Happy!{currentDayName()} Timmy  
     </Box>
   )
