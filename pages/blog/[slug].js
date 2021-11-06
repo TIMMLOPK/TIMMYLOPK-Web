@@ -1,13 +1,12 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import marked from 'marked'
+import { marked } from 'marked'
 import Link from 'next/link'
 
  
 function PostPage({
   frontmatter: { title, date, cover_image },
-  slug,
   content,
 }) {
   return (
