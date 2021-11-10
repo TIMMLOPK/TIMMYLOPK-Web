@@ -3,6 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import { marked } from 'marked'
 import Link from 'next/link'
+import { Button } from '@chakra-ui/react'
 
  
 function PostPage({
@@ -11,8 +12,8 @@ function PostPage({
 }) {
   return (
     <>
-      <Link href='/test'>
-        <a className='btn btn-back'>Go Back</a>
+      <Link href='/blog'>
+        <Button>Go Back</Button>
       </Link>
       <div className='card card-page'>
         <h1 className='post-title'>{title}</h1>

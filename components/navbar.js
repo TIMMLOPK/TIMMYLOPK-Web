@@ -14,7 +14,7 @@ import {
   IconButton,
   useColorModeValue
 } from '@chakra-ui/react'
-import { HamburgerIcon } from '@chakra-ui/icons'
+import { HamburgerIcon, AttachmentIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
 import { IoLogoGithub } from 'react-icons/io5'
 import { FaBlog } from 'react-icons/fa'
@@ -113,8 +113,10 @@ const Navbar = props => {
               <MenuButton
                 as={IconButton}
                 icon={<HamburgerIcon />}
-                variant="outline"
+                v_hover={{ bg: "gray.400" }}
                 aria-label="Options"
+                transition="all 0.2s"
+
               />
               <MenuList>
                 <NextLink href="/" passHref>
@@ -132,6 +134,9 @@ const Navbar = props => {
                 >
                   Github
                 </MenuItem>
+                <NextLink href="/blog" passHref>
+                  <MenuItem as={Link} icon={<AttachmentIcon />} >Blog</MenuItem>
+                </NextLink>
               </MenuList>
             </Menu>
           </Box>

@@ -1,24 +1,29 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import Head from 'next/head'
 import Post from '../components/post'
 import { sortByDate } from '../utils/day'
+import { Container, Heading } from '@chakra-ui/react'
+import Section from '../components/section'
 
-
-export default function Home({ posts }) {
+function Home({ posts }) {
   return (
-    <div>
-      <Head>
-        <title>Dev Blog</title>
-      </Head>
+    <layout title="blog">
+    <Container>
+      <Heading as="h3" fontSize={20} mb={4}>
+        Blog
+      </Heading>
 
+    <Section delay={0.1}>
       <div className='posts'>
         {posts.map((post, index) => (
           <Post key={index} post={post} />
         ))}
-      </div>
-    </div>
+      </div>      
+      </Section>
+
+      </Container>
+    </layout>
   )
 }
 
@@ -51,3 +56,4 @@ export async function getStaticProps() {
     },
   }
 }
+export default Home
