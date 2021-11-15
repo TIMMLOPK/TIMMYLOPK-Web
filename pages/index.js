@@ -34,7 +34,6 @@ const Home = () => (
       >
         Hello,  Welcome To The Site~
       </Box>
-
       <Box display={{ md: 'flex' }}>
         <Box flexGrow={1}>
           <Heading as="h2" variant="page-title">
