@@ -1,12 +1,12 @@
 import { Container, Heading, Avatar } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Paragraph from '../components/paragraph'
-import AwesomeSlider from 'react-awesome-slider'
 import 'react-awesome-slider/dist/styles.css';
-import Music from '../components/music'
+import Music from '../components/music';
 
 const costA ='<5000'
 const costB ='>30000'
+
 
 const Posts = () => (
   <Layout>
@@ -18,22 +18,6 @@ const Posts = () => (
       <Avatar 
       src='shopicaon.jpg'
       />
-      <AwesomeSlider
-      class="Slider"
-      bullets={false}
-      play={true}
-    media={[
-      {
-        source: 'https://i.picsum.photos/id/276/200/200.jpg?hmac=nEmegloU9V9ajpTC6GdgRRIz-d0EliWd5cQ-F1olB54',
-      },
-      {
-        source: 'https://i.picsum.photos/id/452/200/300.jpg?hmac=GNRw9M4S7sR7m03kJ-vBNG4vr5gFJpy7T54vSqBA06E',
-      },
-      {
-        source: 'https://i.picsum.photos/id/276/200/200.jpg?hmac=nEmegloU9V9ajpTC6GdgRRIz-d0EliWd5cQ-F1olB54',
-      },
-    ]}
-  />
       <h1>主力出團 8算 日本運費平分 </h1>                                                                        
  <p>                                           
 代購/中古 82算  Mercari, 樂天, Rukuma, ZOZOTOWN, booth 等

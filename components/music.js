@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import ReactAudioPlayer from "react-audio-player";
+import ReactHowler from 'react-howler';
+import { Button } from "@chakra-ui/button";
 
 const Music = () => {
   const [ismute, setOpen] = useState(true);
 
   return (
     <><div>
-      <ReactAudioPlayer
-        muted={ismute ? false:true}
+      <ReactHowler
         src='../y2mate.com_-_MV.mp3'
-        loop
-        autoPlay
+        playing={ismute ? false:true}
+        html5={true}
          />
-    </div><button onClick={() => setOpen(!ismute)}>Mute music</button>
+    </div><Button onClick={() => setOpen(!ismute)}>Play music</Button>
     </>
   );
 };

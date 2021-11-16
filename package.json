@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "prettier": "prettier -write .",
-    "lint": "next lint"
+    "lint": "next lint",
+    "analyze": "cross-env ANALYZE=true next build",
+    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
   },
   "keywords": [],
   "author": "Takuya Matsuyama",
@@ -17,6 +20,8 @@
     "@chakra-ui/react": "^1.6.9",
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
+    "@next/bundle-analyzer": "^12.0.4",
+    "cross-env": "^7.0.3",
     "framer-motion": "^4.1.17",
     "fs": "^0.0.1-security",
     "gray-matter": "^4.0.3",
@@ -27,6 +32,7 @@
     "react-audio-player": "^0.17.0",
     "react-awesome-slider": "^4.1.0",
     "react-dom": "^17.0.2",
+    "react-howler": "^5.2.0",
     "react-icons": "^4.3.1",
     "react-sound": "^1.2.0",
     "three": "^0.133.1"
