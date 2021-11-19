@@ -18,7 +18,7 @@ import { HamburgerIcon, AttachmentIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
 import { IoLogoGithub } from 'react-icons/io5'
 import { FaBlog } from 'react-icons/fa'
-
+import Music from '../components/music'
 
 const LinkItem = ({ href, path, _target, children, ...props }) => {
   const active = path === href
@@ -76,8 +76,8 @@ const Navbar = props => {
           <LinkItem href="/music" path={path}>
             Music
           </LinkItem>
-          <LinkItem href="/posts" path={path}>
-            Posts
+          <LinkItem href="/info" path={path}>
+            Info
           </LinkItem>
           <LinkItem
             _target="_blank"
@@ -91,6 +91,7 @@ const Navbar = props => {
             <IoLogoGithub />
             Github
           </LinkItem>
+          
           <LinkItem
             _target="_blank"
             href="/blog"
@@ -103,6 +104,7 @@ const Navbar = props => {
             <FaBlog />
             blog
           </LinkItem>
+          <Music/>
         </Stack>
 
         <Box flex={1} align="right">
@@ -125,8 +127,8 @@ const Navbar = props => {
                 <NextLink href="/music" passHref>
                   <MenuItem as={Link}>Music</MenuItem>
                 </NextLink>
-                <NextLink href="/post" passHref>
-                  <MenuItem as={Link}>Posts</MenuItem>
+                <NextLink href="/info" passHref>
+                  <MenuItem as={Link}>Info</MenuItem>
                 </NextLink>
                 <MenuItem
                   as={Link}

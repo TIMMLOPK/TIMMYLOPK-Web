@@ -1,6 +1,6 @@
 {
   "name": "craftzdog-homepage",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Takuya's website",
   "scripts": {
     "dev": "next dev -H 0.0.0.0",
@@ -34,7 +34,6 @@
     "react-dom": "^17.0.2",
     "react-howler": "^5.2.0",
     "react-icons": "^4.3.1",
-    "react-sound": "^1.2.0",
     "three": "^0.133.1"
   },
   "devDependencies": {

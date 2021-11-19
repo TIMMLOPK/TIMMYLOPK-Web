@@ -65,14 +65,16 @@ const Home = () => (
           Info
         </Heading>
         <Paragraph>
-          Info of me still writing Coming Soon :) Some Project on{' '}
-          <Link href="https://github.com/TIMMLOPK" target='_blank'>
-            <Link>GitHub</Link>
+        <p>Hi, I’m @TIMMLOPK</p>
+        <p>👀 I’m interested in Photography,website developed</p>
+        <p>🌱 I’m currently learning JavaScript 💭</p>
+        <p>📫 You can reach me on IG</p>
+          <Link href="https://www.instagram.com/once_wu/" target='_blank'>
+          <Link>@once_wu Instagram</Link>
           </Link>
-          .
         </Paragraph>
         <Box align="center" my={4}>
-          <NextLink href="/posts">
+          <NextLink href="/info">
             <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
               More
             </Button>
@@ -82,7 +84,7 @@ const Home = () => (
 
       <Section delay={0.2}>
         <Heading as="h3" variant="section-title">
-          Website Road 🚄
+          Website Version 🚄
         </Heading>
         <BioSection>
           <BioYear>2021-09</BioYear>
@@ -97,8 +99,8 @@ const Home = () => (
           Website 2.4 【once.】
         </BioSection>
         <BioSection>
-          <BioYear>2021-11~</BioYear>
-          Website 3.0 【T·once】
+          <BioYear>2021-11</BioYear>
+          Website 3.1 【T·once】
         </BioSection>
       </Section>
 
@@ -107,15 +109,15 @@ const Home = () => (
           My Experience
         </Heading>
         <Paragraph>
-          Develop {' '}
+          <h1>💻Develop {' '}</h1>
           <Link href="https://github.com/TIMMLOPK/once" target="_blank">
-            MyFirstWebsite 
+            My First Website 
           </Link>
-          |  Photography{' '}
+          <h1>📷Photography{' '}</h1>
           <Link href="" target="_blank">
             tw_wu_as_tim
           </Link>
-          | And more...
+          <h1>🔭And more...</h1>
         </Paragraph>
       </Section>
 

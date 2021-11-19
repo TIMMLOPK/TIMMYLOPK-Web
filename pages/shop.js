@@ -2,7 +2,6 @@ import { Container, Heading, Avatar } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Paragraph from '../components/paragraph'
 import 'react-awesome-slider/dist/styles.css';
-import Music from '../components/music';
 
 const costA ='<5000'
 const costB ='>30000'
@@ -10,7 +9,6 @@ const costB ='>30000'
 
 const Posts = () => (
   <Layout>
-    <Music></Music>
     <Container>
       <Heading as="h3" fontSize={20} mb={4}>
         @murasaki_jpstore
