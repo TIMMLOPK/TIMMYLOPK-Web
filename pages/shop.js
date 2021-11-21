@@ -4,6 +4,7 @@ import Paragraph from '../components/paragraph'
 import 'react-awesome-slider/dist/styles.css';
 
 
+
 const costA ='<5000'
 const costB ='>30000'
 

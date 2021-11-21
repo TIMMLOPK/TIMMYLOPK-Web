@@ -113,6 +113,10 @@ const Navbar = props => {
           <ThemeToggleButton />
 
           <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
+              <Music/>
+              </Box>
+              
+          <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
             <Menu isLazy id="navbar-menu">
               <MenuButton
                 as={IconButton}
@@ -122,10 +126,6 @@ const Navbar = props => {
                 transition="all 0.2s"
 
               />
-
-              <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
-              <Music/>
-              </Box>
 
               <MenuList>
                 <NextLink href="/" passHref>
@@ -137,8 +137,6 @@ const Navbar = props => {
                 <NextLink href="/info" passHref>
                   <MenuItem as={Link}>Info</MenuItem>
                 </NextLink>
-                
-                <Music/>
                 <MenuItem
                   as={Link}
                   href="https://github.com/TIMMLOPK"

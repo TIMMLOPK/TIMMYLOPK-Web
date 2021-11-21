@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import ReactHowler from 'react-howler';
 import { Button } from "@chakra-ui/button";
+import { HiOutlineMusicNote } from "react-icons/hi";
 
-const songsCollections = ['/music/y2mate.com_-_back_numbercover_.mp3', '/music/y2mate.com_-_Sleepless_Night.mp3', '/music/y2mate.com_-_MV.mp3'];
+const songsCollections = ['/music/y2matecom-back_numbercover.mp3', '/music/y2mate.com_-_Sleepless_Night.mp3', '/music/y2mate.com_-_MV.mp3'];
 
 const getRandomFromRange = (min, max) => {
   return Math.floor(Math.random() * (max - min) + min);
@@ -26,7 +27,7 @@ const Music = () => {
         playing={ismute ? false:true}
         html5={true}
          />
-    </div><Button onClick={() => setOpen(!ismute)}></Button>
+    </div><Button onClick={() => setOpen(!ismute)} colorScheme="blue" variant="ghost" ><HiOutlineMusicNote/></Button>
     </>
   );
 };

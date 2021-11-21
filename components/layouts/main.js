@@ -15,12 +15,12 @@ const Main = ({ children, router }) => {
     <Box as="main" pb={8}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Test Msg" />
-        <meta name="author" content="Takuya Matsuyama" />
-        <meta name="author" content="craftzdog" />
+        <meta name="description" content="回朕車以復路兮，及行迷之未遠 Standing on point give on @tw_wu_as_tim www.lionceu.live" />
+        <meta name="author" content="Timmy Wu" />
+        <meta name="author" content="Timmy Wu" />
         <link rel="apple-touch-icon" href="apple-touch-icon.png" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-        <meta property="og:site_name" content="Takuya Matsuyama's Homepage" />
+        <meta property="og:site_name" content="Timmy Wu's Homepage" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/card.png" />
         <title>T·Once</title>

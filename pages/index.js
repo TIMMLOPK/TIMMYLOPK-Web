@@ -51,7 +51,8 @@ const Home = () => (
             borderColor="whiteAlpha.800"
             borderWidth={2}
             borderStyle="solid"
-            maxWidth="100px"
+            width="100px"
+            height="auto"
             display="inline-block"
             borderRadius="full"
             src="/images/icon.avif"
