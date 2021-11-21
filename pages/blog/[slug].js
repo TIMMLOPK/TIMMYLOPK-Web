@@ -1,5 +1,5 @@
-import fs from 'fs'
 import path from 'path'
+import fs from 'fs-extra'
 import matter from 'gray-matter'
 import { marked } from 'marked'
 import Link from 'next/link'
@@ -58,4 +58,5 @@ export async function getStaticProps({ params: { slug } }) {
     },
   }
 }
+
 export default PostPage

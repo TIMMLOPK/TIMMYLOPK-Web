@@ -26,7 +26,7 @@ const Music = () => {
         playing={ismute ? false:true}
         html5={true}
          />
-    </div><Button onClick={() => setOpen(!ismute)}>Play</Button>
+    </div><Button onClick={() => setOpen(!ismute)}></Button>
     </>
   );
 };

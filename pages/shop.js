@@ -3,6 +3,7 @@ import Layout from '../components/layouts/article'
 import Paragraph from '../components/paragraph'
 import 'react-awesome-slider/dist/styles.css';
 
+
 const costA ='<5000'
 const costB ='>30000'
 
@@ -16,7 +17,7 @@ const Posts = () => (
       <Avatar 
       src='shopicaon.jpg'
       />
-      <h1>主力出團 8算 日本運費平分 </h1>                                                                        
+      <h1>主力出團 8算 日本運費平分 </h1>                                                                
  <p>                                           
 代購/中古 82算  Mercari, 樂天, Rukuma, ZOZOTOWN, booth 等
 </p>
@@ -46,6 +47,7 @@ const Posts = () => (
 </Paragraph>
 </Paragraph>
 <b>順豐到付</b>
+
     </Container>
   </Layout>
 )

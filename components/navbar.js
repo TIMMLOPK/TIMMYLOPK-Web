@@ -14,11 +14,13 @@ import {
   IconButton,
   useColorModeValue
 } from '@chakra-ui/react'
-import { HamburgerIcon, AttachmentIcon } from '@chakra-ui/icons'
+import { HamburgerIcon, AttachmentIcon} from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
 import { IoLogoGithub } from 'react-icons/io5'
+import dynamic from 'next/dynamic'
 import { FaBlog } from 'react-icons/fa'
-import Music from '../components/music'
+
+const Music = dynamic(() => import('../components/music'))
 
 const LinkItem = ({ href, path, _target, children, ...props }) => {
   const active = path === href
@@ -73,8 +75,8 @@ const Navbar = props => {
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
         >
-          <LinkItem href="/music" path={path}>
-            Music
+          <LinkItem href="/works" path={path}>
+            Sharing
           </LinkItem>
           <LinkItem href="/info" path={path}>
             Info
@@ -120,16 +122,23 @@ const Navbar = props => {
                 transition="all 0.2s"
 
               />
+
+              <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
+              <Music/>
+              </Box>
+
               <MenuList>
                 <NextLink href="/" passHref>
                   <MenuItem as={Link}>About</MenuItem>
                 </NextLink>
-                <NextLink href="/music" passHref>
-                  <MenuItem as={Link}>Music</MenuItem>
+                <NextLink href="/works" passHref>
+                  <MenuItem as={Link}>Sharing</MenuItem>
                 </NextLink>
                 <NextLink href="/info" passHref>
                   <MenuItem as={Link}>Info</MenuItem>
                 </NextLink>
+                
+                <Music/>
                 <MenuItem
                   as={Link}
                   href="https://github.com/TIMMLOPK"
