@@ -2,6 +2,8 @@ import { Container, Heading, Avatar } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Paragraph from '../components/paragraph'
 import 'react-awesome-slider/dist/styles.css';
+import { motion } from 'framer-motion';
+import {Link} from '@chakra-ui/react';
 
 
 
@@ -12,12 +14,26 @@ const costB ='>30000'
 const Posts = () => (
   <Layout>
     <Container>
+
       <Heading as="h3" fontSize={20} mb={4}>
         @murasaki_jpstore
       </Heading>
+      <Link href="https://www.instagram.com/murasaki_jpstore/" target='_blank'>
+          <Link>@murasaki_jpstore</Link>
+          </Link>
+
+      <motion.div
+    animate={{
+      scale: [1, 2, 1, 1],
+      rotate: [0, 120, 0, 0],
+    }}
+    
+  >
       <Avatar 
       src='shopicaon.jpg'
       />
+      </motion.div>
+
       <h1>主力出團 8算 日本運費平分 </h1>                                                                
  <p>                                           
 代購/中古 82算  Mercari, 樂天, Rukuma, ZOZOTOWN, booth 等

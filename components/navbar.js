@@ -106,13 +106,12 @@ const Navbar = props => {
             <FaBlog />
             blog
           </LinkItem>
-          <Music/>
         </Stack>
 
         <Box flex={1} align="right">
           <ThemeToggleButton />
 
-          <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
+          <Box ml={2} display={{ base: 'inline-block'}}>
               <Music/>
               </Box>
               
