@@ -3,7 +3,7 @@ import ReactHowler from 'react-howler';
 import { Button } from "@chakra-ui/button";
 import { HiOutlineMusicNote } from "react-icons/hi";
 
-const songsCollections = ['/music/y2matecom-back_numbercover.mp3', '/music/y2mate.com_-_Sleepless_Night.mp3', '/music/y2mate.com_-_MV.mp3'];
+const songsCollections = ['/music/musicass1.mp3', '/music/musicass2.mp3', '/music/musicass3.mp3'];
 
 const getRandomFromRange = (min, max) => {
   return Math.floor(Math.random() * (max - min) + min);

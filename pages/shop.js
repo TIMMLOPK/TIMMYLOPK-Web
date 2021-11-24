@@ -11,23 +11,22 @@ const costA ='<5000'
 const costB ='>30000'
 
 
-const Posts = () => (
+const Shop = () => (
   <Layout>
     <Container>
 
       <Heading as="h3" fontSize={20} mb={4}>
-        @murasaki_jpstore
-      </Heading>
       <Link href="https://www.instagram.com/murasaki_jpstore/" target='_blank'>
           <Link>@murasaki_jpstore</Link>
           </Link>
-
+</Heading>
       <motion.div
-    animate={{
-      scale: [1, 2, 1, 1],
-      rotate: [0, 120, 0, 0],
-    }}
-    
+    animate={{scale:[0,1]}}
+    transition={{
+     delay: 1,
+     x: { type: "spring", stiffness: 100 }
+}}
+
   >
       <Avatar 
       src='shopicaon.jpg'
@@ -68,4 +67,4 @@ const Posts = () => (
     </Container>
   </Layout>
 )
-export default Posts
+export default Shop

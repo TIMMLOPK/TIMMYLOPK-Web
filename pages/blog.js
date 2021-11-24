@@ -6,7 +6,7 @@ import { sortByDate } from '../utils/day'
 import { Container, Heading } from '@chakra-ui/react'
 import Section from '../components/section'
 
-function Home({ posts }) {
+function Blog({ posts }) {
   return (
     <layout title="blog" className='blog'>
     <Container>
@@ -56,4 +56,4 @@ export async function getStaticProps() {
     },
   }
 }
-export default Home
+export default Blog

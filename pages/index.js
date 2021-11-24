@@ -39,7 +39,7 @@ const Home = () => (
           <Heading as="h2" variant="page-title">
             Timmy
           </Heading>
-          <p>Developer (Website/....)</p>
+          <p>Developer of JavaScript</p>
         </Box>
         <Box
           flexShrink={0}
@@ -56,7 +56,7 @@ const Home = () => (
             display="inline-block"
             borderRadius="full"
             src="/images/icon.avif"
-            alt="Profile image"
+            alt="Not support format"
           />
         </Box>
       </Box>
@@ -164,7 +164,7 @@ const Home = () => (
         </List>
 
         <Box align="center" my={4}>
-          <NextLink href="\works">
+          <NextLink href="/works">
             <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
               Blog
             </Button>
