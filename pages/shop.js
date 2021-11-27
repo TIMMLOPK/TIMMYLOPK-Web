@@ -4,12 +4,11 @@ import Paragraph from '../components/paragraph'
 import 'react-awesome-slider/dist/styles.css';
 import { motion } from 'framer-motion';
 import {Link} from '@chakra-ui/react';
-
+import Bottombar from '../components/bottombar';
 
 
 const costA ='<5000'
 const costB ='>30000'
-
 
 const Shop = () => (
   <Layout>
@@ -65,6 +64,8 @@ const Shop = () => (
 <b>順豐到付</b>
 
     </Container>
+    <Bottombar/>
   </Layout>
 )
+
 export default Shop
