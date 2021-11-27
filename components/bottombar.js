@@ -1,9 +1,9 @@
 import { Box,Stack } from "@chakra-ui/layout";
 import { BsShare } from "react-icons/bs"
 import CopyToClipboard from "react-copy-to-clipboard";
-import { useState} from "react";
+import { useState } from "react";
 
-const clip = () => {
+const Clip = () => {
 
   const hostname = typeof window !== 'undefined' && window.location.hostname ? window.location.hostname : '';
 
@@ -41,4 +41,4 @@ const clip = () => {
   );
 };
 
-export default  clip
+export default  Clip
