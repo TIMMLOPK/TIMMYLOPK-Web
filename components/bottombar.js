@@ -18,7 +18,7 @@ const Bottombar = () => {
       copied: false});
 
 //Back to top btn
-      const [visible, setVisible] = useState(false)
+      const [setVisible] = useState(false)
   
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
