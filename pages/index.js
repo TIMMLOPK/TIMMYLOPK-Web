@@ -162,14 +162,7 @@ const Home = () => (
             </Link>
           </ListItem>
         </List>
-
-        <Box align="center" my={4}>
-          <NextLink href="/works">
-            <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
-              Blog
-            </Button>
-          </NextLink>
-        </Box>
+        
       </Section>
     </Container>
   </Layout>
