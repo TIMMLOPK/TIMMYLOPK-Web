@@ -18,26 +18,13 @@ const Bottombar = () => {
       copied: false});
 
 //Back to top btn
-      const [setVisible] = useState(false)
-  
-  const toggleVisible = () => {
-    const scrolled = document.documentElement.scrollTop;
-    if (scrolled > 300){
-      setVisible(true)
-    } 
-    else if (scrolled <= 300){
-      setVisible(false)
-    }
-  };
-  
+
   const scrollToTop = () =>{
     window.scrollTo({
       top: 0, 
       behavior: 'smooth'
     });
   };
-  
-  window.addEventListener('scroll', toggleVisible);
       
     return(
         <>
@@ -54,7 +41,7 @@ const Bottombar = () => {
 
 </Stack>
 
-<Stack position='fixed' bottom='10'>
+<Stack position="fixed" bottom='10'>
 
     {state.copied ? <Alert status="info">
   <AlertTitle>Copied</AlertTitle>
@@ -63,12 +50,14 @@ const Bottombar = () => {
 
 </Alert>: null}
 
-     <Stack 
-    position='fixed'
+     <Stack
+    position="fixed"
     bottom='0'
+    left="0"
+    right="0"
+    w="100%"
     css={{ backdropFilter: 'blur(20px)' }}
-    w='100%'
-    display={{ base: 'inline-block',md:'none'}}
+    display={{md:'none'}}
     >
 
         <CopyToClipboard text={state.value}
@@ -78,7 +67,7 @@ const Bottombar = () => {
         </Box>
         </CopyToClipboard>
 
-        <Box as='button' onClick={scrollToTop}  fontsize='5px' paddingLeft='40%'>
+        <Box as='button' onClick={scrollToTop} paddingLeft="50%">
           <AiOutlineVerticalAlignTop/>
         </Box>
     </Stack>
