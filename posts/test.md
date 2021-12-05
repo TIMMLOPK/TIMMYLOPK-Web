@@ -1,8 +1,7 @@
 ---
 title: 'Django Crash Course'
 date: 'March 5, 2021'
-excerpt: 'Django is a very powerful, high level Python framework for building web applications'
-cover_image: '/images/posts/img3.jpg'
+cover_image: '/'
 ---
 
 Lorem markdownum fine incustoditam unda factura versum occuluere Aeneas, iuvat
@@ -18,7 +17,7 @@ in.
 4. Vulnus se Latreus
 5. Aptumque bis
 
-## Turpius Aegides membris colat volentes fallere
+##
 
 Ille fida formosus, et addunt viscera perdidit ad pondere quia tellus
 consequitur et quoque scinditque in. Ratis laborum instabat quaedam partem
@@ -30,7 +29,7 @@ procul fugitque corpora iugales!
     permalinkCertificateMacintosh(ergonomicsIsdnDns);
     boot = bridgeDaemonActive;
 
-## O contra diu
+## 
 
 Descendit _auras cum misi_ contactu tenax lacus, **quaerensque invitum
 premuntur** patria. Puris ille pictis spiritus placent vestigia et noctis

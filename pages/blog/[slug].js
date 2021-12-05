@@ -4,7 +4,7 @@ import matter from 'gray-matter'
 import { marked } from 'marked'
 import Link from 'next/link'
 import { Button } from '@chakra-ui/react'
-import Image from 'next/image'
+import Img from 'next/image'
 
  
 function PostPage({
@@ -19,7 +19,7 @@ function PostPage({
       <div className='card card-page'>
         <h1 className='post-title'>{title}</h1>
         <div className='post-date'>Posted on {date}</div>
-        <Image src={cover_image} alt='' />
+        <Img src={cover_image} alt='' width='10' height='10'/>
         <div className='post-body'>
           <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
         </div>

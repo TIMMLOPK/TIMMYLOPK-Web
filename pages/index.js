@@ -66,12 +66,12 @@ const Home = () => (
           Info
         </Heading>
         <Paragraph>
-        <p>Hi, I’m @TIMMLOPK</p>
-        <p>👀 I’m interested in Photography, Website developing</p>
-        <p>🌱 I’m currently learning JavaScript 💭</p>
-        <p>📫 You can reach me on IG</p>
+          <p>Hi, I’m @TIMMLOPK</p>
+          <p>👀 I’m interested in Photography, Website developing</p>
+          <p>🌱 I’m currently learning JavaScript 💭</p>
+          <p>📫 You can reach me on IG</p>
           <Link href="https://www.instagram.com/once_wu/" target='_blank'>
-          <Link>@once_wu</Link>
+            <Link>@once_wu</Link>
           </Link>
         </Paragraph>
         <Box align="center" my={4}>
@@ -112,7 +112,7 @@ const Home = () => (
         <Paragraph>
           <h1>💻Developing Works {' '}</h1>
           <Link href="https://github.com/TIMMLOPK/once" target="_blank">
-            My First Website 
+            My First Website
           </Link>
           <h1>📷Photography{' '}</h1>
           <Link href="" target="_blank">
@@ -138,7 +138,7 @@ const Home = () => (
               </Button>
             </Link>
           </ListItem>
-          
+
           <ListItem>
             <Link href="https://www.instagram.com/tw_wu_as_tim/" target="_blank">
               <Button
@@ -162,7 +162,7 @@ const Home = () => (
             </Link>
           </ListItem>
         </List>
-        
+
       </Section>
     </Container>
   </Layout>

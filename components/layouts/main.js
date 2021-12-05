@@ -15,7 +15,7 @@ const Main = ({ children, router }) => {
     <Box as="main" pb={8}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="回朕車以復路兮，及行迷之未遠 @lionceu.live" />
+        <meta name="description" content="HomePage@lionceu-Learn JS" />
         <meta name="author" content="Timmy Wu" />
         <meta name="author" content="Timmy Wu" />
         <link rel="apple-touch-icon" href="apple-touch-icon.png" />

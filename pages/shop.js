@@ -15,6 +15,7 @@ const Shop = () => (
 
 
     <>
+
 <Layout>
     <Heading as="h3" fontSize={20} mb={4}>
       <Link href="https://www.instagram.com/murasaki_jpstore/" target='_blank'>
@@ -34,7 +35,6 @@ const Shop = () => (
       <Avatar
         src='shopicaon.jpg' />
     </motion.div>
-    
       <Bottombar/>
     <h1>主力出團 8算 日本運費平分 </h1>
     <p>
@@ -66,11 +66,9 @@ const Shop = () => (
       </Paragraph>
     </Paragraph>
     <b>順豐到付</b>
-
+    
   </Layout>
   </>
-
-
 )
 
 export default Shop

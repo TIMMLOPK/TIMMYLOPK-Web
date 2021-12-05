@@ -1,6 +1,6 @@
 import React from 'react';
-import Layout from '../components/layouts/article'
 import TextTransition, { presets } from "react-text-transition";
+import { Container, Heading } from '@chakra-ui/layout';
 
 const TEXTS = [
   "您好",
@@ -20,17 +20,26 @@ const Info = () => {
     return () => clearTimeout(intervalId);
   }, []);
 
-  return (
-    <Layout title="Info">
-    <h1>
+  return (      
+  <>
+    <Container>
+      <Heading>
+        <TextTransition
+          text={TEXTS[index % TEXTS.length]}
+          springConfig={presets.wobbly}
+        />
+      </Heading>
 
-      <TextTransition
-        text={ TEXTS[index % TEXTS.length] }
-        springConfig={ presets.wobbly }
-      />
-    </h1>
-    
-    </Layout>
+        <h1>As you know ,I am a Javascript devloper.I have devloped 3 website.</h1>
+        <h1>Typical employers of software developers</h1>
+        <p>A programmer need a good debug skill as you face various error of your project.</p>
+        <h1>How learn a program language ?</h1>
+        <p> My suggestion is starting with project.A project can make you know the language logical.</p>
+        <h1>What is the tips?</h1>
+        <p>Using the different platform to get or solve your problem .</p>
+
+    </Container>      
+    </>
   );
 };
 
