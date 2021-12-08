@@ -1,6 +1,5 @@
 import { Heading, Avatar, Box } from '@chakra-ui/react'
 import Paragraph from '../components/paragraph'
-import 'react-awesome-slider/dist/styles.css';
 import { motion } from 'framer-motion';
 import { Link } from '@chakra-ui/react';
 import dynamic from 'next/dynamic'
