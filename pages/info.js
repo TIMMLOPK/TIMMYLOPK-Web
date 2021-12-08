@@ -30,14 +30,6 @@ const Info = () => {
         />
       </Heading>
 
-        <h1>As you know ,I am a Javascript devloper.I have devloped 3 website.</h1>
-        <h1>Typical employers of software developers</h1>
-        <p>A programmer need a good debug skill as you face various error of your project.</p>
-        <h1>How learn a program language ?</h1>
-        <p> My suggestion is starting with project.A project can make you know the language logical.</p>
-        <h1>What is the tips?</h1>
-        <p>Using the different platform to get or solve your problem .</p>
-
     </Container>      
     </>
   );

@@ -13,7 +13,7 @@ function PostPage({
 }) {
   return (
     <>
-      <Link href='/blog'>
+      <Link href='/blog' passHref>
         <Button>Go Back</Button>
       </Link>
       <div className='card card-page'>

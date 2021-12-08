@@ -20,7 +20,7 @@ const Main = ({ children, router }) => {
         <meta name="author" content="Timmy Wu" />
         <link rel="apple-touch-icon" href="apple-touch-icon.png" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-        <meta property="og:site_name" content="Timmy Wu's Homepage" />
+        <meta property="og:site_name" content="HomePage@lionceu-Learn JS" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/card.png" />
         <title>T·Once</title>

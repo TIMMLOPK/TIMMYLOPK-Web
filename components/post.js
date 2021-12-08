@@ -13,7 +13,7 @@ export default function Post({ post }) {
 
       <div className= 'des'>{post.frontmatter.excerpt}</div>
 
-      <Link href={`/blog/${post.slug}`}>
+      <Link href={`/blog/${post.slug}`} passHref>
        <Button rightIcon={<ChevronRightIcon />} size="sm">Read More
        </Button>
       </Link>

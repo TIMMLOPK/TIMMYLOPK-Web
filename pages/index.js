@@ -32,7 +32,7 @@ const Home = () => (
         textAlign="center"
         bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
       >
-        Hello,  Welcome To The Site~
+        Hello,  Welcome To Lionceu~
       </Box>
       <Box display={{ md: 'flex' }}>
         <Box flexGrow={1}>
@@ -69,15 +69,22 @@ const Home = () => (
           <p>Hi, I’m @TIMMLOPK</p>
           <p>👀 I’m interested in Photography, Website developing</p>
           <p>🌱 I’m currently learning JavaScript 💭</p>
-          <p>📫 You can reach me on IG</p>
+          <Paragraph>
+            Timmy is a JavaScript Developer from Hong Kong.I also good at differnt kind of technology such as software and hardware.</Paragraph>
+          <Paragraph>
+            I am currently learning JavaScript and else language.I am instered in photography so I have ig account for this
+            topic.
+          </Paragraph>
+          <Paragraph>‘Lionceu’ is my own website for sharing something about programming.Let we learn together!</Paragraph>
+          <Paragraph>📫 You can reach me on IG</Paragraph>
           <Link href="https://www.instagram.com/once_wu/" target='_blank'>
             <Link>@once_wu</Link>
           </Link>
         </Paragraph>
         <Box align="center" my={4}>
-          <NextLink href="/info">
+          <NextLink href="/works">
             <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
-              More
+              Sharing
             </Button>
           </NextLink>
         </Box>
