@@ -16,10 +16,8 @@ const Shop = () => (
     <Layout title='@murasaki_jpstore'>
       <Heading as="h3" fontSize={20} mb={4}>
         <Link href="https://www.instagram.com/murasaki_jpstore/" target='_blank'>
-
           <Link backgroundColor='#EBF8FF' color='#000000' borderRadius='5px'>@murasaki_jpstore</Link>
         </Link>
-
       </Heading>
       <motion.div
         animate={{ scale: [0,1] }}
@@ -51,7 +49,7 @@ const Shop = () => (
         落單後請勿作出更改，例如取消、更改訂單，違者blacklist
       </Paragraph>
       <Paragraph>
-        收：AlipayHK / FPS /Payme
+        收:AlipayHK / FPS /Payme
       訊息欄請寫下ig account 名,入數後請send screenshot 給我
       </Paragraph>
       </Box>

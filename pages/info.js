@@ -1,36 +1,27 @@
 import React from 'react';
-import TextTransition, { presets } from "react-text-transition";
-import { Container, Heading } from '@chakra-ui/layout';
-
-const TEXTS = [
-  "您好",
-  "Hey",
-  "Helo",
-  "Hello"
-];
+import Layout from '../components/layouts/article';
 
 const Info = () => {
-  const [index, setIndex] = React.useState(0);
 
-  React.useEffect(() => {
-    const intervalId = setInterval(() =>
-      setIndex(index => index + 1),
-      3000 // every 3 seconds
-    );
-    return () => clearTimeout(intervalId);
-  }, []);
+  return (
+    <>
+      <Layout>
+        <div className="tree">
 
-  return (      
-  <>
-    <Container>
-      <Heading>
-        <TextTransition
-          text={TEXTS[index % TEXTS.length]}
-          springConfig={presets.wobbly}
-        />
-      </Heading>
+          <svg viewBox="0 0 120 140">
+            <text x="20" y="130" className="text" fontweight="normal" fontsize="10">Happy Christmas!</text>
+            <polygon className="p" fill="none" strokeWidth="1" points="60,10 10,110 110,110 " />
+            <circle className="c c1" cx="30" cy="100" r="4" fill="none" strokeWidth="1" />
+            <circle className="c c2" cx="65" cy="40" r="4" fill="none" strokeWidth="1" />
+            <circle className="c c3" cx="90" cy="90" r="4" fill="none" strokeWidth="1" />
+            <circle className="c c4" cx="50" cy="60" r="4" fill="none" strokeWidth="1" />
+            <circle className="c c5" cx="69" cy="102" r="4" fill="none" strokeWidth="1" />
+            <circle className="c c6" cx="45" cy="80" r="4" fill="none" strokeWidth="1" />
+            <circle className="c c7" cx="75" cy="70" r="4" fill="none" strokeWidth="1" />
+          </svg>
 
-    </Container>      
+        </div>
+      </Layout>
     </>
   );
 };

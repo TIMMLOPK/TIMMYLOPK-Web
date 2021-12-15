@@ -8,8 +8,7 @@ import {
   Button,
   List,
   ListItem,
-  Icon,
-  useColorModeValue
+  Icon
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
@@ -18,8 +17,7 @@ import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import {
   IoLogoInstagram,
-  IoLogoGithub,
-  IoLogoDiscord
+  IoLogoGithub
 } from 'react-icons/io5'
 
 const Home = () => (
@@ -30,10 +28,13 @@ const Home = () => (
         mb={6}
         p={3}
         textAlign="center"
-        bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+        bg='salmon'
       >
-        Hello,  Welcome To Lionceu~
+        <Link href='/info' color='none'>
+        Merry christmas 🎄🎄🎄
+        </Link>
       </Box>
+
       <Box display={{ md: 'flex' }}>
         <Box flexGrow={1}>
           <Heading as="h2" variant="page-title">
@@ -66,16 +67,16 @@ const Home = () => (
           Info
         </Heading>
         <Paragraph>
-          <p>Hi, I’m @TIMMLOPK</p>
-          <p>👀 I’m interested in Photography, Website developing</p>
-          <p>🌱 I’m currently learning JavaScript 💭</p>
+          <p>Hi, I&aposm @TIMMLOPK</p>
+          <p>👀 I&aposm interested in Photography, Website developing</p>
+          <p>🌱 I&aposm currently learning JavaScript 💭</p>
           <Paragraph>
             Timmy is a JavaScript Developer from Hong Kong.I also good at differnt kind of technology such as software and hardware.</Paragraph>
           <Paragraph>
             I am currently learning JavaScript and else language.I am instered in photography so I have ig account for this
             topic.
           </Paragraph>
-          <Paragraph>‘Lionceu’ is my own website for sharing something about programming.Let we learn together!</Paragraph>
+          <Paragraph>&quotLionceu&quot is my own website for sharing something about programming.Let we learn together!</Paragraph>
           <Paragraph>📫 You can reach me on IG</Paragraph>
           <Link href="https://www.instagram.com/once_wu/" target='_blank'>
             <Link>@once_wu</Link>
@@ -125,13 +126,13 @@ const Home = () => (
           <Link href="" target="_blank">
             tw_wu_as_tim
           </Link>
-          <h1>🔭And more...</h1>
+          <h1>🔭And More...</h1>
         </Paragraph>
       </Section>
 
       <Section delay={0.3}>
         <Heading as="h3" variant="section-title">
-          On the web
+          SOICAL MEDIA
         </Heading>
         <List>
           <ListItem>
@@ -154,17 +155,6 @@ const Home = () => (
                 leftIcon={<Icon as={IoLogoInstagram} />}
               >
                 @tw_wu_as_tim
-              </Button>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="https://discordapp.com/users/717937234304696380" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<Icon as={IoLogoDiscord} />}
-              >
-                Discord
               </Button>
             </Link>
           </ListItem>

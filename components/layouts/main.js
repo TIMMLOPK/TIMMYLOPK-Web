@@ -10,6 +10,9 @@ const LazyVoxelDog = dynamic(() => import('../voxel-dog'), {
   loading: () => <VoxelDogLoader />
 })
 
+const Snowfall = dynamic(() => import('react-snowfall'), {
+})
+
 const Main = ({ children, router }) => {
   return (
     <Box as="main" pb={8}>
@@ -29,6 +32,8 @@ const Main = ({ children, router }) => {
       <NavBar path={router.asPath} />
 
       <Container maxW="container.md" pt={14}>
+
+      <Snowfall speed={[0,0.5]} snowflakeCount={300}/>
         <LazyVoxelDog />
 
         {children}

@@ -1,11 +1,12 @@
 import Link from 'next/link'
 import { Button } from '@chakra-ui/button'
 import { ChevronRightIcon } from '@chakra-ui/icons'
+import Image from 'next/image'
 
 export default function Post({ post }) {
   return (
     <div className='card'>
-      <img src={post.frontmatter.cover_image} alt='' />
+      <Image src={post.frontmatter.cover_image} alt='' />
 
       <div className='post-date'>Posted on {post.frontmatter.date}</div>
 
