@@ -15,7 +15,7 @@ console.log('Random song index is ', randomSongIndex)
 
 const randomSong = songsCollections[randomSongIndex];
 
-const Audio =randomSong
+const Audio = randomSong
 
 const Music = () => {
   const [ismute, setOpen] = useState(true);
@@ -24,10 +24,15 @@ const Music = () => {
     <><div>
       <ReactHowler
         src={Audio}
-        playing={ismute ? false:true}
+        playing={ismute ? false : true}
         html5={true}
-         />
-    </div><Button onClick={() => setOpen(!ismute)} colorScheme="blue" variant="ghost" ><HiOutlineMusicNote/></Button>
+      />
+    </div><Button onClick={() => setOpen(!ismute)}
+      variant="ghost"
+      fontSize='1x1'
+      _hover={{bg:"transparent"}}
+      _active={{ bg: "transparent" }}
+      style={{ boxShadow: "none" }}><HiOutlineMusicNote /></Button>
     </>
   );
 };

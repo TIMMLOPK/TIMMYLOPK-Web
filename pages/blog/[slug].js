@@ -4,11 +4,10 @@ import matter from 'gray-matter'
 import { marked } from 'marked'
 import Link from 'next/link'
 import { Button } from '@chakra-ui/react'
-import Img from 'next/image'
 
  
 function PostPage({
-  frontmatter: { title, date, cover_image },
+  frontmatter: { title, date },
   content,
 }) {
   return (
@@ -19,7 +18,6 @@ function PostPage({
       <div className='card card-page'>
         <h1 className='post-title'>{title}</h1>
         <div className='post-date'>Posted on {date}</div>
-        <Img src={cover_image} alt='' width='10' height='10'/>
         <div className='post-body'>
           <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
         </div>

@@ -1,10 +1,10 @@
 import Link from "next/link";
-import Layout from "../components/layouts/article";
+import { Box, Heading } from "@chakra-ui/react";
 
 const Policy = () => (
     <>
-        <Layout>
-            <h1>Privacy Policy</h1>
+        <Box alignContent='center'>
+            <Heading>Privacy Policy</Heading>
             <p>Last updated: December 04, 2021</p>
             <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
             <p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy has been created with the help of the <Link href="https://www.privacypolicies.com/privacy-policy-generator/">Privacy Policy Generator</Link>.</p>
@@ -180,9 +180,8 @@ const Policy = () => (
             <h1>Contact Us</h1>
             <p>If you have any questions about this Privacy Policy, You can contact us:</p>
             <ul>
-                <li>By email: timmy.12345wer12@gmail.com</li>
-            </ul>
-        </Layout>
+                <li>By email: timmy.12345wer12@gmail.com</li></ul>
+        </Box>
     </>
 )
 export default Policy

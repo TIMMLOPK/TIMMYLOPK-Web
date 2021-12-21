@@ -9,7 +9,7 @@ const Info = () => {
         <div className="tree">
 
           <svg viewBox="0 0 120 140">
-            <text x="20" y="130" className="text" fontweight="normal" fontsize="10">Happy Christmas!</text>
+            <text x="20" y="130" className="text" fontweight="normal" fontsize="5">HappyChristmas!</text>
             <polygon className="p" fill="none" strokeWidth="1" points="60,10 10,110 110,110 " />
             <circle className="c c1" cx="30" cy="100" r="4" fill="none" strokeWidth="1" />
             <circle className="c c2" cx="65" cy="40" r="4" fill="none" strokeWidth="1" />

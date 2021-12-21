@@ -1,7 +1,6 @@
 ---
 title: 'Django Crash Course'
 date: 'March 5, 2021'
-cover_image: '/'
 ---
 
 Lorem markdownum fine incustoditam unda factura versum occuluere Aeneas, iuvat
