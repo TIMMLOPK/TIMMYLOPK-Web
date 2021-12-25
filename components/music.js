@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import ReactHowler from 'react-howler';
 import { Button } from "@chakra-ui/button";
-import { HiOutlineMusicNote } from "react-icons/hi";
+import { AiFillPlayCircle } from "react-icons/ai";
+import { motion } from "framer-motion";
 
 const songsCollections = ['/music/musicass1.mp3', '/music/musicass2.mp3', '/music/musicass3.mp3'];
 
@@ -27,12 +28,22 @@ const Music = () => {
         playing={ismute ? false : true}
         html5={true}
       />
-    </div><Button onClick={() => setOpen(!ismute)}
-      variant="ghost"
-      fontSize='1x1'
-      _hover={{bg:"transparent"}}
-      _active={{ bg: "transparent" }}
-      style={{ boxShadow: "none" }}><HiOutlineMusicNote /></Button>
+    </div>
+      <div>
+        <motion.div
+          whileHover={{ scale: 2 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <Button onClick={() => setOpen(!ismute)}
+            variant="ghost"
+            _active={{ bg: "transparent" }}
+            style={{ boxShadow: "none" }}
+            _hover={{bg: "transparent"}}
+          ><AiFillPlayCircle />
+          </Button>
+        </motion.div>
+      </div>
+
     </>
   );
 };

@@ -14,7 +14,7 @@ import {
   IconButton,
   useColorModeValue
 } from '@chakra-ui/react'
-import { HamburgerIcon, AttachmentIcon} from '@chakra-ui/icons'
+import { HamburgerIcon, AttachmentIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
 import { IoLogoGithub } from 'react-icons/io5'
 import dynamic from 'next/dynamic'
@@ -93,7 +93,7 @@ const Navbar = props => {
             <IoLogoGithub />
             Github
           </LinkItem>
-          
+
           <LinkItem
             _target="_blank"
             href="/blog"
@@ -111,46 +111,45 @@ const Navbar = props => {
         <Box flex={1} align="right">
           <ThemeToggleButton />
 
-          <Box ml={2} display={{ base: 'inline-block'}}>
-              <Music/>
-              </Box>
-              
+          <Box ml={2} display={{ base: 'inline-block' }}>
+            <Music />
+          </Box>
+
           <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
+
             <Menu isLazy id="navbar-menu">
               <MenuButton
                 as={IconButton}
                 icon={<HamburgerIcon />}
-                v_hover={{ bg: "gray.400" }}
-                aria-label="Options"
-                transition="all 0.2s"
-
+                variant="ghost"
+                transition='linear'
               />
-
-              <MenuList>
-                <NextLink href="/" passHref>
-                  <MenuItem as={Link}>About</MenuItem>
-                </NextLink>
-                <NextLink href="/works" passHref>
-                  <MenuItem as={Link}>Sharing</MenuItem>
-                </NextLink>
-                <NextLink href="/info" passHref display='none'>
-                  <MenuItem as={Link}>Info</MenuItem>
-                </NextLink>
-                <MenuItem
-                  as={Link}
-                  href="https://github.com/TIMMLOPK"
-                >
-                  Github
-                </MenuItem>
-                <NextLink href="/blog" passHref>
-                  <MenuItem as={Link} icon={<AttachmentIcon />} >Blog</MenuItem>
-                </NextLink>
-              </MenuList>
+                <MenuList background='#202023'>
+                  <NextLink href="/" passHref>
+                    <MenuItem as={Link}>About</MenuItem>
+                  </NextLink>
+                  <NextLink href="/works" passHref>
+                    <MenuItem as={Link}>Sharing</MenuItem>
+                  </NextLink>
+                  <NextLink href="/info" passHref>
+                    <MenuItem display='none' as={Link}>Info</MenuItem>
+                  </NextLink>
+                  <MenuItem
+                    as={Link}
+                    href="https://github.com/TIMMLOPK"
+                  >
+                    Github
+                  </MenuItem>
+                  <NextLink href="/blog" passHref>
+                    <MenuItem as={Link} icon={<AttachmentIcon />} >Blog</MenuItem>
+                  </NextLink>
+                </MenuList>          
             </Menu>
-          </Box>
+
         </Box>
-      </Container>
     </Box>
+      </Container >
+    </Box >
   )
 }
 
