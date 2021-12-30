@@ -8,7 +8,8 @@ import {
   Button,
   List,
   ListItem,
-  Icon
+  Icon,
+  useColorModeValue
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
@@ -29,11 +30,11 @@ const Home = () => {
           mb={6}
           p={3}
           textAlign="center"
-          bg='salmon'
+          bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
         >
-          <Link href='/info' color='none'>
-            Merry christmas 🎄🎄🎄
-          </Link>
+          <Box>
+            Hello,Welcome Back ~
+          </Box>
         </Box>
 
         <Box display={{ md: 'flex' }}>
@@ -50,14 +51,11 @@ const Home = () => {
             textAlign="center"
           >
             <Image
-              borderColor="whiteAlpha.800"
-              borderWidth={2}
-              borderStyle="solid"
               width="100px"
               height="auto"
               display="inline-block"
               borderRadius="full"
-              src="/images/icon.avif"
+              src="/images/icon.webp"
               alt="Not support format" />
           </Box>
         </Box>

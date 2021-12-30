@@ -5,7 +5,7 @@ import { marked } from 'marked'
 import Link from 'next/link'
 import { Button } from '@chakra-ui/react'
 
- 
+
 function PostPage({
   frontmatter: { title, date },
   content,

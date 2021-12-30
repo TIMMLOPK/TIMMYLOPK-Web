@@ -1,9 +1,4 @@
-.App{
-  position: relative;
-}
-.Slider{
-  border: white;
-}
+
 .blog{
   position: relative;
 }
@@ -12,31 +7,27 @@
     max-width: 760px;
     margin: auto;
     overflow: auto;
-    padding: 0 5px;
+    padding: 0 10px;
   }
   
   .card {
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 15px;
   }
   
   .card-page {
-    padding: 10px 25px;
+    padding: 0px 20px;
   }
   
   .post-title {
     font-size: 25px;
-    line-height:2.3 ;
-  }
-
-  .des{
-    font-size: 10px;
+    line-height:2.3;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
   .post-date {
-    margin-bottom: 20px;
-    padding: 3px 10px;
+    margin-bottom: 10px;
+    padding: 2px 5px;
   }
   
   .post-body ul,
@@ -59,79 +50,3 @@
       grid-template-columns: 1fr;
     }
   }
-
-  @keyframes svganimation {
-    0%{
-        stroke-dashoffset: 0;
-    }
-    50%{
-        stroke-dashoffset: 1000;
-    }
-    100%{
-        stroke-dashoffset: 0;
-    }
-}
-
-/*chrismas ver*/
-.tree{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.tree svg {
-    stroke-width: 0.5px;
-    stroke: white;
-    width: 70%;
-    height: 70%; 
-}
-
-.tree svg .text{
-    width: 100px;
-    fill: white;
-}
-
-.tree svg .p {
-    stroke-dashoffset: 700;
-    stroke-dasharray: 70;
-    animation: svganimation 20s linear forwards infinite;
-}
-
-.tree svg .c {
-    stroke-dashoffset: 1000;
-    stroke-dasharray: 13;
-}
-
-.tree svg .c1 {
-    animation: svganimation 100s linear forwards infinite ;
-}
-
-.tree svg .c2 {
-    animation: svganimation 100s linear forwards infinite ;
-    animation-delay: .05s;
-}
-
-.tree svg .c3 {
-    animation: svganimation 100s linear forwards infinite ;
-    animation-delay: .25s;
-}
-
-.tree svg .c4 {
-    animation: svganimation 100s linear forwards infinite ;
-    animation-delay: .30s;
-}
-
-.tree svg .c5 {
-    animation: svganimation 100s linear forwards infinite ;
-    animation-delay: .20s;
-}
-
-.tree svg .c6 {
-    animation: svganimation 100s linear forwards infinite ;
-    animation-delay: .10s;
-}
-
-.tree svg .c7 {
-    animation: svganimation 100s linear forwards infinite ;
-    animation-delay: .15s;
-}

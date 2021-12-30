@@ -78,9 +78,6 @@ const Navbar = props => {
           <LinkItem href="/works" path={path}>
             Sharing
           </LinkItem>
-          <LinkItem href="/info" path={path} display='none'>
-            Info
-          </LinkItem>
           <LinkItem
             _target="_blank"
             href="https://github.com/TIMMLOPK"
@@ -124,15 +121,13 @@ const Navbar = props => {
                 variant="ghost"
                 transition='linear'
               />
-                <MenuList background='#202023'>
+                <MenuList 
+                bg={useColorModeValue('#f0e7db', '#202025')}>
                   <NextLink href="/" passHref>
                     <MenuItem as={Link}>About</MenuItem>
                   </NextLink>
                   <NextLink href="/works" passHref>
                     <MenuItem as={Link}>Sharing</MenuItem>
-                  </NextLink>
-                  <NextLink href="/info" passHref>
-                    <MenuItem display='none' as={Link}>Info</MenuItem>
                   </NextLink>
                   <MenuItem
                     as={Link}

@@ -1,12 +1,11 @@
-import { Box,Stack } from '@chakra-ui/react'
-import { currentDayName } from '../utils/dateUtils'
+import { Box, Stack } from '@chakra-ui/react'
 import Link from 'next/link'
 
 const Footer = () => (
-  <Box as="footer" maxW="3x2" py="inherit">
-    &copy; {new Date().getFullYear()} Today:{currentDayName()}!
+  <Box align="center" opacity={0.4} fontSize="sm">
+    &copy; {new Date().getFullYear()} Timmy All Rights Reserved.
     <Stack>
-      <Box as='button' alignSelf={{ base: 'center', sm: 'start' }} color="#A0AEC0"><Link href='/policy'>Website Policy</Link></Box>
+      <Box as='button' align="center" color="#A0AEC0"><Link href='/policy'>Website Policy</Link></Box>
     </Stack>
   </Box>
 )

@@ -9,18 +9,18 @@ import Section from '../components/section'
 function Blog({ posts }) {
   return (
     <layout title="blog" className='blog'>
-    <Container>
-      <Heading as="h3" fontSize={20} mb={4}>
-        Blog
-      </Heading>
+      <Container>
+        <Heading as="h3" fontSize={20} mb={4}>
+          Blog
+        </Heading>
 
-    <Section delay={0.1}>
-      <div className='posts'>
-        {posts.map((post, index) => (
-          <Post key={index} post={post} />
-        ))}
-      </div>      
-      </Section>
+        <Section delay={0.1}>
+          <div className='posts'>
+            {posts.map((post, index) => (
+              <Post key={index} post={post} />
+            ))}
+          </div>
+        </Section>
 
       </Container>
     </layout>
