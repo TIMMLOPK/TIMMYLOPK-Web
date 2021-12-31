@@ -62,7 +62,7 @@ const Navbar = props => {
         justify="space-between"
       >
         <Flex align="center" mr={5}>
-          <Heading as="h1" size="lg" letterSpacing={'tighter'}>
+          <Heading as="h1" size="x1" letterSpacing={'tighter'}>
             <Logo />
           </Heading>
         </Flex>
@@ -113,38 +113,34 @@ const Navbar = props => {
           </Box>
 
           <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
-
             <Menu isLazy id="navbar-menu">
               <MenuButton
                 as={IconButton}
                 icon={<HamburgerIcon />}
                 variant="ghost"
-                transition='linear'
+                transition="linear"
               />
-                <MenuList 
-                bg={useColorModeValue('#f0e7db', '#202025')}>
-                  <NextLink href="/" passHref>
-                    <MenuItem as={Link}>About</MenuItem>
-                  </NextLink>
-                  <NextLink href="/works" passHref>
-                    <MenuItem as={Link}>Sharing</MenuItem>
-                  </NextLink>
-                  <MenuItem
-                    as={Link}
-                    href="https://github.com/TIMMLOPK"
-                  >
-                    Github
+              <MenuList bg={useColorModeValue('#f0e7db', '#202025')}>
+                <NextLink href="/" passHref>
+                  <MenuItem as={Link}>About</MenuItem>
+                </NextLink>
+                <NextLink href="/works" passHref>
+                  <MenuItem as={Link}>Sharing</MenuItem>
+                </NextLink>
+                <MenuItem as={Link} href="https://github.com/TIMMLOPK">
+                  Github
+                </MenuItem>
+                <NextLink href="/blog" passHref>
+                  <MenuItem as={Link} icon={<AttachmentIcon />}>
+                    Blog
                   </MenuItem>
-                  <NextLink href="/blog" passHref>
-                    <MenuItem as={Link} icon={<AttachmentIcon />} >Blog</MenuItem>
-                  </NextLink>
-                </MenuList>          
+                </NextLink>
+              </MenuList>
             </Menu>
-
+          </Box>
         </Box>
+      </Container>
     </Box>
-      </Container >
-    </Box >
   )
 }
 

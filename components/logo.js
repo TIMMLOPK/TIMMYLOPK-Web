@@ -22,7 +22,7 @@ const LogoBox = styled.span`
 `
 
 const Logo = () => {
-  const footPrintImg = `/images/avtar${useColorModeValue('', '-dark')}.png`
+  const footPrintImg = `/images/avtar.png`
 
   return (
     <Link href="/">
@@ -32,10 +32,10 @@ const Logo = () => {
           <Text
             color={useColorModeValue('gray.800', 'whiteAlpha.900')}
             fontFamily='M PLUS Rounded 1c", sans-serif'
-            fontWeight="normal"
+            fontWeight="bold"
             ml={3}
           >
-            T·once
+            once.
           </Text>
         </LogoBox>
       </a>

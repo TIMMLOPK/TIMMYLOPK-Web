@@ -16,10 +16,7 @@ import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from '../components/bio'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
-import {
-  IoLogoInstagram,
-  IoLogoGithub
-} from 'react-icons/io5'
+import { IoLogoInstagram, IoLogoGithub } from 'react-icons/io5'
 
 const Home = () => {
   return (
@@ -33,7 +30,7 @@ const Home = () => {
           bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
         >
           <Box>
-            Hello,Welcome Back ~
+            Hello,Welcome Back <Box color="gray.400">#Go to 2022</Box>
           </Box>
         </Box>
 
@@ -56,7 +53,8 @@ const Home = () => {
               display="inline-block"
               borderRadius="full"
               src="/images/icon.webp"
-              alt="Not support format" />
+              alt="Not support format"
+            />
           </Box>
         </Box>
 
@@ -69,14 +67,19 @@ const Home = () => {
             <p>👀 I am interested in Photography, Website developing</p>
             <p>🌱 I am currently learning JavaScript 💭</p>
             <Paragraph>
-              Timmy is a JavaScript Developer from Hong Kong.I also good at differnt kind of technology such as software and hardware.</Paragraph>
-            <Paragraph>
-              I am currently learning JavaScript and else language.I am instered in photography so I have ig account for this
-              topic.
+              Timmy is a JavaScript Developer from Hong Kong.I also good at
+              differnt kind of technology such as software and hardware.
             </Paragraph>
-            <Paragraph>📱Lionceu is my own website for sharing something about programming.Let we learn together!</Paragraph>
+            <Paragraph>
+              I am currently learning JavaScript and else language.I am instered
+              in photography so I have ig account for this topic.
+            </Paragraph>
+            <Paragraph>
+              📱Lionceu is my own website for sharing something about
+              programming.Let we learn together!
+            </Paragraph>
             <Paragraph>📫 You can reach me on IG</Paragraph>
-            <Link href="https://www.instagram.com/once_wu/" target='_blank'>
+            <Link href="https://www.instagram.com/once_wu/" target="_blank">
               <Link>@once_wu</Link>
             </Link>
           </Paragraph>
@@ -106,8 +109,8 @@ const Home = () => {
             Website 2.4 【once.】
           </BioSection>
           <BioSection>
-            <BioYear>2021-11</BioYear>
-            Website 3.4 【T·once】
+            <BioYear>2022-01</BioYear>
+            <Box as="b">Website 3.6.1 【once.】</Box>
           </BioSection>
         </Section>
 
@@ -116,11 +119,11 @@ const Home = () => {
             My Experience
           </Heading>
           <Paragraph>
-            <h1>💻Developing Works {' '}</h1>
+            <h1>💻Developing Works </h1>
             <Link href="https://github.com/TIMMLOPK/once" target="_blank">
               My First Website
             </Link>
-            <h1>📷Photography{' '}</h1>
+            <h1>📷Photography </h1>
             <Link href="" target="_blank">
               tw_wu_as_tim
             </Link>
@@ -146,7 +149,10 @@ const Home = () => {
             </ListItem>
 
             <ListItem>
-              <Link href="https://www.instagram.com/tw_wu_as_tim/" target="_blank">
+              <Link
+                href="https://www.instagram.com/tw_wu_as_tim/"
+                target="_blank"
+              >
                 <Button
                   variant="ghost"
                   colorScheme="teal"
@@ -157,7 +163,6 @@ const Home = () => {
               </Link>
             </ListItem>
           </List>
-
         </Section>
       </Container>
     </Layout>

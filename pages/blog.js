@@ -8,20 +8,19 @@ import Section from '../components/section'
 
 function Blog({ posts }) {
   return (
-    <layout title="blog" className='blog'>
+    <layout title="blog" className="blog">
       <Container>
         <Heading as="h3" fontSize={20} mb={4}>
           Blog
         </Heading>
 
         <Section delay={0.1}>
-          <div className='posts'>
+          <div className="posts">
             {posts.map((post, index) => (
               <Post key={index} post={post} />
             ))}
           </div>
         </Section>
-
       </Container>
     </layout>
   )
@@ -32,7 +31,7 @@ export async function getStaticProps() {
   const files = fs.readdirSync(path.join('posts'))
 
   // Get slug and frontmatter from posts
-  const posts = files.map((filename) => {
+  const posts = files.map(filename => {
     // Create slug
     const slug = filename.replace('.md', '')
 
@@ -46,14 +45,14 @@ export async function getStaticProps() {
 
     return {
       slug,
-      frontmatter,
+      frontmatter
     }
   })
 
   return {
     props: {
-      posts: posts.sort(sortByDate),
-    },
+      posts: posts.sort(sortByDate)
+    }
   }
 }
 export default Blog

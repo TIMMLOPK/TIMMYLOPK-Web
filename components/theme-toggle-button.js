@@ -19,9 +19,9 @@ const ThemeToggleButton = () => {
           variant="ghost"
           icon={useColorModeValue(<MoonIcon />, <SunIcon />)}
           onClick={toggleColorMode}
-          _hover={{ bg: "transparent" }}
-          _active={{ bg: "transparent" }}
-          style={{ boxShadow: "none" }}
+          _hover={{ bg: 'transparent' }}
+          _active={{ bg: 'transparent' }}
+          style={{ boxShadow: 'none' }}
         ></IconButton>
       </motion.div>
     </AnimatePresence>

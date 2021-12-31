@@ -1,6 +1,10 @@
-const MoonIcon  = () => {
-  return(
-    <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none"
+const MoonIcon = () => {
+  return (
+    <svg
+      width="1em"
+      height="1em"
+      viewBox="0 0 24 24"
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <circle cx="11.9998" cy="11.9998" r="5.75375" fill="currentColor" />
@@ -36,6 +40,7 @@ const MoonIcon  = () => {
         />
         <circle cx="12" cy="1.71143" r="1.71143" fill="currentColor" />
       </g>
-    </svg>)
-  }
-  export default MoonIcon
+    </svg>
+  )
+}
+export default MoonIcon

@@ -23,13 +23,12 @@ const Main = ({ children, router }) => {
         <meta property="og:site_name" content="HomePage@lionceu-Learn JS" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/card.png" />
-        <title>T·Once</title>
+        <title>once.</title>
       </Head>
 
       <NavBar path={router.asPath} />
 
       <Container maxW="container.md" pt={14}>
-
         <LazyVoxelDog />
 
         {children}

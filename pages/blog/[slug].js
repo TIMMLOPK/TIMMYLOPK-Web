@@ -5,20 +5,16 @@ import { marked } from 'marked'
 import Link from 'next/link'
 import { Button } from '@chakra-ui/react'
 
-
-function PostPage({
-  frontmatter: { title, date },
-  content,
-}) {
+function PostPage({ frontmatter: { title, date }, content }) {
   return (
     <>
-      <Link href='/blog' passHref>
+      <Link href="/blog" passHref>
         <Button>Go Back</Button>
       </Link>
-      <div className='card card-page'>
-        <h1 className='post-title'>{title}</h1>
-        <div className='post-date'>Posted on {date}</div>
-        <div className='post-body'>
+      <div className="card card-page">
+        <h1 className="post-title">{title}</h1>
+        <div className="post-date">Posted on {date}</div>
+        <div className="post-body">
           <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
         </div>
       </div>
@@ -29,15 +25,15 @@ function PostPage({
 export async function getStaticPaths() {
   const files = fs.readdirSync(path.join('posts'))
 
-  const paths = files.map((filename) => ({
+  const paths = files.map(filename => ({
     params: {
-      slug: filename.replace('.md', ''),
-    },
+      slug: filename.replace('.md', '')
+    }
   }))
 
   return {
     paths,
-    fallback: false,
+    fallback: false
   }
 }
 
@@ -53,8 +49,8 @@ export async function getStaticProps({ params: { slug } }) {
     props: {
       frontmatter,
       slug,
-      content,
-    },
+      content
+    }
   }
 }
 

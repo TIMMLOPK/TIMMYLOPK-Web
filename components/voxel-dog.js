@@ -9,7 +9,6 @@ function easeOutCirc(x) {
 }
 
 const VoxelDog = () => {
-
   const refContainer = useRef()
   const [loading, setLoading] = useState(true)
   const [renderer, setRenderer] = useState()

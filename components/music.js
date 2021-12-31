@@ -1,52 +1,50 @@
-import React, { useState } from "react";
-import ReactHowler from 'react-howler';
-import { Button } from "@chakra-ui/button";
-import { AiFillPlayCircle } from "react-icons/ai";
-import { motion } from "framer-motion";
+import React, { useState } from 'react'
+import ReactHowler from 'react-howler'
+import { Button } from '@chakra-ui/button'
+import { AiFillPlayCircle } from 'react-icons/ai'
+import { motion } from 'framer-motion'
 
-const songsCollections = ['/music/musicass1.mp3', '/music/musicass2.mp3', '/music/musicass3.mp3'];
+const songsCollections = [
+  '/music/musicass1.mp3',
+  '/music/musicass2.mp3',
+  '/music/musicass3.mp3'
+]
 
 const getRandomFromRange = (min, max) => {
-  return Math.floor(Math.random() * (max - min) + min);
-};
+  return Math.floor(Math.random() * (max - min) + min)
+}
 
-const randomSongIndex = getRandomFromRange(0, songsCollections.length);
+const randomSongIndex = getRandomFromRange(0, songsCollections.length)
 
 console.log('Random song index is ', randomSongIndex)
 
-const randomSong = songsCollections[randomSongIndex];
+const randomSong = songsCollections[randomSongIndex]
 
 const Audio = randomSong
 
 const Music = () => {
-  const [ismute, setOpen] = useState(true);
+  const [ismute, setOpen] = useState(true)
 
   return (
-    <><div>
-      <ReactHowler
-        src={Audio}
-        playing={ismute ? false : true}
-        html5={true}
-      />
-    </div>
+    <>
       <div>
-        <motion.div
-          whileHover={{ scale: 2 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          <Button onClick={() => setOpen(!ismute)}
+        <ReactHowler src={Audio} playing={ismute ? false : true} html5={true} />
+      </div>
+      <div>
+        <motion.div whileHover={{ scale: 2 }} whileTap={{ scale: 0.9 }}>
+          <Button
+            onClick={() => setOpen(!ismute)}
             variant="ghost"
-            _active={{ bg: "transparent" }}
-            style={{ boxShadow: "none" }}
-            _hover={{bg: "transparent"}}
-          ><AiFillPlayCircle />
+            _active={{ bg: 'transparent' }}
+            style={{ boxShadow: 'none' }}
+            _hover={{ bg: 'transparent' }}
+          >
+            <AiFillPlayCircle />
           </Button>
         </motion.div>
       </div>
-
     </>
-  );
-};
-
+  )
+}
 
 export default Music
