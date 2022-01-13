@@ -5,7 +5,7 @@ import { marked } from 'marked'
 import Link from 'next/link'
 import { Button } from '@chakra-ui/react'
 
-function PostPage({ frontmatter: { title, date }, content }) {
+function PostPage({ frontmatter: { title, date, tags }, content }) {
   return (
     <>
       <Link href="/blog" passHref>
@@ -14,6 +14,7 @@ function PostPage({ frontmatter: { title, date }, content }) {
       <div className="card card-page">
         <h1 className="post-title">{title}</h1>
         <div className="post-date">Posted on {date}</div>
+        <div className="post-tags">{tags}</div>
         <div className="post-body">
           <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
         </div>

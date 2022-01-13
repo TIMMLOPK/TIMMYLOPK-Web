@@ -29,9 +29,7 @@ const Home = () => {
           textAlign="center"
           bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
         >
-          <Box>
-            Hello,Welcome Back <Box color="gray.400">#Go to 2022</Box>
-          </Box>
+          <Box>Hello,Welcome Back</Box>
         </Box>
 
         <Box display={{ md: 'flex' }}>
@@ -78,13 +76,9 @@ const Home = () => {
               📱Lionceu is my own website for sharing something about
               programming.Let we learn together!
             </Paragraph>
-            <Paragraph>📫 You can reach me on IG</Paragraph>
-            <Link href="https://www.instagram.com/once_wu/" target="_blank">
-              <Link>@once_wu</Link>
-            </Link>
           </Paragraph>
           <Box align="center" my={4}>
-            <NextLink href="/works">
+            <NextLink href="/shares">
               <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
                 Sharing
               </Button>

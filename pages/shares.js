@@ -6,23 +6,23 @@ const Info = () => (
   <Layout title="Info">
     <Container>
       <Heading as="h3" fontSize={27} mb={4}>
-        Sharing or else
+        Sharing and Tips
       </Heading>
       <Box paddingBottom="5">
         <Paragraph>
           As you know ,I am a Javascript devloper.I have devloped 3 project.You
-          can see that in Github
+          can see them in Github.
         </Paragraph>
       </Box>
       <Heading as="h3" fontSize={20}>
-        Typical employers of software developers
+        --Typical employers of software developers--
       </Heading>
       <Paragraph>
         A programmer need a good debug skill as you face various error of your
         project.
       </Paragraph>
       <Heading as="h3" fontSize={20}>
-        How learn devlop program ?
+        How learn devloping program ?
       </Heading>
       <Paragraph>
         {' '}
