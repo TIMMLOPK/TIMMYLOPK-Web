@@ -22,16 +22,20 @@ import { FaBlog } from 'react-icons/fa'
 
 const Music = dynamic(() => import('../components/music'))
 
-const LinkItem = ({ href, path, _target, children, ...props }) => {
+const LinkItem = ({ href, path, _target, children,isExternal,...props }) => {
   const active = path === href
   const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
   return (
     <NextLink href={href} passHref>
       <Link
         p={2}
-        bg={active ? 'grassTeal' : undefined}
+        bg={active ? '#B0E0E6' : undefined}
         color={active ? '#202023' : inactiveColor}
+        _hover='none'
+        boxShadow='none'
+        variant="ghost"
         _target={_target}
+        isExternal={isExternal}
         {...props}
       >
         {children}
@@ -62,7 +66,8 @@ const Navbar = props => {
         justify="space-between"
       >
         <Flex align="center" mr={5}>
-          <Heading as="h1" size="x1" letterSpacing={'tighter'}>
+          <Heading as="h1" size="x1" >
+
             <Logo />
           </Heading>
         </Flex>
@@ -80,19 +85,6 @@ const Navbar = props => {
           </LinkItem>
           <LinkItem
             _target="_blank"
-            href="https://github.com/TIMMLOPK"
-            path={path}
-            display="inline-flex"
-            alignItems="center"
-            style={{ gap: 4 }}
-            pl={2}
-          >
-            <IoLogoGithub />
-            Github
-          </LinkItem>
-
-          <LinkItem
-            _target="_blank"
             href="/blog"
             path={path}
             display="inline-flex"
@@ -103,6 +95,20 @@ const Navbar = props => {
             <FaBlog />
             blog
           </LinkItem>
+          <LinkItem
+            _target="_blank"
+            href="https://github.com/TIMMLOPK"
+            path={path}
+            display="inline-flex"
+            alignItems="center"
+            style={{ gap: 4 }}
+            pl={2}
+            isExternal={true}
+          >
+            <IoLogoGithub />
+            Github
+          </LinkItem>
+
         </Stack>
 
         <Box flex={1} align="right">
@@ -113,7 +119,7 @@ const Navbar = props => {
           </Box>
 
           <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
-            <Menu isLazy id="navbar-menu">
+            <Menu isLazytrue id="navbar-menu">
               <MenuButton
                 as={IconButton}
                 icon={<HamburgerIcon />}

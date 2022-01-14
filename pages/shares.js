@@ -1,9 +1,9 @@
 import { Box, Container, Heading } from '@chakra-ui/react'
-import Layout from '../components/layouts/shop'
+import Layout from '../components/layouts/article'
 import Paragraph from '../components/paragraph'
 
 const Info = () => (
-  <Layout title="Info">
+  <Layout title="Sharing">
     <Container>
       <Heading as="h3" fontSize={27} mb={4}>
         Sharing and Tips

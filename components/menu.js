@@ -1,8 +1,7 @@
 import { Stack } from '@chakra-ui/layout'
 import {
   AiOutlineVerticalAlignTop,
-  AiOutlineShareAlt,
-  AiOutlineMenu
+  AiOutlineShareAlt
 } from 'react-icons/ai'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import React, { useState } from 'react'
@@ -10,10 +9,7 @@ import {
   Alert,
   AlertTitle,
   Button,
-  CloseButton,
-  Menu,
-  MenuButton,
-  IconButton
+  CloseButton
 } from '@chakra-ui/react'
 
 const Bottombar = () => {
@@ -49,13 +45,6 @@ const Bottombar = () => {
         ) : null}
 
         <Stack position="fixed" bottom="10" left="85%">
-          <Menu isLazy>
-            <MenuButton
-              variant="ghost"
-              transition="linear"
-              as={IconButton}
-              icon={<AiOutlineMenu />}
-            />
             <CopyToClipboard
               text={state.value}
               onCopy={() => setState({ copied: true })}
@@ -74,7 +63,6 @@ const Bottombar = () => {
             >
               <AiOutlineVerticalAlignTop />
             </Button>
-          </Menu>
         </Stack>
       </Stack>
     </>

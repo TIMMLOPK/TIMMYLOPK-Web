@@ -29,7 +29,7 @@ const Home = () => {
           textAlign="center"
           bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
         >
-          <Box>Hello,Welcome Back</Box>
+          <Box>Hello,Welcome to moon</Box>
         </Box>
 
         <Box display={{ md: 'flex' }}>
@@ -58,10 +58,10 @@ const Home = () => {
 
         <Section delay={0.1}>
           <Heading as="h3" variant="section-title">
-            Info
+            🧑‍🚀Info
           </Heading>
           <Paragraph>
-            <p>Hi, I am @TIMMLOPK</p>
+            <p>Hi, I am @TIMMLOPK.I am astronaut of JavaScript.</p>
             <p>👀 I am interested in Photography, Website developing</p>
             <p>🌱 I am currently learning JavaScript 💭</p>
             <Paragraph>

@@ -1,12 +1,13 @@
 import Link from 'next/link'
 import { Box, Heading } from '@chakra-ui/react'
+import Layout from '../components/layouts/article'
 
-const Policy = () => {
-  return (
-    <>
+const Policy = () => (
+  <>
+    <Layout>
       <Box alignContent="center">
         <Heading>Privacy Policy</Heading>
-        <p>Last updated: December 04, 2021</p>
+        <Box padding='5px' fontSize='md'>Last updated: December 04, 2021</Box>
         <p>
           This Privacy Policy describes Our policies and procedures on the
           collection, use and disclosure of Your information when You use the
@@ -525,7 +526,7 @@ const Policy = () => {
           <li>By email: timmy.12345wer12@gmail.com</li>
         </ul>
       </Box>
-    </>
-  )
-}
+    </Layout>
+  </>
+)
 export default Policy

@@ -22,10 +22,7 @@ const Shop = () => (
       </Heading>
       <motion.div
         animate={{ scale: [0, 1] }}
-        transition={{
-          delay: 1,
-          x: { type: 'spring', stiffness: 500 }
-        }}
+        transition={{x: { type: 'spring', stiffness: 500 }}}
       >
         <Avatar src="shopicaon.jpg" />
       </motion.div>

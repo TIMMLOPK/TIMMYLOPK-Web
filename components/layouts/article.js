@@ -8,28 +8,30 @@ const variants = {
   exit: { opacity: 0, x: -0, y: 20 }
 }
 
-const Layout = ({ children, title }) => (
-  <motion.article
-    initial="hidden"
-    animate="enter"
-    exit="exit"
-    variants={variants}
-    transition={{ duration: 0.4, type: 'easeInOut' }}
-    style={{ position: 'relative' }}
-  >
-    <>
-      {title && (
-        <Head>
-          <title>{title} - Timmy</title>
-          <meta name="twitter:title" content={title} />
-          <meta property="og:title" content={title} />
-        </Head>
-      )}
-      {children}
+const Layout = ({ children, title }) => {
+  return (
+    <motion.article
+      initial="hidden"
+      animate="enter"
+      exit="exit"
+      variants={variants}
+      transition={{ duration: 0.6, type: 'spring' }}
+      style={{ position: 'relative' }}
+    >
+      <>
+        {title && (
+          <Head>
+            <title>{title} - Timmy</title>
+            <meta name="twitter:title" content={title} />
+            <meta property="og:title" content={title} />
+          </Head>
+        )}
+        {children}
 
-      <GridItemStyle />
-    </>
-  </motion.article>
-)
+        <GridItemStyle />
+      </>
+    </motion.article>
+  )
+}
 
 export default Layout
