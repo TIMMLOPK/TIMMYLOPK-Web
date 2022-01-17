@@ -7,7 +7,9 @@ const Policy = () => (
     <Layout>
       <Box alignContent="center">
         <Heading>Privacy Policy</Heading>
-        <Box padding='5px' fontSize='md'>Last updated: December 04, 2021</Box>
+        <Box padding="5px" fontSize="md">
+          Last updated: December 04, 2021
+        </Box>
         <p>
           This Privacy Policy describes Our policies and procedures on the
           collection, use and disclosure of Your information when You use the

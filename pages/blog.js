@@ -11,7 +11,7 @@ function Blog({ posts }) {
     <layout title="blog" className="blog">
       <Container>
         <Heading as="h3" fontSize={20} mb={4}>
-        Astronaut&apos;s blog 🗞️
+          Astronaut&apos;s blog 🗞️
         </Heading>
 
         <Section delay={0.1}>

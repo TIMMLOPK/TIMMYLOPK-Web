@@ -7,22 +7,20 @@ import {
   Stack,
   Heading,
   Flex,
-  Menu,
-  MenuItem,
-  MenuList,
-  MenuButton,
-  IconButton,
+  Button,
   useColorModeValue
 } from '@chakra-ui/react'
-import { HamburgerIcon, AttachmentIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
 import { IoLogoGithub } from 'react-icons/io5'
 import dynamic from 'next/dynamic'
 import { FaBlog } from 'react-icons/fa'
+import { useState } from 'react'
+import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons'
+import { motion } from 'framer-motion'
 
 const Music = dynamic(() => import('../components/music'))
 
-const LinkItem = ({ href, path, _target, children,isExternal,...props }) => {
+const LinkItem = ({ href, path, _target, children, ...props }) => {
   const active = path === href
   const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
   return (
@@ -31,11 +29,10 @@ const LinkItem = ({ href, path, _target, children,isExternal,...props }) => {
         p={2}
         bg={active ? '#B0E0E6' : undefined}
         color={active ? '#202023' : inactiveColor}
-        _hover='none'
-        boxShadow='none'
+        _hover="none"
+        boxShadow="none"
         variant="ghost"
         _target={_target}
-        isExternal={isExternal}
         {...props}
       >
         {children}
@@ -46,13 +43,14 @@ const LinkItem = ({ href, path, _target, children,isExternal,...props }) => {
 
 const Navbar = props => {
   const { path } = props
-
+  const [display, changeDisplay] = useState('none')
+  const [hide, setHide] = useState({ base: 'inline-block', md: 'none' })
   return (
     <Box
       position="fixed"
       as="nav"
       w="100%"
-      bg={useColorModeValue('#ffffff40', '#20202380')}
+      bg={useColorModeValue('#ffffff', '#202023')}
       css={{ backdropFilter: 'blur(10px)' }}
       zIndex={1}
       {...props}
@@ -66,8 +64,7 @@ const Navbar = props => {
         justify="space-between"
       >
         <Flex align="center" mr={5}>
-          <Heading as="h1" size="x1" >
-
+          <Heading as="h1" size="x1">
             <Logo />
           </Heading>
         </Flex>
@@ -108,7 +105,6 @@ const Navbar = props => {
             <IoLogoGithub />
             Github
           </LinkItem>
-
         </Stack>
 
         <Box flex={1} align="right">
@@ -118,32 +114,123 @@ const Navbar = props => {
             <Music />
           </Box>
 
-          <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
-            <Menu isLazytrue id="navbar-menu">
-              <MenuButton
-                as={IconButton}
-                icon={<HamburgerIcon />}
-                variant="ghost"
-                transition="linear"
-              />
-              <MenuList bg={useColorModeValue('#f0e7db', '#202025')}>
-                <NextLink href="/" passHref>
-                  <MenuItem as={Link}>About</MenuItem>
-                </NextLink>
-                <NextLink href="/shares" passHref>
-                  <MenuItem as={Link}>Sharing</MenuItem>
-                </NextLink>
-                <MenuItem as={Link} href="https://github.com/TIMMLOPK">
-                  Github
-                </MenuItem>
-                <NextLink href="/blog" passHref>
-                  <MenuItem as={Link} icon={<AttachmentIcon />}>
-                    Blog
-                  </MenuItem>
-                </NextLink>
-              </MenuList>
-            </Menu>
+          <Box flex={1} display={{ base: 'inline-block' }}>
+            <Box
+              as="button"
+              position="relative"
+              margin={2}
+              onClick={() => {
+                changeDisplay('none')
+                setHide({ base: 'inline-block', md: 'none' })
+              }}
+              display={display}
+            >
+              <motion.div
+                animate={{ opacity: 1, rotate: -360 }}
+                transition={{ type: 'spring' }}
+              >
+                <CloseIcon />
+              </motion.div>
+            </Box>
           </Box>
+
+          <Box
+            as="button"
+            position="relative"
+            onClick={() => {
+              changeDisplay('block')
+              setHide('none')
+            }}
+            display={hide}
+            margin={2}
+          >
+            <motion.div whileTap={{ rotate: 360 }}>
+              <HamburgerIcon />
+            </motion.div>
+          </Box>
+
+          <Stack
+            w="100%"
+            display={display}
+            bg={useColorModeValue('#ffffff95', '#20202380')}
+            css={{ backdropFilter: 'blur(10px)' }}
+            zIndex={20}
+            h="100vh"
+            position="fixed"
+            left="0"
+            overflowY="auto"
+            flexDir="column"
+          >
+            <Box flexDir="column" align="center">
+              <NextLink href="/" passHref>
+                <Button
+                  as="a"
+                  variant="ghost"
+                  aria-label="Home"
+                  my={5}
+                  w="100%"
+                  onClick={() => {
+                    changeDisplay('none')
+                    setHide({ base: 'inline-block', md: 'none' })
+                  }}
+                >
+                  Home
+                </Button>
+              </NextLink>
+              <NextLink href="/shares" passHref>
+                <Button
+                  as="a"
+                  variant="ghost"
+                  aria-label="About"
+                  my={5}
+                  w="100%"
+                  onClick={() => {
+                    changeDisplay('none')
+                    setHide({ base: 'inline-block', md: 'none' })
+                  }}
+                >
+                  Sharing
+                </Button>
+              </NextLink>
+
+              <NextLink href="/blog" passHref>
+                <Button
+                  as="a"
+                  variant="ghost"
+                  aria-label="Contact"
+                  my={5}
+                  w="100%"
+                  onClick={() => {
+                    changeDisplay('none')
+                    setHide({ base: 'inline-block', md: 'none' })
+                  }}
+                >
+                  <FaBlog />
+                  Blog
+                </Button>
+              </NextLink>
+              <NextLink
+                href="https://github.com/TIMMLOPK"
+                passHref
+                prefetch={false}
+              >
+                <Button
+                  as="a"
+                  variant="ghost"
+                  aria-label="Contact"
+                  my={5}
+                  w="100%"
+                  onClick={() => {
+                    changeDisplay('none')
+                    setHide({ base: 'inline-block', md: 'none' })
+                  }}
+                >
+                  <IoLogoGithub />
+                  Github
+                </Button>
+              </NextLink>
+            </Box>
+          </Stack>
         </Box>
       </Container>
     </Box>

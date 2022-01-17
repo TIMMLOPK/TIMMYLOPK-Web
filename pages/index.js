@@ -78,7 +78,7 @@ const Home = () => {
             </Paragraph>
           </Paragraph>
           <Box align="center" my={4}>
-            <NextLink href="/shares">
+            <NextLink href="/shares" prefetch={false}>
               <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
                 Sharing
               </Button>
@@ -118,7 +118,10 @@ const Home = () => {
               My First Website
             </Link>
             <h1>📷Photography </h1>
-            <Link href="" target="_blank">
+            <Link
+              href="https://www.instagram.com/tw_wu_as_tim/"
+              target="_blank"
+            >
               tw_wu_as_tim
             </Link>
             <h1>🔭And More...</h1>

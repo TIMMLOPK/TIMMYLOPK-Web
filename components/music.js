@@ -24,11 +24,17 @@ const Audio = randomSong
 
 const Music = () => {
   const [ismute, setOpen] = useState(true)
+  const [loading, setloading] = useState(true)
 
   return (
     <>
       <div>
-        <ReactHowler src={Audio} playing={ismute ? false : true} html5={true} />
+        <ReactHowler
+          src={Audio}
+          playing={ismute ? false : true}
+          html5={true}
+          onLoad={() => setloading(false)}
+        />
       </div>
       <div>
         <motion.div whileHover={{ scale: 2 }} whileTap={{ scale: 0.9 }}>
@@ -38,6 +44,7 @@ const Music = () => {
             _active={{ bg: 'transparent' }}
             style={{ boxShadow: 'none' }}
             _hover={{ bg: 'transparent' }}
+            isLoading={loading}
           >
             <AiFillPlayCircle />
           </Button>

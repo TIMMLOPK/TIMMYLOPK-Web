@@ -1,16 +1,8 @@
 import { Stack } from '@chakra-ui/layout'
-import {
-  AiOutlineVerticalAlignTop,
-  AiOutlineShareAlt
-} from 'react-icons/ai'
+import { AiOutlineVerticalAlignTop, AiOutlineShareAlt } from 'react-icons/ai'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import React, { useState } from 'react'
-import {
-  Alert,
-  AlertTitle,
-  Button,
-  CloseButton
-} from '@chakra-ui/react'
+import { Alert, AlertTitle, Button, CloseButton } from '@chakra-ui/react'
 
 const Bottombar = () => {
   //share btn
@@ -45,24 +37,24 @@ const Bottombar = () => {
         ) : null}
 
         <Stack position="fixed" bottom="10" left="85%">
-            <CopyToClipboard
-              text={state.value}
-              onCopy={() => setState({ copied: true })}
-            >
-              <Button w="50px" h="50px" borderRadius="50%" boxShadow="lg">
-                <AiOutlineShareAlt />
-              </Button>
-            </CopyToClipboard>
-
-            <Button
-              onClick={scrollToTop}
-              w="50px"
-              h="50px"
-              borderRadius="50%"
-              boxShadow="lg"
-            >
-              <AiOutlineVerticalAlignTop />
+          <CopyToClipboard
+            text={state.value}
+            onCopy={() => setState({ copied: true })}
+          >
+            <Button w="50px" h="50px" borderRadius="50%" boxShadow="lg">
+              <AiOutlineShareAlt />
             </Button>
+          </CopyToClipboard>
+
+          <Button
+            onClick={scrollToTop}
+            w="50px"
+            h="50px"
+            borderRadius="50%"
+            boxShadow="lg"
+          >
+            <AiOutlineVerticalAlignTop />
+          </Button>
         </Stack>
       </Stack>
     </>
