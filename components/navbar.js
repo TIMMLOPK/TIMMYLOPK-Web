@@ -50,7 +50,7 @@ const Navbar = props => {
       position="fixed"
       as="nav"
       w="100%"
-      bg={useColorModeValue('#ffffff', '#202023')}
+      bg={useColorModeValue('#ffffff40', '#20202380')}
       css={{ backdropFilter: 'blur(10px)' }}
       zIndex={1}
       {...props}
@@ -149,11 +149,11 @@ const Navbar = props => {
             </motion.div>
           </Box>
 
-          <Stack
+          <Flex
             w="100%"
             display={display}
-            bg={useColorModeValue('#ffffff95', '#20202380')}
-            css={{ backdropFilter: 'blur(10px)' }}
+            bg={useColorModeValue('#ffffff95', '#20202390')}
+            css={{ backdropFilter: 'blur(5px)' }}
             zIndex={20}
             h="100vh"
             position="fixed"
@@ -230,7 +230,7 @@ const Navbar = props => {
                 </Button>
               </NextLink>
             </Box>
-          </Stack>
+          </Flex>
         </Box>
       </Container>
     </Box>
