@@ -14,7 +14,6 @@ const ThemeToggleButton = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, rotate: 360 }}
         whileTap={{ scale: 0.95, rotate: 15 }}
-        whileHover={{ scale: 2 }}
       >
         <IconButton
           variant="ghost"

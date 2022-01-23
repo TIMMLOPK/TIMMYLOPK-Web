@@ -16,8 +16,6 @@ const getRandomFromRange = (min, max) => {
 
 const randomSongIndex = getRandomFromRange(0, songsCollections.length)
 
-console.log('Random song index is ', randomSongIndex)
-
 const randomSong = songsCollections[randomSongIndex]
 
 const Audio = randomSong
@@ -32,12 +30,15 @@ const Music = () => {
         <ReactHowler
           src={Audio}
           playing={ismute ? false : true}
-          html5={true}
           onLoad={() => setloading(false)}
         />
       </div>
       <div>
-        <motion.div whileHover={{ scale: 2 }} whileTap={{ scale: 0.9 }}>
+        <motion.div
+          whileTap={{ scale: 0.9 }}
+          animate={{ scale: [0.5, 1.4, 1.2, 1.1] }}
+          transition={{ type: 'spring' }}
+        >
           <Button
             onClick={() => setOpen(!ismute)}
             variant="ghost"

@@ -8,4 +8,10 @@ updates:
   - package-ecosystem: 'npm' # See documentation for possible values
     directory: '/' # Location of package manifests
     schedule:
-      interval: 'daily'
+      interval:
+        'weekly'
+        # Check for npm updates on Sundays
+      day: 'monday'
+      commit-message:
+      # Prefix all commit messages with "npm"
+      prefix: 'Dependencies-Update'

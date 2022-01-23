@@ -10,9 +10,9 @@ import {
 
 const NotFound = () => {
   return (
-    <Container>
+    <Container position="relative">
       <Heading as="h1">Not found</Heading>
-      <Text>The page you&apos;re looking forward was not found.</Text>
+      <Text>The page you&apos;re looking forward is not found.</Text>
       <Divider my={6} />
 
       <Box my={6} align="center">

@@ -8,9 +8,9 @@ import Section from '../components/section'
 
 function Blog({ posts }) {
   return (
-    <layout title="blog" className="blog">
+    <layout title="Blog">
       <Container>
-        <Heading as="h3" fontSize={20} mb={4}>
+        <Heading as="h3" fontSize={20} mb={4} position="relative">
           Astronaut&apos;s blog 🗞️
         </Heading>
 

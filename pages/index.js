@@ -27,7 +27,8 @@ const Home = () => {
           mb={6}
           p={3}
           textAlign="center"
-          bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+          bg={useColorModeValue('whiteAlpha', 'whiteAlpha.200')}
+          backdropBlur="8px"
         >
           <Box>Hello,Welcome to moon</Box>
         </Box>
@@ -49,7 +50,7 @@ const Home = () => {
               width="100px"
               height="auto"
               display="inline-block"
-              borderRadius="full"
+              borderRadius="50%"
               src="/images/icon.webp"
               alt="Not support format"
             />
@@ -114,16 +115,21 @@ const Home = () => {
           </Heading>
           <Paragraph>
             <h1>💻Developing Works </h1>
-            <Link href="https://github.com/TIMMLOPK/once" target="_blank">
-              My First Website
-            </Link>
-            <h1>📷Photography </h1>
-            <Link
-              href="https://www.instagram.com/tw_wu_as_tim/"
-              target="_blank"
+            <NextLink
+              href="https://github.com/TIMMLOPK/once"
+              passHref
+              prefetch={false}
             >
-              tw_wu_as_tim
-            </Link>
+              <Link>My First Website</Link>
+            </NextLink>
+            <h1>📷Photography </h1>
+            <NextLink
+              href="https://www.instagram.com/tw_wu_as_tim/"
+              passHref
+              prefetch={false}
+            >
+              <Link>tw_wu_as_tim</Link>
+            </NextLink>
             <h1>🔭And More...</h1>
           </Paragraph>
         </Section>

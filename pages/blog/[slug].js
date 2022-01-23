@@ -3,22 +3,25 @@ import fs from 'fs-extra'
 import matter from 'gray-matter'
 import { marked } from 'marked'
 import Link from 'next/link'
-import { Button } from '@chakra-ui/react'
+import { Box, Button } from '@chakra-ui/react'
 
-function PostPage({ frontmatter: { title, date, tags }, content }) {
+function PostPage({ frontmatter: { title, date }, content }) {
   return (
     <>
       <Link href="/blog" passHref>
         <Button>Go Back</Button>
       </Link>
-      <div className="card card-page">
-        <h1 className="post-title">{title}</h1>
-        <div className="post-date">Posted on {date}</div>
-        <div className="post-tags">{tags}</div>
-        <div className="post-body">
-          <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
-        </div>
-      </div>
+      <Box position="relative" p="0px 20px">
+        <Box fontSize="25" lineHeight="2.3">
+          {title}
+        </Box>
+        <Box marginBottom="10px" p="2px 5px">
+          Posted on {date}
+        </Box>
+        <Box fontSize="110%" lineHeight="2.3" margin="10px 0">
+          <Box dangerouslySetInnerHTML={{ __html: marked(content) }}></Box>
+        </Box>
+      </Box>
     </>
   )
 }
