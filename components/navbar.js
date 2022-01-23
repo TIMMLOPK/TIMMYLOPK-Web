@@ -133,8 +133,9 @@ const Navbar = props => {
           </Box>
           <Box display={{ base: 'inline-flex', md: 'none' }}>
             <motion.div
-              whileTap={{ scale: 1.2 }}
-              transition={{ duration: 0.2, type: 'spring' }}
+              whileTap={{ scale: 0.9 }}
+              animate={{ scale: [0.5, 1.4, 1.2, 1.1] }}
+              transition={{ type: 'spring' }}
             >
               <IconButton
                 variant="ghost"
