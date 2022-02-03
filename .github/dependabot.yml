@@ -1,23 +1,8 @@
-# Set update schedule for each package manager
-
 version: 2
 updates:
-<<<<<<< HEAD
-  - package-ecosystem: 'github-actions'
-    directory: '/'
-    schedule:
-      # Check for updates to GitHub Actions every weekday
-      interval: 'daily'
-
-  - package-ecosystem: 'npm'
-    directory: '/'
-    schedule:
-      interval: 'weekly'
-=======
 
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
 
       interval: "daily"
->>>>>>> 9ff628334c861ded154474097e1c28d827c3b883
