@@ -2,6 +2,7 @@
 
 version: 2
 updates:
+<<<<<<< HEAD
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
@@ -12,3 +13,11 @@ updates:
     directory: '/'
     schedule:
       interval: 'weekly'
+=======
+
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+
+      interval: "daily"
+>>>>>>> 9ff628334c861ded154474097e1c28d827c3b883
