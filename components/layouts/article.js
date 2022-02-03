@@ -1,12 +1,18 @@
 import { motion } from 'framer-motion'
 import Head from 'next/head'
-import { GridItemStyle } from '../grid-item'
+import dynamic from 'next/dynamic'
+import VoxelDogLoader from '../voxel-dog-loader'
 
 const variants = {
   hidden: { opacity: 0, x: 0, y: 20 },
   enter: { opacity: 1, x: 0, y: 0 },
   exit: { opacity: 0, x: -0, y: 20 }
 }
+
+const LazyVoxelDog = dynamic(() => import('../voxel-dog'), {
+  ssr: false,
+  loading: () => <VoxelDogLoader />
+})
 
 const Layout = ({ children, title }) => {
   return (
@@ -16,7 +22,6 @@ const Layout = ({ children, title }) => {
       exit="exit"
       variants={variants}
       transition={{ duration: 0.6, type: 'spring' }}
-      style={{ position: 'relative' }}
     >
       <>
         {title && (
@@ -26,9 +31,8 @@ const Layout = ({ children, title }) => {
             <meta property="og:title" content={title} />
           </Head>
         )}
+        <LazyVoxelDog />
         {children}
-
-        <GridItemStyle />
       </>
     </motion.article>
   )

@@ -1,19 +1,22 @@
+import { Box } from '@chakra-ui/react'
 import Head from 'next/head'
-import { GridItemStyle } from '../grid-item'
 
-const Layout = ({ children, title }) => (
-  <>
-    {title && (
-      <Head>
-        <title>{title}</title>
-        <meta name="twitter:title" content={title} />
-        <meta property="og:title" content={title} />
-      </Head>
-    )}
-    {children}
+const Layout = ({ children, title }) => {
+  return (
+    <>
+      <Box pt={5}>
+        {title && (
+          <Head>
+            <title>{title}</title>
+            <meta name="twitter:title" content={title} />
+            <meta property="og:title" content={title} />
+          </Head>
+        )}
 
-    <GridItemStyle />
-  </>
-)
+        {children}
+      </Box>
+    </>
+  )
+}
 
 export default Layout

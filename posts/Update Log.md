@@ -1,24 +1,21 @@
 ---
-title: '3.8.5 Update Log'
-date: '23-1-2022'
+title: '3.9 Update Log'
+date: '3-2-2022'
+tag: ['All']
 ---
 
 # Highlight update
 
-1.Improve Navbar UI
+1.Improve Navbar motion
 
-2.Loading animation of music component
+## 2.Blog Searching & Tag
 
-3.Remove music preload
+3.Theme saving (only specific pages)
 
-4.Blog UI update
-
-5.New Banner of website
-
-6.Optimize performance
-
-7.New ICON
+4.Optimize model performance
 
 @Fix Bugs
 
-·Delete unused files
+·Delete unused code
+
+---------------------

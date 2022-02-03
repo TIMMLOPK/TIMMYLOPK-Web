@@ -1,3 +1,4 @@
+import Layout from '../components/layouts/article'
 import NextLink from 'next/link'
 import {
   Link,
@@ -14,14 +15,13 @@ import {
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from '../components/bio'
-import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { IoLogoInstagram, IoLogoGithub } from 'react-icons/io5'
 
 const Home = () => {
   return (
     <Layout>
-      <Container>
+      <Container position="relative">
         <Box
           borderRadius="lg"
           mb={6}
@@ -66,22 +66,24 @@ const Home = () => {
             <p>👀 I am interested in Photography, Website developing</p>
             <p>🌱 I am currently learning JavaScript 💭</p>
             <Paragraph>
-              Timmy is a JavaScript Developer from Hong Kong.I also good at
-              differnt kind of technology such as software and hardware.
+              I am a JavaScript developer from Hong Kong.I am studying in
+              secondary school. I am not study with the programm subject so I
+              learn by myself.I think this is common of developer. Beside
+              JavaScript,I am interested in Rust but it is not yet start.
             </Paragraph>
             <Paragraph>
-              I am currently learning JavaScript and else language.I am instered
-              in photography so I have ig account for this topic.
+              I am currently learning JavaScript and Rust.I also like
+              Photography despite not professional.
             </Paragraph>
             <Paragraph>
-              📱Lionceu is my own website for sharing something about
-              programming.Let we learn together!
+              once. is my website for sharing about programming.Let we learn
+              together!
             </Paragraph>
           </Paragraph>
           <Box align="center" my={4}>
             <NextLink href="/shares" prefetch={false}>
               <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
-                Sharing
+                Share
               </Button>
             </NextLink>
           </Box>
@@ -104,8 +106,8 @@ const Home = () => {
             Website 2.4 【once.】
           </BioSection>
           <BioSection>
-            <BioYear>2022-01</BioYear>
-            <Box as="b">Website 3.6.1 【once.】</Box>
+            <BioYear>2022-02</BioYear>
+            <Box as="b">Website 3.9 【once.】</Box>
           </BioSection>
         </Section>
 
@@ -171,5 +173,6 @@ const Home = () => {
     </Layout>
   )
 }
+export { getServerSideProps } from '../components/theme-cookie'
 
 export default Home

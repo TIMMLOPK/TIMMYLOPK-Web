@@ -6,7 +6,24 @@ export default class Document extends NextDocument {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=G-D0R4YZSHHS`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-D0R4YZSHHS', {
+              page_path: window.location.pathname,
+            });
+          `
+            }}
+          />
+        </Head>
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <Main />

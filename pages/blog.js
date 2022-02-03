@@ -3,26 +3,92 @@ import path from 'path'
 import matter from 'gray-matter'
 import Post from '../components/post'
 import { sortByDate } from '../utils/day'
-import { Container, Heading } from '@chakra-ui/react'
+import {
+  Button,
+  Container,
+  Heading,
+  Input,
+  Stack,
+  Box,
+  Divider
+} from '@chakra-ui/react'
 import Section from '../components/section'
+import { useState, useRef } from 'react'
+import Layout from '../components/layouts/article'
+import { AiOutlineSearch, AiOutlineStop } from 'react-icons/ai'
 
 function Blog({ posts }) {
+  const [update, setupdate] = useState('All')
+  const [value, setvalue] = useState('none')
+
+  const inputEl = useRef(null)
+  const onButtonClick = () => {
+    inputEl.current.focus()
+  }
+
   return (
-    <layout title="Blog">
+    <Layout title="Blog">
       <Container>
         <Heading as="h3" fontSize={20} mb={4} position="relative">
           Astronaut&apos;s blog 🗞️
         </Heading>
-
-        <Section delay={0.1}>
-          <div className="posts">
-            {posts.map((post, index) => (
-              <Post key={index} post={post} />
+        <Stack
+          direction={{ base: 'column', md: 'row' }}
+          display="flex"
+          width={{ base: 'full', md: 'auto' }}
+          mt={{ base: 4, md: 0 }}
+        >
+          <Button
+            onClick={() => {
+              setupdate('All')
+            }}
+            bg="burlywood"
+            _hover="none"
+          >
+            All
+          </Button>
+          <Button
+            onClick={() => setupdate('update')}
+            bg="burlywood"
+            _hover="none"
+          >
+            Update
+          </Button>
+          <Input
+            placeholder="Search"
+            type="text"
+            value={null}
+            onKeyUp={e => {
+              setupdate(e.currentTarget.value)
+            }}
+            onKeyDown={() => setvalue('flex')}
+            variant="filled"
+            ref={inputEl}
+          />
+        </Stack>
+        <Section delay={0.2}>
+          {posts
+            .filter(post => post.frontmatter.tag.includes(update))
+            .map((posts, index) => (
+              <Post key={index} post={posts} />
             ))}
-          </div>
+          <Stack
+            pt={5}
+            display={value}
+            direction={{ base: 'column', md: 'row' }}
+          >
+            <Box pt={2}>No matching result</Box>
+            <Box pt={3}>
+              <AiOutlineStop />
+            </Box>
+            <Button onClick={onButtonClick} rightIcon={<AiOutlineSearch />}>
+              Try search again
+            </Button>
+          </Stack>
+          <Divider pb={4} />
         </Section>
       </Container>
-    </layout>
+    </Layout>
   )
 }
 
@@ -55,4 +121,6 @@ export async function getStaticProps() {
     }
   }
 }
+
+
 export default Blog

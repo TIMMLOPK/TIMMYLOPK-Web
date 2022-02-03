@@ -36,7 +36,7 @@ const Bottombar = () => {
           </Alert>
         ) : null}
 
-        <Stack position="fixed" bottom="10" left="85%">
+        <Stack position="fixed" bottom="10" left="88%">
           <CopyToClipboard
             text={state.value}
             onCopy={() => setState({ copied: true })}
