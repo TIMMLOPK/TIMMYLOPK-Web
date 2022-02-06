@@ -10,12 +10,14 @@ import {
   Input,
   Stack,
   Box,
-  Divider
+  Divider,
+  InputGroup,
+  InputRightElement,
+  CloseButton
 } from '@chakra-ui/react'
-import Section from '../components/section'
 import { useState, useRef } from 'react'
 import Layout from '../components/layouts/article'
-import { AiOutlineSearch, AiOutlineStop } from 'react-icons/ai'
+import { AiOutlineSearch } from 'react-icons/ai'
 
 function Blog({ posts }) {
   const [update, setupdate] = useState('All')
@@ -54,39 +56,44 @@ function Blog({ posts }) {
           >
             Update
           </Button>
-          <Input
-            placeholder="Search"
-            type="text"
-            value={null}
-            onKeyUp={e => {
-              setupdate(e.currentTarget.value)
-            }}
-            onKeyDown={() => setvalue('flex')}
-            variant="filled"
-            ref={inputEl}
-          />
+          <InputGroup>
+            <Input
+              placeholder="Search"
+              type="text"
+              value={null}
+              onKeyUp={e => {
+                setupdate(e.currentTarget.value)
+              }}
+              onKeyDown={() => setvalue('flex')}
+              variant="filled"
+              ref={inputEl}
+            />
+            <InputRightElement width="4.5rem">
+              <CloseButton
+                variant="ghost"
+                style={{ boxShadow: 'none' }}
+                h="1.75rem"
+                size="sm"
+                onClick={() => {
+                  setupdate('All')
+                  setvalue('none')
+                }}
+              />
+            </InputRightElement>
+          </InputGroup>
         </Stack>
-        <Section delay={0.2}>
-          {posts
-            .filter(post => post.frontmatter.tag.includes(update))
-            .map((posts, index) => (
-              <Post key={index} post={posts} />
-            ))}
-          <Stack
-            pt={5}
-            display={value}
-            direction={{ base: 'column', md: 'row' }}
-          >
-            <Box pt={2}>No matching result</Box>
-            <Box pt={3}>
-              <AiOutlineStop />
-            </Box>
-            <Button onClick={onButtonClick} rightIcon={<AiOutlineSearch />}>
-              Try search again
-            </Button>
-          </Stack>
-          <Divider pb={4} />
-        </Section>
+        {posts
+          .filter(post => post.frontmatter.tag.includes(update))
+          .map((posts, index) => (
+            <Post key={index} post={posts} />
+          ))}
+        <Stack pt={5} display={value} direction={{ base: 'column', md: 'row' }}>
+          <Box pt={2}>No matching result</Box>
+          <Button onClick={onButtonClick} rightIcon={<AiOutlineSearch />}>
+            Try search again
+          </Button>
+        </Stack>
+        <Divider my={6} />
       </Container>
     </Layout>
   )
@@ -121,6 +128,5 @@ export async function getStaticProps() {
     }
   }
 }
-
 
 export default Blog

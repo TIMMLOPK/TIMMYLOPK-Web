@@ -1,4 +1,4 @@
-import { Box, Container, Heading } from '@chakra-ui/react'
+import { Box, Container, Heading, Stack } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Paragraph from '../components/paragraph'
 import Card from '../components/card'
@@ -38,9 +38,10 @@ const Info = () => {
           .
         </Paragraph>
         <Box as="b">Keep going is a big tip</Box>
-        <Box display="none">
-          <Card href="https://github.com/TIMMLOPK/once">once</Card>
-        </Box>
+        <Stack pt={5}>
+          <Heading fontSize='25px'>My project</Heading>
+          <Card href='/' name='Discord-bot' isDisabled >TIMMYLOPK -Discord bot</Card>
+        </Stack>
       </Container>
     </Layout>
   )

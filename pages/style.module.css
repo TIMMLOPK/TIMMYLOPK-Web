@@ -1,0 +1,13 @@
+.postbody pre {
+  background: #f4f4f4;
+  padding: 20px;
+  margin: 20px 0;
+  line-height: 2.3;
+}
+
+.postbody h1 {
+  margin: 10px 0;
+  font-size: 150%;
+  font-weight: bold;
+  line-height: 2.3;
+}

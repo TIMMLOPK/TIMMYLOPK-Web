@@ -22,6 +22,7 @@ const Layout = ({ children, title }) => {
       exit="exit"
       variants={variants}
       transition={{ duration: 0.6, type: 'spring' }}
+      position="relative"
     >
       <>
         {title && (

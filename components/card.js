@@ -7,9 +7,10 @@ import {
   useColorModeValue,
   Heading
 } from '@chakra-ui/react'
+import Image from 'next/image'
 import NextLink from 'next/link'
 
-const Card = ({ children, href, _target, ...props }) => {
+const Card = ({ children,name,href, _target, ...props }) => {
   return (
     <Center py={6}>
       <Stack
@@ -22,7 +23,9 @@ const Card = ({ children, href, _target, ...props }) => {
         boxShadow={'2xl'}
         padding={4}
       >
-        <Flex flex={1} bg="gray.400"></Flex>
+        <Flex flex={1}>
+          <Image src='/card.png' width='250%' height='100%' alt='Project'/>
+        </Flex>
         <Stack
           flex={1}
           flexDirection="column"
@@ -32,7 +35,7 @@ const Card = ({ children, href, _target, ...props }) => {
           pt={2}
         >
           <Heading fontSize={'4x1'} fontFamily={'body'}>
-            My Project
+            {name}
           </Heading>
           <Text fontWeight={600} color={'gray.500'} size="sm" mb={4}>
             @{children}
@@ -47,12 +50,11 @@ const Card = ({ children, href, _target, ...props }) => {
           >
             <NextLink href={href} passHref>
               <Button
-                as="a"
                 flex={1}
                 fontSize={'sm'}
-                rounded={'full'}
-                bg={'blue.400'}
-                color={'white'}
+                rounded='full'
+                bg='blue.400'
+                color='white'
                 _target={_target}
                 boxShadow={
                   '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'

@@ -2,26 +2,34 @@ import path from 'path'
 import fs from 'fs'
 import matter from 'gray-matter'
 import { marked } from 'marked'
-import Link from 'next/link'
-import { Box, Button } from '@chakra-ui/react'
+import { Box, Heading, Link } from '@chakra-ui/react'
 import Layout from '../../components/layouts/article'
+import { ChevronRightIcon } from '@chakra-ui/icons'
+import NextLink from 'next/link'
+import styles from '../style.module.css'
 
 function PostPage({ frontmatter: { title, date }, content }) {
   return (
     <>
       <Layout>
-        <Link href="/blog" passHref>
-          <Button>Go Back</Button>
-        </Link>
-        <Box position="relative" p="0px 20px">
-          <Box fontSize="25" lineHeight="2.3">
-            {title}
+        <NextLink href="/blog">
+          <Link color="Highlight">Blog</Link>
+        </NextLink>
+        <Box as="span" color="#A0AEC0">
+          <Box display="inline-block">
+            <ChevronRightIcon />
           </Box>
-          <Box marginBottom="10px" p="2px 5px">
-            Posted on {date}
-          </Box>
+          <Box display="inline-block">{title}</Box>
+        </Box>
+
+        <Box position="relative">
+          <Heading>{title}</Heading>
+          <Box pt={5}>Posted on {date}</Box>
           <Box fontSize="110%" lineHeight="2.3" margin="10px 0">
-            <Box dangerouslySetInnerHTML={{ __html: marked(content) }}></Box>
+            <Box
+              dangerouslySetInnerHTML={{ __html: marked(content) }}
+              className={styles.postbody}
+            />
           </Box>
         </Box>
       </Layout>

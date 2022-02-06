@@ -43,8 +43,7 @@ const VoxelDog = () => {
 
       const renderer = new THREE.WebGLRenderer({
         antialias: true,
-        alpha: true,
-        powerPreference: 'high-performance'
+        alpha: true
       })
       renderer.setPixelRatio(window.devicePixelRatio)
       renderer.setSize(scW, scH)

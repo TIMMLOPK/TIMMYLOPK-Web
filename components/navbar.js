@@ -21,7 +21,7 @@ import { FaBlog } from 'react-icons/fa'
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons'
 import { motion } from 'framer-motion'
 
-const Music = dynamic(() => import('../components/music'))
+const Music = dynamic(() => import('../components/music'), { ssr: false })
 
 const MeunItem = ({ href, _target, children, ...props }) => {
   return (
@@ -133,9 +133,11 @@ const Navbar = props => {
           </Box>
           <Box display={{ base: 'inline-flex', md: 'none' }}>
             <motion.div
-              whileTap={{ scale: 0.9, rotate: 180 }}
-              animate={{ scale: [0.5, 1] }}
-              transition={{ type: 'keyframes', duration: 0.2 }}
+              initial={{ y: [10, -10], opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 10, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              key={isOpen ? onclose : onOpen}
             >
               <IconButton
                 variant="ghost"

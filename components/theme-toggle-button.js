@@ -11,9 +11,9 @@ const ThemeToggleButton = () => {
       <motion.div
         style={{ display: 'inline-block' }}
         key={useColorModeValue('light', 'dark')}
-        initial={{ opacity: 0 }}
+        initial={{ opacity: 1 }}
         animate={{ opacity: 1, rotate: 360 }}
-        whileTap={{ scale: 0.95, rotate: 15 }}
+        whileTap={{ rotate: 15 }}
       >
         <IconButton
           variant="ghost"

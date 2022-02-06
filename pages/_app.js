@@ -13,12 +13,7 @@ function Website({ Component, pageProps, router }) {
     const handleRouteChange = url => {
       ga.pageview(url)
     }
-    //When the component is mounted, subscribe to router changes
-    //and log those page views
     routerEvent.events.on('routeChangeComplete', handleRouteChange)
-
-    // If the component is unmounted, unsubscribe
-    // from the event with the `off` method
     return () => {
       routerEvent.events.off('routeChangeComplete', handleRouteChange)
     }
@@ -34,9 +29,4 @@ function Website({ Component, pageProps, router }) {
     </Chakra>
   )
 }
-
-export function reportWebVitals(metric) {
-  console.log(metric)
-}
-
 export default Website

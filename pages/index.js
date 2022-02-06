@@ -5,7 +5,6 @@ import {
   Container,
   Heading,
   Box,
-  Image,
   Button,
   List,
   ListItem,
@@ -17,11 +16,12 @@ import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from '../components/bio'
 import Section from '../components/section'
 import { IoLogoInstagram, IoLogoGithub } from 'react-icons/io5'
+import Image from 'next/image'
 
 const Home = () => {
   return (
     <Layout>
-      <Container position="relative">
+      <Container>
         <Box
           borderRadius="lg"
           mb={6}
@@ -48,18 +48,17 @@ const Home = () => {
           >
             <Image
               width="100px"
-              height="auto"
+              height="100px"
               display="inline-block"
-              borderRadius="50%"
               src="/images/icon.webp"
-              alt="Not support format"
+              alt='Timmy'
             />
           </Box>
         </Box>
 
         <Section delay={0.1}>
           <Heading as="h3" variant="section-title">
-            🧑‍🚀Info
+            Info
           </Heading>
           <Paragraph>
             <p>Hi, I am @TIMMLOPK.I am astronaut of JavaScript.</p>
@@ -173,6 +172,7 @@ const Home = () => {
     </Layout>
   )
 }
+
 export { getServerSideProps } from '../components/theme-cookie'
 
 export default Home

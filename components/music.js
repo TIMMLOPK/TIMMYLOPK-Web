@@ -21,7 +21,7 @@ const randomSong = songsCollections[randomSongIndex]
 const Audio = randomSong
 
 const Music = () => {
-  const [ismute, setOpen] = useState(true)
+  const [isplaying, setplaying] = useState(true)
   const [loading, setloading] = useState(true)
 
   return (
@@ -29,18 +29,18 @@ const Music = () => {
       <div>
         <ReactHowler
           src={Audio}
-          playing={ismute ? false : true}
+          playing={isplaying ? false : true}
           onLoad={() => setloading(false)}
         />
       </div>
       <div>
         <motion.div
           whileTap={{ scale: 0.9 }}
-          animate={{ scale: [0.5, 1.4, 1.2, 1.1] }}
-          transition={{ type: 'spring' }}
+          animate={{ scale: [0.5, 1.1] }}
+          transition={{ type: 'spring', duration: 0.2 }}
         >
           <Button
-            onClick={() => setOpen(!ismute)}
+            onClick={() => setplaying(!isplaying)}
             variant="ghost"
             _active={{ bg: 'transparent' }}
             style={{ boxShadow: 'none' }}
