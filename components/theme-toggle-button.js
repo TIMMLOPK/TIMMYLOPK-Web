@@ -1,29 +1,22 @@
-import { AnimatePresence, motion } from 'framer-motion'
 import { IconButton, useColorMode, useColorModeValue } from '@chakra-ui/react'
-import SunIcon from './icons/Sunicon'
-import MoonIcon from './icons/Moonicon'
+import { SunIcon } from './icons/Sunicon'
+import { MoonIcon } from './icons/Moonicon'
+import { AnimatePresence } from 'framer-motion'
 
 const ThemeToggleButton = () => {
   const { toggleColorMode } = useColorMode()
+  const SwitchIcon = useColorModeValue(MoonIcon, SunIcon)
 
   return (
     <AnimatePresence exitBeforeEnter initial={false}>
-      <motion.div
-        style={{ display: 'inline-block' }}
-        key={useColorModeValue('light', 'dark')}
-        initial={{ opacity: 1 }}
-        animate={{ opacity: 1, rotate: 360 }}
-        whileTap={{ rotate: 15 }}
-      >
-        <IconButton
-          variant="ghost"
-          icon={useColorModeValue(<MoonIcon />, <SunIcon />)}
-          onClick={toggleColorMode}
-          _hover={{ bg: 'transparent' }}
-          _active={{ bg: 'transparent' }}
-          style={{ boxShadow: 'none' }}
-        />
-      </motion.div>
+      <IconButton
+        variant="ghost"
+        onClick={() => toggleColorMode()}
+        icon={<SwitchIcon />}
+        _hover={{ bg: 'transparent' }}
+        _active={{ bg: 'transparent' }}
+        style={{ boxShadow: 'none' }}
+      />
     </AnimatePresence>
   )
 }

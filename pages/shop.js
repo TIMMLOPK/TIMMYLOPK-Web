@@ -32,7 +32,7 @@ const Shop = () => (
       >
         <Avatar src="shopicaon.jpg" />
       </motion.div>
-      <Box paddingTop="20px">
+      <Box>
         <Bottombar />
       </Box>
       <h3>Last updated : Last Month</h3>

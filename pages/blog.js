@@ -8,25 +8,15 @@ import {
   Container,
   Heading,
   Input,
-  Stack,
-  Box,
-  Divider,
-  InputGroup,
-  InputRightElement,
-  CloseButton
+  Stack
 } from '@chakra-ui/react'
 import { useState, useRef } from 'react'
 import Layout from '../components/layouts/article'
-import { AiOutlineSearch } from 'react-icons/ai'
 
 function Blog({ posts }) {
   const [update, setupdate] = useState('All')
-  const [value, setvalue] = useState('none')
 
   const inputEl = useRef(null)
-  const onButtonClick = () => {
-    inputEl.current.focus()
-  }
 
   return (
     <Layout title="Blog">
@@ -44,56 +34,30 @@ function Blog({ posts }) {
             onClick={() => {
               setupdate('All')
             }}
-            bg="burlywood"
-            _hover="none"
+            colorScheme="teal"
           >
             All
           </Button>
-          <Button
-            onClick={() => setupdate('update')}
-            bg="burlywood"
-            _hover="none"
-          >
+          <Button onClick={() => setupdate('update')} colorScheme="teal">
             Update
           </Button>
-          <InputGroup>
-            <Input
-              placeholder="Search"
-              type="text"
-              value={null}
-              onKeyUp={e => {
-                setupdate(e.currentTarget.value)
-              }}
-              onKeyDown={() => setvalue('flex')}
-              variant="filled"
-              ref={inputEl}
-            />
-            <InputRightElement width="4.5rem">
-              <CloseButton
-                variant="ghost"
-                style={{ boxShadow: 'none' }}
-                h="1.75rem"
-                size="sm"
-                onClick={() => {
-                  setupdate('All')
-                  setvalue('none')
-                }}
-              />
-            </InputRightElement>
-          </InputGroup>
+          <Input
+            placeholder="Developing..."
+            type="text"
+            disabled
+            value={null}
+            onKeyUp={e => {
+              setupdate(e.target.value)
+            }}
+            variant="filled"
+            ref={inputEl}
+          />
         </Stack>
         {posts
           .filter(post => post.frontmatter.tag.includes(update))
           .map((posts, index) => (
             <Post key={index} post={posts} />
           ))}
-        <Stack pt={5} display={value} direction={{ base: 'column', md: 'row' }}>
-          <Box pt={2}>No matching result</Box>
-          <Button onClick={onButtonClick} rightIcon={<AiOutlineSearch />}>
-            Try search again
-          </Button>
-        </Stack>
-        <Divider my={6} />
       </Container>
     </Layout>
   )

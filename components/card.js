@@ -10,7 +10,7 @@ import {
 import Image from 'next/image'
 import NextLink from 'next/link'
 
-const Card = ({ children,name,href, _target, ...props }) => {
+const Card = ({ children, name, href, _target, ...props }) => {
   return (
     <Center py={6}>
       <Stack
@@ -24,7 +24,7 @@ const Card = ({ children,name,href, _target, ...props }) => {
         padding={4}
       >
         <Flex flex={1}>
-          <Image src='/card.png' width='250%' height='100%' alt='Project'/>
+          <Image src="/card.png" width="250%" height="100%" alt="Project" />
         </Flex>
         <Stack
           flex={1}
@@ -51,10 +51,10 @@ const Card = ({ children,name,href, _target, ...props }) => {
             <NextLink href={href} passHref>
               <Button
                 flex={1}
-                fontSize={'sm'}
-                rounded='full'
-                bg='blue.400'
-                color='white'
+                fontSize="sm"
+                rounded="full"
+                bg="blue.400"
+                color="white"
                 _target={_target}
                 boxShadow={
                   '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'

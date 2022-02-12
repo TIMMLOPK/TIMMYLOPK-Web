@@ -7,9 +7,9 @@ export default class Document extends NextDocument {
     return (
       <Html lang="en">
         <Head>
-          <script
+          <NextScript
             async
-            src={`https://www.googletagmanager.com/gtag/js?id=G-D0R4YZSHHS`}
+            src="https://www.googletagmanager.com/gtag/js?id=G-D0R4YZSHHS"
           />
           <script
             dangerouslySetInnerHTML={{

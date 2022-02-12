@@ -8,7 +8,6 @@ import {
   Button,
   List,
   ListItem,
-  Icon,
   useColorModeValue
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
@@ -21,16 +20,15 @@ import Image from 'next/image'
 const Home = () => {
   return (
     <Layout>
-      <Container>
+      <Container position="relative">
         <Box
           borderRadius="lg"
           mb={6}
           p={3}
           textAlign="center"
-          bg={useColorModeValue('whiteAlpha', 'whiteAlpha.200')}
-          backdropBlur="8px"
+          bg={useColorModeValue('whiteAlpha.800', 'whiteAlpha.200')}
         >
-          <Box>Hello,Welcome to moon</Box>
+          <Box fontWeight="medium">Hello,Welcome to moon</Box>
         </Box>
 
         <Box display={{ md: 'flex' }}>
@@ -51,7 +49,7 @@ const Home = () => {
               height="100px"
               display="inline-block"
               src="/images/icon.webp"
-              alt='Timmy'
+              alt="Timmy"
             />
           </Box>
         </Box>
@@ -61,14 +59,14 @@ const Home = () => {
             Info
           </Heading>
           <Paragraph>
-            <p>Hi, I am @TIMMLOPK.I am astronaut of JavaScript.</p>
+            <p>Hi, I am @TIMMLOPK,an astronaut of programmer.</p>
             <p>👀 I am interested in Photography, Website developing</p>
             <p>🌱 I am currently learning JavaScript 💭</p>
             <Paragraph>
               I am a JavaScript developer from Hong Kong.I am studying in
               secondary school. I am not study with the programm subject so I
-              learn by myself.I think this is common of developer. Beside
-              JavaScript,I am interested in Rust but it is not yet start.
+              learn by myself.I think this is common of developer. Beside JS,I
+              am learning Rustlang too.
             </Paragraph>
             <Paragraph>
               I am currently learning JavaScript and Rust.I also like
@@ -106,7 +104,23 @@ const Home = () => {
           </BioSection>
           <BioSection>
             <BioYear>2022-02</BioYear>
-            <Box as="b">Website 3.9 【once.】</Box>
+            <Box
+              as="b"
+              color="ActiveCaption"
+              _hover={{ color: useColorModeValue('#000000', '#FFFFFF') }}
+            >
+              <NextLink href="/blog/Update Log" prefetch={false}>
+                Website 3.9.2 【once.】
+              </NextLink>
+              <Box
+                backgroundColor="#50e3c2"
+                w="12px"
+                h="12px"
+                display="inline-block"
+                borderRadius="50%"
+                boxShadow="0px 1px 10px 2px rgb(80 227 194), 0 1px 10px -5px rgb(80 227 194)"
+              />
+            </Box>
           </BioSection>
         </Section>
 
@@ -145,7 +159,7 @@ const Home = () => {
                 <Button
                   variant="ghost"
                   colorScheme="teal"
-                  leftIcon={<Icon as={IoLogoGithub} />}
+                  leftIcon={<IoLogoGithub />}
                 >
                   @TIMMLOPK
                 </Button>
@@ -160,7 +174,7 @@ const Home = () => {
                 <Button
                   variant="ghost"
                   colorScheme="teal"
-                  leftIcon={<Icon as={IoLogoInstagram} />}
+                  leftIcon={<IoLogoInstagram />}
                 >
                   @tw_wu_as_tim
                 </Button>

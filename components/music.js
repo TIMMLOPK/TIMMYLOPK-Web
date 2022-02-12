@@ -24,11 +24,16 @@ const Music = () => {
   const [isplaying, setplaying] = useState(true)
   const [loading, setloading] = useState(true)
 
+  const [loaded, setloaded] = useState(false)
+  setTimeout(() => {
+    setloaded(true)
+  }, 500)
   return (
     <>
       <div>
         <ReactHowler
           src={Audio}
+          preload={loaded}
           playing={isplaying ? false : true}
           onLoad={() => setloading(false)}
         />

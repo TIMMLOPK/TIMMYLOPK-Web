@@ -39,8 +39,10 @@ const Info = () => {
         </Paragraph>
         <Box as="b">Keep going is a big tip</Box>
         <Stack pt={5}>
-          <Heading fontSize='25px'>My project</Heading>
-          <Card href='/' name='Discord-bot' isDisabled >TIMMYLOPK -Discord bot</Card>
+          <Heading fontSize="25px">My project</Heading>
+          <Card href="/" name="Discord-bot" isDisabled>
+            TIMMYLOPK -Discord bot
+          </Card>
         </Stack>
       </Container>
     </Layout>
