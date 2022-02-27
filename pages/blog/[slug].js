@@ -2,30 +2,45 @@ import path from 'path'
 import fs from 'fs'
 import matter from 'gray-matter'
 import { marked } from 'marked'
-import { Box, Heading, Link } from '@chakra-ui/react'
-import Layout from '../../components/layouts/article'
+import {
+  Box,
+  Heading,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink
+} from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
-import NextLink from 'next/link'
+import Layout from '../../components/layouts/article'
 import styles from '../style.module.css'
+import dynamic from 'next/dynamic'
+
+const Menu = dynamic(() => import('../../components/menu'), { ssr: false })
 
 function PostPage({ frontmatter: { title, date }, content }) {
   return (
     <>
       <Layout>
-        <NextLink href="/blog">
-          <Link color="Highlight">Blog</Link>
-        </NextLink>
-        <Box as="span" color="#A0AEC0">
-          <Box display="inline-block">
-            <ChevronRightIcon />
-          </Box>
-          <Box display="inline-block">{title}</Box>
-        </Box>
+        <Breadcrumb
+          spacing="8px"
+          separator={<ChevronRightIcon color="gray.500" />}
+          position="relative"
+        >
+          <BreadcrumbItem>
+            <BreadcrumbLink href="#">Home</BreadcrumbLink>
+          </BreadcrumbItem>
 
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/blog">Blog</BreadcrumbLink>
+          </BreadcrumbItem>
+
+          <BreadcrumbItem isCurrentPage>
+            <BreadcrumbLink>{title}</BreadcrumbLink>
+          </BreadcrumbItem>
+        </Breadcrumb>
         <Box position="relative">
           <Heading>{title}</Heading>
           <Box pt={5}>Posted on {date}</Box>
-          <Box fontSize="110%" lineHeight="2.3" margin="10px 0">
+          <Box lineHeight="2.3" margin="10px 0">
             <Box
               dangerouslySetInnerHTML={{ __html: marked(content) }}
               className={styles.postbody}
@@ -33,6 +48,7 @@ function PostPage({ frontmatter: { title, date }, content }) {
           </Box>
         </Box>
       </Layout>
+      <Menu />
     </>
   )
 }

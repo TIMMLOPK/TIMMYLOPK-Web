@@ -3,10 +3,8 @@ import NextLink from 'next/link'
 import {
   Container,
   Box,
-  Link,
   Stack,
   Heading,
-  Flex,
   useDisclosure,
   useColorModeValue,
   IconButton,
@@ -16,22 +14,22 @@ import {
 } from '@chakra-ui/react'
 import ThemeToggleButton from './theme-toggle-button'
 import { IoLogoGithub } from 'react-icons/io5'
-import dynamic from 'next/dynamic'
 import { FaBlog } from 'react-icons/fa'
-import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons'
+import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
 import { motion } from 'framer-motion'
-
-const Music = dynamic(() => import('../components/music'), { ssr: false })
+import Music from '../components/music'
 
 const MeunItem = ({ href, _target, children, ...props }) => {
   return (
     <NextLink href={href} passHref>
       <Button
-        as="a"
         variant="ghost"
         my={7}
+        pr="25%"
         w="100%"
         target={_target}
+        _hover="none"
+        _active={{ bg: 'transparent' }}
         style={{ boxShadow: 'none' }}
         {...props}
       >
@@ -45,21 +43,20 @@ const LinkItem = ({ href, path, _target, children, ...props }) => {
   const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
   return (
     <NextLink href={href} passHref>
-      <Link
+      <Button
         p={2}
         bg={active ? '#B0E0E6' : undefined}
         color={active ? '#202023' : inactiveColor}
         borderRadius="5px"
-        _hover="none"
         variant="ghost"
         pl={2}
         transition="all 0.3s"
         style={{ gap: 5, boxShadow: 'none' }}
-        _target={_target}
+        target={_target}
         {...props}
       >
         {children}
-      </Link>
+      </Button>
     </NextLink>
   )
 }
@@ -72,8 +69,8 @@ const Navbar = props => {
       position="fixed"
       as="nav"
       w="100%"
-      bg={useColorModeValue('#ffffff40', '#20202380')}
-      css={{ backdropFilter: 'blur(10px)' }}
+      bg={useColorModeValue('#ffffff80', '#20202380')}
+      css={{ backdropFilter: 'blur(8px)' }}
       zIndex={1}
       {...props}
     >
@@ -85,11 +82,11 @@ const Navbar = props => {
         align="center"
         justify="space-between"
       >
-        <Flex align="center" mr={5} paddingRight="5px">
-          <Heading as="h1" size="x1">
+        <Stack align="center" mr={5}>
+          <Heading size="md" mt="1">
             <Logo />
           </Heading>
-        </Flex>
+        </Stack>
 
         <Stack
           direction={{ base: 'column', md: 'row' }}
@@ -113,12 +110,11 @@ const Navbar = props => {
             Blog
           </LinkItem>
           <LinkItem
-            _target="_blank"
+            target="_blank"
             href="https://github.com/TIMMLOPK"
             path={path}
             display="inline-flex"
             alignItems="center"
-            isExternal={true}
           >
             <IoLogoGithub />
             Github
@@ -128,9 +124,10 @@ const Navbar = props => {
         <Box flex={2} align="right">
           <ThemeToggleButton />
 
-          <Box ml={2} display={{ base: 'inline-block' }}>
+          <Box ml={2} display="inline-block">
             <Music />
           </Box>
+
           <Box display={{ base: 'inline-flex', md: 'none' }}>
             <motion.div
               initial={{ y: [10, -10], opacity: 0 }}
@@ -140,24 +137,20 @@ const Navbar = props => {
               key={isOpen ? onclose : onOpen}
             >
               <IconButton
+                h="40px"
+                w="40px"
                 variant="ghost"
-                _hover="none"
                 _active={{ bg: 'transparent' }}
                 style={{ boxShadow: 'none' }}
-                icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+                icon={isOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
                 onClick={isOpen ? onClose : onOpen}
               />
             </motion.div>
           </Box>
           <Fade in={isOpen} unmountOnExit={true}>
             <Stack
-              w="100%"
-              bg={useColorModeValue('#FFFFFF80', '#20202390')}
-              css={{ backdropFilter: 'blur(8px)' }}
               h="100vh"
-              position="fixed"
-              top="14"
-              left="0"
+              display={{ base: 'block', md: 'none' }}
               flexDir="column"
             >
               <SlideFade in={isOpen} offsetY={150} reverse={true}>
@@ -174,7 +167,10 @@ const Navbar = props => {
                     <FaBlog />
                     Blog
                   </MeunItem>
-                  <MeunItem href="/" onClick={onClose}>
+                  <MeunItem
+                    href="https://github.com/TIMMLOPK"
+                    onClick={onClose}
+                  >
                     {' '}
                     <IoLogoGithub />
                     Github

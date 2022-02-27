@@ -1,524 +1,380 @@
-import Link from 'next/link'
 import { Box, Heading } from '@chakra-ui/react'
+import NextLink from 'next/link'
 
-const Policy = () => (
-  <>
-    <Box alignContent="center">
-      <Heading>Privacy Policy</Heading>
-      <Box padding="5px" fontSize="md">
-        Last updated: December 04, 2021
+const Policy = () => {
+  return (
+    <>
+      <Box alignContent="center">
+        <Heading>Privacy policy</Heading>
+        <p>
+          We respect your privacy and are committed to protecting it through our
+          compliance with this privacy policy (“Policy”).This Policy describes
+          the types of information we may collect from you or that you may
+          provide (“Personal Information”) on the{' '}
+          <NextLink target="_blank" rel="nofollow" href="https://lionceu.live">
+            lionceu.live
+          </NextLink>{' '}
+          website (“Website” or “Service”) and any of its related products and
+          services (collectively, “Services”), and our practices for collecting,
+          using, maintaining, protecting, and disclosing that Personal
+          Information. It also describes the choices available to you regarding
+          our use of your Personal Information and how you can access and update
+          it.
+        </p>
+        <p>
+          This Policy is a legally binding agreement between you (“User”, “you”
+          or “your”) and this Website operator (“Operator”, “we”, “us” or
+          “our”).If you are entering into this agreement on behalf of a business
+          or other legal entity, you represent that you have the authority to
+          bind such entity to this agreement, in which case the terms “User”,
+          “you” or “your” shall refer to such entity.If you do not have such
+          authority, or if you do not agree with the terms of this agreement,
+          you must not accept this agreement and may not access and use the
+          Website and Services.By accessing and using the Website and Services,
+          you acknowledge that you have read, understood, and agree to be bound
+          by the terms of this Policy.This Policy does not apply to the
+          practices of companies that we do not own or control, or to
+          individuals that we do not employ or manage.This privacy policy was
+          created with the help of the{' '}
+          <NextLink
+            target="_blank"
+            href="https://www.websitepolicies.com/privacy-policy-generator"
+            rel="noopener"
+          >
+            privacy policy generator
+          </NextLink>
+          .
+        </p>
+        <Heading as="h2">Automatic collection of information</Heading>
+        <p>
+          When you open the Website, our servers automatically record
+          information that your browser sends. This data may include information
+          such as your device’s IP address, browser type, and version, operating
+          system type and version, language preferences or the webpage you were
+          visiting before you came to the Website and Services, pages of the
+          Website and Services that you visit, the time spent on those pages,
+          information you search for on the Website, access times and dates, and
+          other statistics.
+        </p>
+        <p>
+          Information collected automatically is used only to identify potential
+          cases of abuse and establish statistical information regarding the
+          usage and traffic of the Website and Services. This statistical
+          information is not otherwise aggregated in such a way that would
+          identify any particular User of the system.
+        </p>
+        <Heading as="h2">Collection of personal information</Heading>
+        <p>
+          You can access and use the Website and Services without telling us who
+          you are or revealing any information by which someone could identify
+          you as a specific, identifiable individual. If, however, you wish to
+          use some of the features offered on the Website, you may be asked to
+          provide certain Personal Information (for example, your name and
+          e-mail address).
+        </p>
+        <p>
+          We receive and store any information you knowingly provide to us when
+          you fill any forms on the Website. When required, this information may
+          include the following:
+        </p>
+        <ul>
+          <li>
+            Geolocation data of your device (such as latitude and longitude)
+          </li>
+          <li>
+            Any other materials you willingly submit to us (such as articles,
+            images, feedback, etc)
+          </li>
+        </ul>
+        <p>
+          You can choose not to provide us with your Personal Information, but
+          then you may not be able to take advantage of some of the features on
+          the Website. Users who are uncertain about what information is
+          mandatory are welcome to contact us.
+        </p>
+        <Heading as="h2">Privacy of children</Heading>
+        <p>
+          We do not knowingly collect any Personal Information from children
+          under the age of 13. If you are under the age of 13, please do not
+          submit any Personal Information through the Website and Services. If
+          you have reason to believe that a child under the age of 13 has
+          provided Personal Information to us through the Website and Services,
+          please contact us to request that we delete that child’s Personal
+          Information from our Services.
+        </p>
+        <p>
+          We encourage parents and legal guardians to monitor their children’s
+          Internet usage and to help enforce this Policy by instructing their
+          children never to provide Personal Information through the Website and
+          Services without their permission. We also ask that all parents and
+          legal guardians overseeing the care of children take the necessary
+          precautions to ensure that their children are instructed to never give
+          out Personal Information when online without their permission.
+        </p>
+        <Heading as="h2">Use and processing of collected information</Heading>
+        <p>
+          We act as a data controller and a data processor when handling
+          Personal Information, unless we have entered into a data processing
+          agreement with you in which case you would be the data controller and
+          we would be the data processor.
+        </p>
+        <p>
+          {' '}
+          Our role may also differ depending on the specific situation involving
+          Personal Information. We act in the capacity of a data controller when
+          we ask you to submit your Personal Information that is necessary to
+          ensure your access and use of the Website and Services. In such
+          instances, we are a data controller because we determine the purposes
+          and means of the processing of Personal Information.
+        </p>
+        <p>
+          We act in the capacity of a data processor in situations when you
+          submit Personal Information through the Website and Services. We do
+          not own, control, or make decisions about the submitted Personal
+          Information, and such Personal Information is processed only in
+          accordance with your instructions. In such instances, the User
+          providing Personal Information acts as a data controller.
+        </p>
+        <p>
+          In order to make the Website and Services available to you, or to meet
+          a legal obligation, we may need to collect and use certain Personal
+          Information. If you do not provide the information that we request, we
+          may not be able to provide you with the requested products or
+          services. Any of the information we collect from you may be used for
+          the following purposes:
+        </p>
+        <ul>
+          <li>Send product and service updates</li>
+          <li>Improve user experience</li>
+          <li>Enforce terms and conditions and policies</li>
+          <li>Protect from abuse and malicious users</li>
+          <li>Respond to legal requests and prevent harm</li>
+          <li>Run and operate the Website and Services</li>
+        </ul>
+        <p>
+          Processing your Personal Information depends on how you interact with
+          the Website and Services, where you are located in the world and if
+          one of the following applies: (i) you have given your consent for one
+          or more specific purposes; (ii) provision of information is necessary
+          for the performance of an agreement with you and/or for any
+          pre-contractual obligations thereof; (iii) processing is necessary for
+          compliance with a legal obligation to which you are subject; (iv)
+          processing is related to a task that is carried out in the public
+          interest or in the exercise of official authority vested in us; (v)
+          processing is necessary for the purposes of the legitimate interests
+          pursued by us or by a third party.
+        </p>
+        <p>
+          {' '}
+          Note that under some legislations we may be allowed to process
+          information until you object to such processing by opting out, without
+          having to rely on consent or any other of the legal bases. In any
+          case, we will be happy to clarify the specific legal basis that
+          applies to the processing, and in particular whether the provision of
+          Personal Information is a statutory or contractual requirement, or a
+          requirement necessary to enter into a contract.
+        </p>
+        <Heading as="h2">Disclosure of information</Heading>
+        <p>
+          {' '}
+          Depending on the requested Services or as necessary to complete any
+          transaction or provide any Service you have requested, we may share
+          your information with our affiliates, contracted companies, and
+          service providers (collectively, “Service Providers”) we rely upon to
+          assist in the operation of the Website and Services available to you
+          and whose privacy policies are consistent with ours or who agree to
+          abide by our policies with respect to Personal Information. We will
+          not share any personally identifiable information with third parties
+          and will not share any information with unaffiliated third parties.
+        </p>
+        <p>
+          Service Providers are not authorized to use or disclose your
+          information except as necessary to perform services on our behalf or
+          comply with legal requirements. Service Providers are given the
+          information they need only in order to perform their designated
+          functions, and we do not authorize them to use or disclose any of the
+          provided information for their own marketing or other purposes.
+        </p>
+        <p>
+          We may also disclose any Personal Information we collect, use or
+          receive if required or permitted by law, such as to comply with a
+          subpoena or similar legal process, and when we believe in good faith
+          that disclosure is necessary to protect our rights, protect your
+          safety or the safety of others, investigate fraud, or respond to a
+          government request.
+        </p>
+        <Heading as="h2">Retention of information</Heading>
+        <p>
+          We will retain and use your Personal Information for the period
+          necessary to comply with our legal obligations, to enforce our
+          agreements, resolve disputes, and unless a longer retention period is
+          required or permitted by law.
+        </p>
+        <p>
+          We may use any aggregated data derived from or incorporating your
+          Personal Information after you update or delete it, but not in a
+          manner that would identify you personally. Once the retention period
+          expires, Personal Information shall be deleted. Therefore, the right
+          to access, the right to erasure, the right to rectification, and the
+          right to data portability cannot be enforced after the expiration of
+          the retention period.
+        </p>
+        <Heading as="h2">Cookies</Heading>
+        <p>
+          Our Website and Services use “cookies” to help personalize your online
+          experience.A cookie is a text file that is placed on your hard disk by
+          a web page server.Cookies cannot be used to run programs or deliver
+          viruses to your computer.Cookies are uniquely assigned to you, and can
+          only be read by a web server in the domain that issued the cookie to
+          you.If you choose to decline cookies, you may not be able to fully
+          experience the features of the Website and Services.
+          <NextLink
+            target="_blank"
+            href="https://www.websitepolicies.com/blog/cookies"
+            rel="noopener"
+          >
+            Click here
+          </NextLink>{' '}
+          to learn more about cookies and how they work.
+        </p>
+        <p>
+          We may use cookies to collect, store, and track information for
+          security and personalization, to operate the Website and Services, and
+          for statistical purposes. Please note that you have the ability to
+          accept or decline cookies. Most web browsers automatically accept
+          cookies by default, but you can modify your browser settings to
+          decline cookies if you prefer.
+        </p>
+        <Heading as="h2">Data analytics</Heading>
+        <p>
+          Our Website and Services may use third-party analytics tools that use
+          cookies, web beacons, or other similar information-gathering
+          technologies to collect standard internet activity and usage
+          information. The information gathered is used to compile statistical
+          reports on User activity such as how often Users visit our Website and
+          Services, what pages they visit and for how long, etc. We use the
+          information obtained from these analytics tools to monitor the
+          performance and improve our Website and Services. We do not use
+          third-party analytics tools to track or to collect any personally
+          identifiable information of our Users and we will not associate any
+          information gathered from the statistical reports with any individual
+          User.
+        </p>
+        <Heading as="h2">Do Not Track signals</Heading>
+        <p>
+          Some browsers incorporate a Do Not Track feature that signals to
+          websites you visit that you do not want to have your online activity
+          tracked. Tracking is not the same as using or collecting information
+          in connection with a website. For these purposes, tracking refers to
+          collecting personally identifiable information from consumers who use
+          or visit a website or online service as they move across different
+          websites over time. How browsers communicate the Do Not Track signal
+          is not yet uniform. As a result, the Website and Services are not yet
+          set up to interpret or respond to Do Not Track signals communicated by
+          your browser. Even so, as described in more detail throughout this
+          Policy, we limit our use and collection of your Personal Information.
+        </p>
+        <Heading as="h2">Social media features</Heading>
+        <p>
+          Our Website and Services may include social media features, such as
+          the Facebook and Twitter buttons, Share This buttons, etc
+          (collectively, “Social Media Features”). These Social Media Features
+          may collect your IP address, what page you are visiting on our Website
+          and Services, and may set a cookie to enable Social Media Features to
+          function properly. Social Media Features are hosted either by their
+          respective providers or directly on our Website and Services. Your
+          interactions with these Social Media Features are governed by the
+          privacy policy of their respective providers.
+        </p>
+        <Heading as="h2">Links to other resources</Heading>
+        <p>
+          The Website and Services contain links to other resources that are not
+          owned or controlled by us. Please be aware that we are not responsible
+          for the privacy practices of such other resources or third parties. We
+          encourage you to be aware when you leave the Website and Services and
+          to read the privacy statements of each and every resource that may
+          collect Personal Information.
+        </p>
+        <Heading as="h2">Information security</Heading>
+        <p>
+          We secure information you provide on computer servers in a controlled,
+          secure environment, protected from unauthorized access, use, or
+          disclosure. We maintain reasonable administrative, technical, and
+          physical safeguards in an effort to protect against unauthorized
+          access, use, modification, and disclosure of Personal Information in
+          our control and custody. However, no data transmission over the
+          Internet or wireless network can be guaranteed.
+        </p>
+        <p>
+          Therefore, while we strive to protect your Personal Information, you
+          acknowledge that (i) there are security and privacy limitations of the
+          Internet which are beyond our control; (ii) the security, integrity,
+          and privacy of any and all information and data exchanged between you
+          and the Website and Services cannot be guaranteed; and (iii) any such
+          information and data may be viewed or tampered with in transit by a
+          third party, despite best efforts.
+        </p>
+        <Heading as="h2">Data breach</Heading>
+        <p>
+          In the event we become aware that the security of the Website and
+          Services has been compromised or Users’ Personal Information has been
+          disclosed to unrelated third parties as a result of external activity,
+          including, but not limited to, security attacks or fraud, we reserve
+          the right to take reasonably appropriate measures, including, but not
+          limited to, investigation and reporting, as well as notification to
+          and cooperation with law enforcement authorities. In the event of a
+          data breach, we will make reasonable efforts to notify affected
+          individuals if we believe that there is a reasonable risk of harm to
+          the User as a result of the breach or if notice is otherwise required
+          by law. When we do, we will post a notice on the Website.
+        </p>
+        <Heading as="h2">Changes and amendments</Heading>
+        <p>
+          We reserve the right to modify this Policy or its terms related to the
+          Website and Services at any time at our discretion. When we do, we
+          will revise the updated date at the bottom of this page, post a
+          notification on the main page of the Website. We may also provide
+          notice to you in other ways at our discretion, such as through the
+          contact information you have provided.
+        </p>
+        <p>
+          An updated version of this Policy will be effective immediately upon
+          the posting of the revised Policy unless otherwise specified. Your
+          continued use of the Website and Services after the effective date of
+          the revised Policy (or such other act specified at that time) will
+          constitute your consent to those changes. However, we will not,
+          without your consent, use your Personal Information in a manner
+          materially different than what was stated at the time your Personal
+          Information was collected.
+        </p>
+        <Heading as="h2">Acceptance of this policy</Heading>
+        <p>
+          You acknowledge that you have read this Policy and agree to all its
+          terms and conditions. By accessing and using the Website and Services
+          and submitting your information you agree to be bound by this Policy.
+          If you do not agree to abide by the terms of this Policy, you are not
+          authorized to access or use the Website and Services.
+        </p>
+        <Heading as="h2">Contacting us</Heading>
+        <p>
+          If you have any questions, concerns, or complaints regarding this
+          Policy, the information we hold about you, or if you wish to exercise
+          your rights, we encourage you to contact us using the details below:
+        </p>
+        <p>
+          &#116;i&#109;&#109;&#121;.&#49;2345we&#114;12&#64;gm&#97;i&#108;&#46;&#99;&#111;&#109;
+        </p>
+        <p>
+          We will attempt to resolve complaints and disputes and make every
+          reasonable effort to honor your wish to exercise your rights as
+          quickly as possible and in any event, within the timescales provided
+          by applicable data protection laws.
+        </p>
+        <p>This document was last updated on February 21, 2022</p>
       </Box>
-      <p>
-        This Privacy Policy describes Our policies and procedures on the
-        collection, use and disclosure of Your information when You use the
-        Service and tells You about Your privacy rights and how the law protects
-        You.
-      </p>
-      <p>
-        We use Your Personal data to provide and improve the Service.By using
-        the Service, You agree to the collection and use of information in
-        accordance with this Privacy Policy.This Privacy Policy has been created
-        with the help of the{' '}
-        <Link href="https://www.privacypolicies.com/privacy-policy-generator/">
-          Privacy Policy Generator
-        </Link>
-        .
-      </p>
-      <h1>Interpretation and Definitions</h1>
-      <h2>Interpretation</h2>
-      <p>
-        The words of which the initial letter is capitalized have meanings
-        defined under the following conditions. The following definitions shall
-        have the same meaning regardless of whether they appear in singular or
-        in plural.
-      </p>
-      <h2>Definitions</h2>
-      <p>For the purposes of this Privacy Policy:</p>
-      <ul>
-        <li>
-          <p>
-            <strong>Account</strong> means a unique account created for You to
-            access our Service or parts of our Service.
-          </p>
-        </li>
-        <li>
-          <p>
-            <strong>Company</strong> (referred to as either &quot;the
-            Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in
-            this Agreement) refers to lionceu.
-          </p>
-        </li>
-        <li>
-          <p>
-            <strong>Cookies</strong> are small files that are placed on Your
-            computer, mobile device or any other device by a website, containing
-            the details of Your browsing history on that website among its many
-            uses.
-          </p>
-        </li>
-        <li>
-          <p>
-            <strong>Country</strong> refers to: Hong Kong SAR China
-          </p>
-        </li>
-        <li>
-          <p>
-            <strong>Device</strong> means any device that can access the Service
-            such as a computer, a cellphone or a digital tablet.
-          </p>
-        </li>
-        <li>
-          <p>
-            <strong>Personal Data</strong> is any information that relates to an
-            identified or identifiable individual.
-          </p>
-        </li>
-        <li>
-          <p>
-            <strong>Service</strong> refers to the Website.
-          </p>
-        </li>
-        <li>
-          <p>
-            <strong>Service Provider</strong> means any natural or legal person
-            who processes the data on behalf of the Company. It refers to
-            third-party companies or individuals employed by the Company to
-            facilitate the Service, to provide the Service on behalf of the
-            Company, to perform services related to the Service or to assist the
-            Company in analyzing how the Service is used.
-          </p>
-        </li>
-        <li>
-          <p>
-            <strong>Third-party Social Media Service</strong> refers to any
-            website or any social network website through which a User can log
-            in or create an account to use the Service.
-          </p>
-        </li>
-        <li>
-          <p>
-            <strong>Usage Data</strong> refers to data collected automatically,
-            either generated by the use of the Service or from the Service
-            infrastructure itself (for example, the duration of a page visit).
-          </p>
-        </li>
-        <li>
-          <p>
-            <strong>Website</strong> refers to lionceu, accessible from{' '}
-            <Link href="https://www.lionceu.live/" target="_blank">
-              https://www.lionceu.live/
-            </Link>
-          </p>
-        </li>
-        <li>
-          <p>
-            <strong>You</strong> means the individual accessing or using the
-            Service, or the company, or other legal entity on behalf of which
-            such individual is accessing or using the Service, as applicable.
-          </p>
-        </li>
-      </ul>
-      <h1>Collecting and Using Your Personal Data</h1>
-      <h2>Types of Data Collected</h2>
-      <h3>Personal Data</h3>
-      <p>
-        While using Our Service, We may ask You to provide Us with certain
-        personally identifiable information that can be used to contact or
-        identify You. Personally identifiable information may include, but is
-        not limited to:
-      </p>
-      <ul>
-        <li>
-          <p>Address, State, Province, ZIP/Postal code, City</p>
-        </li>
-        <li>
-          <p>Usage Data</p>
-        </li>
-      </ul>
-      <h3>Usage Data</h3>
-      <p>Usage Data is collected automatically when using the Service.</p>
-      <p>
-        Usage Data may include information such as Your Devices Internet
-        Protocol address (e.g. IP address), browser type, browser version, the
-        pages of our Service that You visit, the time and date of Your visit,
-        the time spent on those pages, unique device identifiers and other
-        diagnostic data.
-      </p>
-      <p>
-        When You access the Service by or through a mobile device, We may
-        collect certain information automatically, including, but not limited
-        to, the type of mobile device You use, Your mobile device unique ID, the
-        IP address of Your mobile device, Your mobile operating system, the type
-        of mobile Internet browser You use, unique device identifiers and other
-        diagnostic data.
-      </p>
-      <p>
-        We may also collect information that Your browser sends whenever You
-        visit our Service or when You access the Service by or through a mobile
-        device.
-      </p>
-      <h3>Information from Third-Party Social Media Services</h3>
-      <p>
-        The Company allows You to create an account and log in to use the
-        Service through the following Third-party Social Media Services:
-      </p>
-      <ul>
-        <li>Google</li>
-        <li>Facebook</li>
-        <li>Twitter</li>
-      </ul>
-      <p>
-        If You decide to register through or otherwise grant us access to a
-        Third-Party Social Media Service, We may collect Personal data that is
-        already associated with Your Third-Party Social Media Services account,
-        such as Your name, Your email address, Your activities or Your contact
-        list associated with that account.
-      </p>
-      <p>
-        You may also have the option of sharing additional information with the
-        Company through Your Third-Party Social Media Services account. If You
-        choose to provide such information and Personal Data, during
-        registration or otherwise, You are giving the Company permission to use,
-        share, and store it in a manner consistent with this Privacy Policy.
-      </p>
-      <h3>Tracking Technologies and Cookies</h3>
-      <p>
-        We use Cookies and similar tracking technologies to track the activity
-        on Our Service and store certain information. Tracking technologies used
-        are beacons, tags, and scripts to collect and track information and to
-        improve and analyze Our Service. The technologies We use may include:
-      </p>
-      <ul>
-        <li>
-          <strong>Cookies or Browser Cookies.</strong> A cookie is a small file
-          placed on Your Device. You can instruct Your browser to refuse all
-          Cookies or to indicate when a Cookie is being sent. However, if You do
-          not accept Cookies, You may not be able to use some parts of our
-          Service. Unless you have adjusted Your browser setting so that it will
-          refuse Cookies, our Service may use Cookies.
-        </li>
-        <li>
-          <strong>Flash Cookies.</strong> Certain features of our Service may
-          use local stored objects (or Flash Cookies) to collect and store
-          information about Your preferences or Your activity on our
-          Service.Flash Cookies are not managed by the same browser settings as
-          those used for Browser Cookies.For more information on how You can
-          delete Flash Cookies, please read &quot; Where can I change the
-          settings for disabling, or deleting local shared objects?&quot;
-          available at{' '}
-          <Link href="https://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html#main_Where_can_I_change_the_settings_for_disabling__or_deleting_local_shared_objects_">
-            https://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html#main_Where_can_I_change_the_settings_for_disabling__or_deleting_local_shared_objects_
-          </Link>
-        </li>
-        <li>
-          <strong>Web Beacons.</strong> Certain sections of our Service and our
-          emails may contain small electronic files known as web beacons (also
-          referred to as clear gifs, pixel tags, and single-pixel gifs) that
-          permit the Company, for example, to count users who have visited those
-          pages or opened an email and for other related website statistics (for
-          example, recording the popularity of a certain section and verifying
-          system and server integrity).
-        </li>
-      </ul>
-      <p>
-        Cookies can be &quot; Persistent&quot; or &quot; Session&quot;
-        Cookies.Persistent Cookies remain on Your personal computer or mobile
-        device when You go offline, while Session Cookies are deleted as soon as
-        You close Your web browser.Learn more about cookies:{' '}
-        <Link href="https://www.privacypolicies.com/blog/privacy-policy-template/#Use_Of_Cookies_Log_Files_And_Tracking">
-          Cookies by PrivacyPolicies Generator
-        </Link>
-        .
-      </p>
-      <p>
-        We use both Session and Persistent Cookies for the purposes set out
-        below:
-      </p>
-      <ul>
-        <li>
-          <p>
-            <strong>Necessary / Essential Cookies</strong>
-          </p>
-          <p>Type: Session Cookies</p>
-          <p>Administered by: Us</p>
-          <p>
-            Purpose: These Cookies are essential to provide You with services
-            available through the Website and to enable You to use some of its
-            features. They help to authenticate users and prevent fraudulent use
-            of user accounts. Without these Cookies, the services that You have
-            asked for cannot be provided, and We only use these Cookies to
-            provide You with those services.
-          </p>
-        </li>
-        <li>
-          <p>
-            <strong>Cookies Policy / Notice Acceptance Cookies</strong>
-          </p>
-          <p>Type: Persistent Cookies</p>
-          <p>Administered by: Us</p>
-          <p>
-            Purpose: These Cookies identify if users have accepted the use of
-            cookies on the Website.
-          </p>
-        </li>
-        <li>
-          <p>
-            <strong>Functionality Cookies</strong>
-          </p>
-          <p>Type: Persistent Cookies</p>
-          <p>Administered by: Us</p>
-          <p>
-            Purpose: These Cookies allow us to remember choices You make when
-            You use the Website, such as remembering your login details or
-            language preference. The purpose of these Cookies is to provide You
-            with a more personal experience and to avoid You having to re-enter
-            your preferences every time You use the Website.
-          </p>
-        </li>
-      </ul>
-      <p>
-        For more information about the cookies we use and your choices regarding
-        cookies, please visit our Cookies Policy or the Cookies section of our
-        Privacy Policy.
-      </p>
-      <h2>Use of Your Personal Data</h2>
-      <p>The Company may use Personal Data for the following purposes:</p>
-      <ul>
-        <li>
-          <p>
-            <strong>To provide and maintain our Service</strong>, including to
-            monitor the usage of our Service.
-          </p>
-        </li>
-        <li>
-          <p>
-            <strong>To manage Your Account:</strong> to manage Your registration
-            as a user of the Service. The Personal Data You provide can give You
-            access to different functionalities of the Service that are
-            available to You as a registered user.
-          </p>
-        </li>
-        <li>
-          <p>
-            <strong>For the performance of a contract:</strong> the development,
-            compliance and undertaking of the purchase contract for the
-            products, items or services You have purchased or of any other
-            contract with Us through the Service.
-          </p>
-        </li>
-        <li>
-          <p>
-            <strong>To contact You:</strong> To contact You by email, telephone
-            calls, SMS, or other equivalent forms of electronic communication,
-            such as a mobile applications push notifications regarding updates
-            or informative communications related to the functionalities,
-            products or contracted services, including the security updates,
-            when necessary or reasonable for their implementation.
-          </p>
-        </li>
-        <li>
-          <p>
-            <strong>To provide You</strong> with news, special offers and
-            general information about other goods, services and events which we
-            offer that are similar to those that you have already purchased or
-            enquired about unless You have opted not to receive such
-            information.
-          </p>
-        </li>
-        <li>
-          <p>
-            <strong>To manage Your requests:</strong> To attend and manage Your
-            requests to Us.
-          </p>
-        </li>
-        <li>
-          <p>
-            <strong>For business transfers:</strong> We may use Your information
-            to evaluate or conduct a merger, divestiture, restructuring,
-            reorganization, dissolution, or other sale or transfer of some or
-            all of Our assets, whether as a going concern or as part of
-            bankruptcy, liquidation, or similar proceeding, in which Personal
-            Data held by Us about our Service users is among the assets
-            transferred.
-          </p>
-        </li>
-        <li>
-          <p>
-            <strong>For other purposes</strong>: We may use Your information for
-            other purposes, such as data analysis, identifying usage trends,
-            determining the effectiveness of our promotional campaigns and to
-            evaluate and improve our Service, products, services, marketing and
-            your experience.
-          </p>
-        </li>
-      </ul>
-      <p>We may share Your personal information in the following situations:</p>
-      <ul>
-        <li>
-          <strong>With Service Providers:</strong> We may share Your personal
-          information with Service Providers to monitor and analyze the use of
-          our Service, to contact You.
-        </li>
-        <li>
-          <strong>For business transfers:</strong> We may share or transfer Your
-          personal information in connection with, or during negotiations of,
-          any merger, sale of Company assets, financing, or acquisition of all
-          or a portion of Our business to another company.
-        </li>
-        <li>
-          <strong>With Affiliates:</strong> We may share Your information with
-          Our affiliates, in which case we will require those affiliates to
-          honor this Privacy Policy. Affiliates include Our parent company and
-          any other subsidiaries, joint venture partners or other companies that
-          We control or that are under common control with Us.
-        </li>
-        <li>
-          <strong>With business partners:</strong> We may share Your information
-          with Our business partners to offer You certain products, services or
-          promotions.
-        </li>
-        <li>
-          <strong>With other users:</strong> when You share personal information
-          or otherwise interact in the public areas with other users, such
-          information may be viewed by all users and may be publicly distributed
-          outside. If You interact with other users or register through a
-          Third-Party Social Media Service, Your contacts on the Third-Party
-          Social Media Service may see Your name, profile, pictures and
-          description of Your activity. Similarly, other users will be able to
-          view descriptions of Your activity, communicate with You and view Your
-          profile.
-        </li>
-        <li>
-          <strong>With Your consent</strong>: We may disclose Your personal
-          information for any other purpose with Your consent.
-        </li>
-      </ul>
-      <h2>Retention of Your Personal Data</h2>
-      <p>
-        The Company will retain Your Personal Data only for as long as is
-        necessary for the purposes set out in this Privacy Policy. We will
-        retain and use Your Personal Data to the extent necessary to comply with
-        our legal obligations (for example, if we are required to retain your
-        data to comply with applicable laws), resolve disputes, and enforce our
-        legal agreements and policies.
-      </p>
-      <p>
-        The Company will also retain Usage Data for internal analysis purposes.
-        Usage Data is generally retained for a shorter period of time, except
-        when this data is used to strengthen the security or to improve the
-        functionality of Our Service, or We are legally obligated to retain this
-        data for longer time periods.
-      </p>
-      <h2>Transfer of Your Personal Data</h2>
-      <p>
-        Your information, including Personal Data, is processed at the Companys
-        operating offices and in any other places where the parties involved in
-        the processing are located. It means that this information may be
-        transferred to — and maintained on — computers located outside of Your
-        state, province, country or other governmental jurisdiction where the
-        data protection laws may differ than those from Your jurisdiction.
-      </p>
-      <p>
-        Your consent to this Privacy Policy followed by Your submission of such
-        information represents Your agreement to that transfer.
-      </p>
-      <p>
-        The Company will take all steps reasonably necessary to ensure that Your
-        data is treated securely and in accordance with this Privacy Policy and
-        no transfer of Your Personal Data will take place to an organization or
-        a country unless there are adequate controls in place including the
-        security of Your data and other personal information.
-      </p>
-      <h2>Disclosure of Your Personal Data</h2>
-      <h3>Business Transactions</h3>
-      <p>
-        If the Company is involved in a merger, acquisition or asset sale, Your
-        Personal Data may be transferred. We will provide notice before Your
-        Personal Data is transferred and becomes subject to a different Privacy
-        Policy.
-      </p>
-      <h3>Law enforcement</h3>
-      <p>
-        Under certain circumstances, the Company may be required to disclose
-        Your Personal Data if required to do so by law or in response to valid
-        requests by public authorities (e.g. a court or a government agency).
-      </p>
-      <h3>Other legal requirements</h3>
-      <p>
-        The Company may disclose Your Personal Data in the good faith belief
-        that such action is necessary to:
-      </p>
-      <ul>
-        <li>Comply with a legal obligation</li>
-        <li>Protect and defend the rights or property of the Company</li>
-        <li>
-          Prevent or investigate possible wrongdoing in connection with the
-          Service
-        </li>
-        <li>
-          Protect the personal safety of Users of the Service or the public
-        </li>
-        <li>Protect against legal liability</li>
-      </ul>
-      <h2>Security of Your Personal Data</h2>
-      <p>
-        The security of Your Personal Data is important to Us, but remember that
-        no method of transmission over the Internet, or method of electronic
-        storage is 100% secure. While We strive to use commercially acceptable
-        means to protect Your Personal Data, We cannot guarantee its absolute
-        security.
-      </p>
-      <h1>Childrens Privacy</h1>
-      <p>
-        Our Service does not address anyone under the age of 13. We do not
-        knowingly collect personally identifiable information from anyone under
-        the age of 13. If You are a parent or guardian and You are aware that
-        Your child has provided Us with Personal Data, please contact Us. If We
-        become aware that We have collected Personal Data from anyone under the
-        age of 13 without verification of parental consent, We take steps to
-        remove that information from Our servers.
-      </p>
-      <p>
-        If We need to rely on consent as a legal basis for processing Your
-        information and Your country requires consent from a parent, We may
-        require Your parents consent before We collect and use that information.
-      </p>
-      <h1>Links to Other Websites</h1>
-      <p>
-        Our Service may contain links to other websites that are not operated by
-        Us. If You click on a third party link, You will be directed to that
-        third partys site. We strongly advise You to review the Privacy Policy
-        of every site You visit.
-      </p>
-      <p>
-        We have no control over and assume no responsibility for the content,
-        privacy policies or practices of any third party sites or services.
-      </p>
-      <h1>Changes to this Privacy Policy</h1>
-      <p>
-        We may update Our Privacy Policy from time to time. We will notify You
-        of any changes by posting the new Privacy Policy on this page.
-      </p>
-      <p>
-        We will let You know via email and/or a prominent notice on Our Service,
-        prior to the change becoming effective and update the &quot;Last
-        updated&quot; date at the top of this Privacy Policy.
-      </p>
-      <p>
-        You are advised to review this Privacy Policy periodically for any
-        changes. Changes to this Privacy Policy are effective when they are
-        posted on this page.
-      </p>
-      <h1>Contact Us</h1>
-      <p>
-        If you have any questions about this Privacy Policy, You can contact us:
-      </p>
-      <ul>
-        <li>By email: timmy.12345wer12@gmail.com</li>
-      </ul>
-    </Box>
-  </>
-)
+    </>
+  )
+}
 
 export { getServerSideProps } from '../components/theme-cookie'
 

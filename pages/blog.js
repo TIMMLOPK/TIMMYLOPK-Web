@@ -3,26 +3,18 @@ import path from 'path'
 import matter from 'gray-matter'
 import Post from '../components/post'
 import { sortByDate } from '../utils/day'
-import {
-  Button,
-  Container,
-  Heading,
-  Input,
-  Stack
-} from '@chakra-ui/react'
-import { useState, useRef } from 'react'
+import { Button, Container, Heading, Input, Stack } from '@chakra-ui/react'
+import { useState } from 'react'
 import Layout from '../components/layouts/article'
 
 function Blog({ posts }) {
   const [update, setupdate] = useState('All')
 
-  const inputEl = useRef(null)
-
   return (
     <Layout title="Blog">
       <Container>
         <Heading as="h3" fontSize={20} mb={4} position="relative">
-          Astronaut&apos;s blog 🗞️
+          Astronaut&apos;s blog
         </Heading>
         <Stack
           direction={{ base: 'column', md: 'row' }}
@@ -43,14 +35,8 @@ function Blog({ posts }) {
           </Button>
           <Input
             placeholder="Developing..."
-            type="text"
             disabled
-            value={null}
-            onKeyUp={e => {
-              setupdate(e.target.value)
-            }}
             variant="filled"
-            ref={inputEl}
           />
         </Stack>
         {posts

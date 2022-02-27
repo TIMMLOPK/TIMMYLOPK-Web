@@ -24,16 +24,16 @@ export default function Post({ post }) {
         <Stack>
           <Heading
             color={useColorModeValue('gray.700', 'white')}
-            fontSize={'2xl'}
-            fontFamily={'body'}
+            fontSize="2xl"
+            fontFamily="body"
           >
             <NextLink href={`/blog/${post.slug}`} passHref>
               {post.frontmatter.title}
             </NextLink>
           </Heading>
-          <Text color={'gray.500'}></Text>
+          <Text color="gray.500"></Text>
         </Stack>
-        <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
+        <Stack mt={6} direction="row" spacing={4} align={'center'}>
           <NextLink href="https://www.instagram.com/tw_wu_as_tim/" passHref>
             <Avatar src="/images/icon.webp" alt="Author" />
           </NextLink>
@@ -42,7 +42,7 @@ export default function Post({ post }) {
             <Box fontSize={15}>
               <MdOutlineAdminPanelSettings />
             </Box>
-            <Text color={'gray.500'}>{post.frontmatter.date}</Text>
+            <Text color="gray.500">{post.frontmatter.date}</Text>
           </Stack>
         </Stack>
       </Box>

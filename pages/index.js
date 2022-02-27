@@ -47,7 +47,6 @@ const Home = () => {
             <Image
               width="100px"
               height="100px"
-              display="inline-block"
               src="/images/icon.webp"
               alt="Timmy"
             />
@@ -73,12 +72,11 @@ const Home = () => {
               Photography despite not professional.
             </Paragraph>
             <Paragraph>
-              once. is my website for sharing about programming.Let we learn
-              together!
+              once. is my website for sharing about programming.Let we learn together!
             </Paragraph>
           </Paragraph>
           <Box align="center" my={4}>
-            <NextLink href="/shares" prefetch={false}>
+            <NextLink href="/shares" prefetch={false} passHref>
               <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
                 Share
               </Button>
@@ -109,8 +107,8 @@ const Home = () => {
               color="ActiveCaption"
               _hover={{ color: useColorModeValue('#000000', '#FFFFFF') }}
             >
-              <NextLink href="/blog/Update Log" prefetch={false}>
-                Website 3.9.2 【once.】
+              <NextLink href="/blog/Release Notes" prefetch={false}>
+                Website 3.9.3 【once.】
               </NextLink>
               <Box
                 backgroundColor="#50e3c2"
@@ -129,7 +127,7 @@ const Home = () => {
             My Experience
           </Heading>
           <Paragraph>
-            <h1>💻Developing Works </h1>
+            <h1>💻Developing Works</h1>
             <NextLink
               href="https://github.com/TIMMLOPK/once"
               passHref
@@ -137,7 +135,7 @@ const Home = () => {
             >
               <Link>My First Website</Link>
             </NextLink>
-            <h1>📷Photography </h1>
+            <h1>📷Photography</h1>
             <NextLink
               href="https://www.instagram.com/tw_wu_as_tim/"
               passHref
@@ -145,7 +143,7 @@ const Home = () => {
             >
               <Link>tw_wu_as_tim</Link>
             </NextLink>
-            <h1>🔭And More...</h1>
+            <h1>🔭Explore More...</h1>
           </Paragraph>
         </Section>
 
