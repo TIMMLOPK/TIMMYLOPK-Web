@@ -108,7 +108,7 @@ const Home = () => {
               _hover={{ color: useColorModeValue('#000000', '#FFFFFF') }}
             >
               <NextLink href="/blog/Release Notes" prefetch={false}>
-                Website 3.9.3 【once.】
+                Website 3.9.4 【once.】
               </NextLink>
               <Box
                 backgroundColor="#50e3c2"

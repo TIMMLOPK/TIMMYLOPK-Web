@@ -1,4 +1,4 @@
-import { ChakraProvider, cookieStorageManager } from '@chakra-ui/react'
+import { ChakraProvider, cookieStorageManager, storageKey } from '@chakra-ui/react'
 import theme from '../lib/theme'
 
 export default function Chakra({ cookies, children }) {
@@ -6,8 +6,8 @@ export default function Chakra({ cookies, children }) {
     typeof cookies === 'string'
       ? cookies
       : typeof document !== 'undefined'
-      ? document.cookie
-      : ''
+        ? storageKey
+        : '',
   )
 
   return (

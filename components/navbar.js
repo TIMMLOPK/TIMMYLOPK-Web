@@ -24,8 +24,8 @@ const MeunItem = ({ href, _target, children, ...props }) => {
     <NextLink href={href} passHref>
       <Button
         variant="ghost"
-        my={7}
-        pr="25%"
+        my={5}
+        pr="95px"
         w="100%"
         target={_target}
         _hover="none"
@@ -154,7 +154,6 @@ const Navbar = props => {
               flexDir="column"
             >
               <SlideFade in={isOpen} offsetY={150} reverse={true}>
-                <Box flexDir="column" align="center">
                   <MeunItem href="/" onClick={onClose}>
                     Home
                   </MeunItem>
@@ -175,7 +174,6 @@ const Navbar = props => {
                     <IoLogoGithub />
                     Github
                   </MeunItem>
-                </Box>
               </SlideFade>
             </Stack>
           </Fade>

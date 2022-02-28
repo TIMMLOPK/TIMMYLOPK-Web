@@ -24,7 +24,7 @@ const Card = ({ children, name, href, _target, cardImage, ...props }) => {
         padding={4}
       >
         <Flex flex={1}>
-          <Image src={cardImage} width="250%" height="100%" alt="Project" />
+          <Image src={cardImage} width="220%" height="120%" alt="Project" />
         </Flex>
         <Stack
           flex={1}

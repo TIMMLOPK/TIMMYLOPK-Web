@@ -1,12 +1,31 @@
 ---
 title: 'Release Notes'
-date: '27-2-2022'
+date: '28-2-2022'
 tag: ['All']
 ---
-# 3.9.3 Hightlight Update(Current Version)
+# 3.9.4 Hightlight Update(Current Version)
+
+## Some [announcement](/blog/Announcement)
+
+## @Fix bugs
+1.Refresh page will cause some components not work with theme setting.
+
+(Refer:3.9.3 update @Fix bugs No.4) 
+
+2.Navbar wasn't align.
+
+3.Project card image not show.
+
+## Noticed issues
+
+1.In 404 and blog page, the page won't display with theme setting if you refresh page.
+
+(Solution:Manually set the theme again)
+
+# 3.9.3 Hightlight Update
 
 ## Update Website Policy
-See the [Privacy Policy](www.lionceu.live/policy) for more information.
+See the [Privacy Policy](/policy) for more information.
 
 ## @Fix bugs
 1.Navbar is not working in PC view
@@ -15,7 +34,7 @@ See the [Privacy Policy](www.lionceu.live/policy) for more information.
 
 3.Speed decrease 
 
-4.Theme don't work in blog page(refer 3.9 update)
+4.Theme setting don't work in blog page(refer 3.9 update)
 
 5.Delete unuseful code
 

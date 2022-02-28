@@ -40,7 +40,7 @@ const Info = () => {
         <Box as="b">Keep going is a big tip</Box>
         <Stack pt={5}>
           <Heading fontSize="25px">My project</Heading>
-          <Card href="/" name="Discord-bot" isDisabled>
+          <Card href="/" name="Discord-bot" isDisabled cardImage='/card.png'>
             TIMMYLOPK -Discord bot
           </Card>
         </Stack>
