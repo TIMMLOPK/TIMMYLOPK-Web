@@ -18,6 +18,7 @@ function Website({ Component, pageProps, router }) {
       routerevent.events.off('routeChangeComplete', handleRouteChange)
     }
   }, [routerevent.events])
+
   return (
     <>
       <Script

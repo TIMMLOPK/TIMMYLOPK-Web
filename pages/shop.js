@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { Link } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
 import Layout from '../components/layouts/shop'
-import { SplitText } from '../components/spilt-word'
+import { SplitText } from '../components/split-word'
 
 const Bottombar = dynamic(() => import('../components/menu'), { ssr: false })
 

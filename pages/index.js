@@ -16,6 +16,7 @@ import { BioSection, BioYear } from '../components/bio'
 import Section from '../components/section'
 import { IoLogoInstagram, IoLogoGithub } from 'react-icons/io5'
 import Image from 'next/image'
+import { SplitText } from '../components/split-word'
 
 const Home = () => {
   return (
@@ -28,7 +29,20 @@ const Home = () => {
           textAlign="center"
           bg={useColorModeValue('whiteAlpha.800', 'whiteAlpha.200')}
         >
-          <Box fontWeight="medium">Hello,Welcome to moon</Box>
+          <SplitText
+            initial={{ y: '100%' }}
+            animate="visible"
+            variants={{
+              visible: i => ({
+                y: 2,
+                transition: {
+                  delay: i * 0.1
+                }
+              })
+            }}
+          >
+            Hello,Welcome to the moon!
+          </SplitText>
         </Box>
 
         <Box display={{ md: 'flex' }}>
@@ -55,30 +69,34 @@ const Home = () => {
 
         <Section delay={0.1}>
           <Heading as="h3" variant="section-title">
-            Info
+            Infomation
           </Heading>
           <Paragraph>
-            <p>Hi, I am @TIMMLOPK,an astronaut of programmer.</p>
-            <p>👀 I am interested in Photography, Website developing</p>
-            <p>🌱 I am currently learning JavaScript 💭</p>
-            <Paragraph>
-              I am a JavaScript developer from Hong Kong.I am studying in
-              secondary school. I am not study with the programm subject so I
-              learn by myself.I think this is common of developer. Beside JS,I
-              am learning Rustlang too.
-            </Paragraph>
-            <Paragraph>
-              I am currently learning JavaScript and Rust.I also like
-              Photography despite not professional.
-            </Paragraph>
-            <Paragraph>
-              once. is my website for sharing about programming.Let we learn together!
-            </Paragraph>
+            Hello! I am Timmy, a front-end developer. I am excited about you
+            come here. We will have an amazing journey.
+          </Paragraph>
+          <Paragraph>
+            Lionceu is a spaceship that attempt to moon. I am a software
+            developer of this ship. We will learn more thing from this journey.
+            It departs from earth every day and we are improving our engine so
+            that we can fly fast. The ship is attempting to moon now but it will
+            fly farther in the future. Come up quickly if you want to conquer
+            programming space.
+          </Paragraph>
+          <Paragraph>
+            It is an adventure of software developing! Let we start today.
+          </Paragraph>
+          <Paragraph>
+            You can go to GitHub if you are looking forward to my project. I
+            have developed some works like Discord bot, profile website and meme
+            generator. I am glad if you appreciate them. Also, you can tell me
+            if you have advice or questions. My contact information is on{' '}
+            <b>SOCIAL MEDIA</b>&apos;s section.
           </Paragraph>
           <Box align="center" my={4}>
-            <NextLink href="/shares" prefetch={false} passHref>
+            <NextLink href="/project" prefetch={false} passHref>
               <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
-                Share
+                Project
               </Button>
             </NextLink>
           </Box>
@@ -101,14 +119,14 @@ const Home = () => {
             Website 2.4 【once.】
           </BioSection>
           <BioSection>
-            <BioYear>2022-02</BioYear>
+            <BioYear>2022-03</BioYear>
             <Box
               as="b"
               color="ActiveCaption"
               _hover={{ color: useColorModeValue('#000000', '#FFFFFF') }}
             >
               <NextLink href="/blog/Release Notes" prefetch={false}>
-                Website 3.9.4 【once.】
+                Website 3.9.5 【once.】
               </NextLink>
               <Box
                 backgroundColor="#50e3c2"

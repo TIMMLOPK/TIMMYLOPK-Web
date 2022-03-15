@@ -1,16 +1,26 @@
 ---
 title: 'Release Notes'
-date: '28-2-2022'
+date: '15-3-2022'
 tag: ['All']
 ---
-# 3.9.4 Hightlight Update(Current Version)
+
+# 3.9.5 Hightlight Update(Current Version)
+
+1.Display the music name when you hover the button.
+
+2.Other small improvements.
+
+## @Fix bugs
+
+# 3.9.4 Hightlight Update
 
 ## Some [announcement](/blog/Announcement)
 
 ## @Fix bugs
+
 1.Refresh page will cause some components not work with theme setting.
 
-(Refer:3.9.3 update @Fix bugs No.4) 
+(Refer:3.9.3 update @Fix bugs No.4)
 
 2.Navbar wasn't align.
 
@@ -25,14 +35,16 @@ tag: ['All']
 # 3.9.3 Hightlight Update
 
 ## Update Website Policy
+
 See the [Privacy Policy](/policy) for more information.
 
 ## @Fix bugs
+
 1.Navbar is not working in PC view
 
 2.Theme can't save in PC view
 
-3.Speed decrease 
+3.Speed decrease
 
 4.Theme setting don't work in blog page(refer 3.9 update)
 

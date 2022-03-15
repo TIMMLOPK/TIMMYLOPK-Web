@@ -11,7 +11,7 @@ import {
 const NotFound = () => {
   return (
     <Container position="relative">
-      <Heading as="h1">Not found</Heading>
+      <Heading as="h1">Lose signal</Heading>
       <Text>The connection to the communication system is interrupted.</Text>
       <Divider my={6} />
 

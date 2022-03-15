@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ReactHowler from 'react-howler'
 import { Button } from '@chakra-ui/button'
 import { AiFillPlayCircle } from 'react-icons/ai'
 import { motion } from 'framer-motion'
+import { Tooltip } from '@chakra-ui/react'
 
 const songsCollections = [
   '/music/musicass1.mp3',
@@ -21,20 +22,21 @@ const randomSong = songsCollections[randomSongIndex]
 const Audio = randomSong
 
 const Music = () => {
-  const [isplaying, setplaying] = useState(true)
+  const [playing, setplaying] = useState(true)
   const [loading, setloading] = useState(true)
-
   const [loaded, setloaded] = useState(false)
-  setTimeout(() => {
+
+  useEffect(() => {
     setloaded(true)
-  }, 500)
+  }, [])
+
   return (
     <>
       <div>
         <ReactHowler
           src={Audio}
           preload={loaded}
-          playing={isplaying ? false : true}
+          playing={playing ? false : true}
           onLoad={() => setloading(false)}
         />
       </div>
@@ -44,16 +46,20 @@ const Music = () => {
           animate={{ scale: [0.5, 1.1] }}
           transition={{ type: 'spring', duration: 0.2 }}
         >
-          <Button
-            onClick={() => setplaying(!isplaying)}
-            variant="ghost"
-            _active={{ bg: 'transparent' }}
-            style={{ boxShadow: 'none' }}
-            _hover={{ bg: 'transparent' }}
-            isLoading={loading}
+          <Tooltip
+            label={Audio.replace('/music/', 'Playing: ').replace('.mp3', '')}
           >
-            <AiFillPlayCircle />
-          </Button>
+            <Button
+              onClick={() => setplaying(!playing)}
+              variant="ghost"
+              _active={{ bg: 'transparent' }}
+              style={{ boxShadow: 'none' }}
+              _hover={{ bg: 'transparent' }}
+              isLoading={loading}
+            >
+              <AiFillPlayCircle />
+            </Button>
+          </Tooltip>
         </motion.div>
       </div>
     </>

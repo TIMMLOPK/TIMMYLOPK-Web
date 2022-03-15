@@ -96,8 +96,8 @@ const Navbar = props => {
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
         >
-          <LinkItem href="/shares" path={path}>
-            Share
+          <LinkItem href="/project" path={path}>
+            Project
           </LinkItem>
           <LinkItem
             _target="_blank"
@@ -154,26 +154,23 @@ const Navbar = props => {
               flexDir="column"
             >
               <SlideFade in={isOpen} offsetY={150} reverse={true}>
-                  <MeunItem href="/" onClick={onClose}>
-                    Home
-                  </MeunItem>
-                  <MeunItem href="/shares" onClick={onClose}>
-                    Share
-                  </MeunItem>
+                <MeunItem href="/" onClick={onClose}>
+                  Home
+                </MeunItem>
+                <MeunItem href="/project" onClick={onClose}>
+                  Project
+                </MeunItem>
 
-                  <MeunItem href="/blog" onClick={onClose}>
-                    {' '}
-                    <FaBlog />
-                    Blog
-                  </MeunItem>
-                  <MeunItem
-                    href="https://github.com/TIMMLOPK"
-                    onClick={onClose}
-                  >
-                    {' '}
-                    <IoLogoGithub />
-                    Github
-                  </MeunItem>
+                <MeunItem href="/blog" onClick={onClose}>
+                  {' '}
+                  <FaBlog />
+                  Blog
+                </MeunItem>
+                <MeunItem href="https://github.com/TIMMLOPK" onClick={onClose}>
+                  {' '}
+                  <IoLogoGithub />
+                  Github
+                </MeunItem>
               </SlideFade>
             </Stack>
           </Fade>

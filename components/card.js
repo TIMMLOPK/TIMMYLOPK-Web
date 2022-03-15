@@ -1,7 +1,6 @@
 import {
   Center,
   Stack,
-  Flex,
   Text,
   Button,
   useColorModeValue,
@@ -23,9 +22,15 @@ const Card = ({ children, name, href, _target, cardImage, ...props }) => {
         boxShadow={'2xl'}
         padding={4}
       >
-        <Flex flex={1}>
-          <Image src={cardImage} width="220%" height="120%" alt="Project" />
-        </Flex>
+        <Image
+          src={cardImage}
+          width="250"
+          height="282"
+          alt="Project"
+          objectFit="cover"
+          placeholder="blur"
+          loading="lazy"
+        />
         <Stack
           flex={1}
           flexDirection="column"
@@ -67,7 +72,7 @@ const Card = ({ children, name, href, _target, cardImage, ...props }) => {
                 }}
                 {...props}
               >
-                Visit Code
+                View
               </Button>
             </NextLink>
           </Stack>

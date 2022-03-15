@@ -33,11 +33,7 @@ function Blog({ posts }) {
           <Button onClick={() => setupdate('update')} colorScheme="teal">
             Update
           </Button>
-          <Input
-            placeholder="Developing..."
-            disabled
-            variant="filled"
-          />
+          <Input placeholder="Developing..." disabled variant="filled" />
         </Stack>
         {posts
           .filter(post => post.frontmatter.tag.includes(update))
