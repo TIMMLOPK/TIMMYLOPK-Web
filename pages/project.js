@@ -11,8 +11,8 @@ const project = () => {
       <Container position="relative">
         <Stack pt={5}>
           <Heading fontSize="25px">My project</Heading>
-          <Card href="/" name="Discord-bot" isDisabled cardImage={image1}>
-            TIMMYLOPK -Discord bot
+          <Card href="/" name="TIMMYLOPK" isDisabled cardImage={image1}>
+            Discord bot
           </Card>
           <Card
             href="https://meme-maker-sec.vercel.app/"
@@ -20,6 +20,13 @@ const project = () => {
             cardImage={image2}
           >
             MEME Generator
+          </Card>
+          <Card
+            href="https://github.com/TIMMLOPK/once"
+            name="CSS Website"
+            cardImage={image1}
+          >
+            A simple website by css
           </Card>
         </Stack>
       </Container>

@@ -45,7 +45,7 @@ const LinkItem = ({ href, path, _target, children, ...props }) => {
     <NextLink href={href} passHref>
       <Button
         p={2}
-        bg={active ? '#B0E0E6' : undefined}
+        bg={active ? '#B0E0E6' : ''}
         color={active ? '#202023' : inactiveColor}
         borderRadius="5px"
         variant="ghost"
@@ -53,6 +53,7 @@ const LinkItem = ({ href, path, _target, children, ...props }) => {
         transition="all 0.3s"
         style={{ gap: 5, boxShadow: 'none' }}
         target={_target}
+        _hover={active ? 'none' : undefined}
         {...props}
       >
         {children}

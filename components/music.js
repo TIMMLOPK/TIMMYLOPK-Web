@@ -6,9 +6,9 @@ import { motion } from 'framer-motion'
 import { Tooltip } from '@chakra-ui/react'
 
 const songsCollections = [
-  '/music/musicass1.mp3',
-  '/music/musicass2.mp3',
-  '/music/musicass3.mp3'
+  '/music/夜明けと蛍／天月-あまつき.mp3',
+  '/music/アカイトを歌ってみた♔ ver志麻.mp3',
+  '/music/死んでしまったのだろうか ver Kanae.mp3'
 ]
 
 const getRandomFromRange = (min, max) => {
@@ -24,10 +24,10 @@ const Audio = randomSong
 const Music = () => {
   const [playing, setplaying] = useState(true)
   const [loading, setloading] = useState(true)
-  const [loaded, setloaded] = useState(false)
+  const [loadFile, setloadFile] = useState(false)
 
   useEffect(() => {
-    setloaded(true)
+    setloadFile(true)
   }, [])
 
   return (
@@ -35,7 +35,8 @@ const Music = () => {
       <div>
         <ReactHowler
           src={Audio}
-          preload={loaded}
+          volume={0.45}
+          preload={loadFile}
           playing={playing ? false : true}
           onLoad={() => setloading(false)}
         />

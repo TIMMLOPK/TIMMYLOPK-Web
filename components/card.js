@@ -15,17 +15,17 @@ const Card = ({ children, name, href, _target, cardImage, ...props }) => {
       <Stack
         borderWidth="1px"
         borderRadius="lg"
-        w={{ sm: '100%', md: '540px' }}
-        height={{ sm: '400px', md: '10rem' }}
+        w="100%"
+        h="100%"
         direction={{ base: 'column', md: 'row' }}
         bg={useColorModeValue('white', 'black')}
-        boxShadow={'2xl'}
+        boxShadow="dark-lg"
         padding={4}
       >
         <Image
           src={cardImage}
-          width="250"
-          height="282"
+          width="230"
+          height="150"
           alt="Project"
           objectFit="cover"
           placeholder="blur"
@@ -42,7 +42,7 @@ const Card = ({ children, name, href, _target, cardImage, ...props }) => {
           <Heading fontSize="4x1" fontFamily="body">
             {name}
           </Heading>
-          <Text fontWeight={600} color="gray.500" size="sm" mb={4}>
+          <Text fontWeight={500} color="gray.500" size="sm" mb={4}>
             @{children}
           </Text>
           <Stack
@@ -53,10 +53,9 @@ const Card = ({ children, name, href, _target, cardImage, ...props }) => {
             justifyContent="space-between"
             alignItems="center"
           >
-            <NextLink href={href} passHref>
+            <NextLink href={href} passHref prefetch={false}>
               <Button
                 flex={1}
-                fontSize="sm"
                 rounded="full"
                 bg="blue.400"
                 color="white"
@@ -72,7 +71,7 @@ const Card = ({ children, name, href, _target, cardImage, ...props }) => {
                 }}
                 {...props}
               >
-                View
+                Visit
               </Button>
             </NextLink>
           </Stack>
