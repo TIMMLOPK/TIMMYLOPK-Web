@@ -4,7 +4,7 @@
 
 ## Info
 
-A web fork of [https://www.craftz.dog/](https://www.craftz.dog/)
+From from [https://www.craftz.dog/](https://www.craftz.dog/)
 
 ## Stack
 
