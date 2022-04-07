@@ -9,7 +9,7 @@ import {
 import Image from 'next/image'
 import NextLink from 'next/link'
 
-const Card = ({ children, name, href, _target, cardImage, ...props }) => {
+const Card = ({ children, name, href, _target, cardImage, buttonMessage, ...props }) => {
   return (
     <Center py={6}>
       <Stack
@@ -71,7 +71,7 @@ const Card = ({ children, name, href, _target, cardImage, ...props }) => {
                 }}
                 {...props}
               >
-                Visit
+                {buttonMessage}
               </Button>
             </NextLink>
           </Stack>
