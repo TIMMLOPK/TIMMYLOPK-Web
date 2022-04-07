@@ -11,7 +11,7 @@ const project = () => {
       <Container position="relative">
         <Stack pt={5}>
           <Heading fontSize="25px">My project</Heading>
-          <Card href="https://discord.lionceu.live/" name="TIMMYLOPK" isDisabled cardImage={image1} buttonMessage='Go to Web'>
+          <Card href="https://discord.lionceu.live/" name="TIMMYLOPK" cardImage={image1} buttonMessage='Go to Web'>
             Discord bot
           </Card>
           <Card
