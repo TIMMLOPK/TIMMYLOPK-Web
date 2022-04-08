@@ -10,13 +10,8 @@ const project = () => {
     <Layout title="Project">
       <Container position="relative">
         <Stack pt={5}>
-          <Heading fontSize="25px">Project Wall</Heading>
-          <Card
-            href="https://discord.lionceu.live/"
-            name="TIMMYLOPK"
-            cardImage={image1}
-            buttonMessage="Go to Web"
-          >
+          <Heading fontSize="25px">My project</Heading>
+          <Card href="https://discord.lionceu.live/" name="TIMMYLOPK" cardImage={image1} buttonMessage='Go to Web'>
             Discord bot
           </Card>
           <Card
