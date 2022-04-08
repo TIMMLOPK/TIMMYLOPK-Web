@@ -23,7 +23,7 @@ function Website({ Component, pageProps, router }) {
     <>
       <Script
         strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=G-D0R4YZSHHS`}
+        src="https://www.googletagmanager.com/gtag/js?id=G-D0R4YZSHHS"
       />
       <Script
         id="my-script"

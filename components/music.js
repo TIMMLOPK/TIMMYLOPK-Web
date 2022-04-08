@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import ReactHowler from 'react-howler'
 import { Button } from '@chakra-ui/button'
 import { AiFillPlayCircle } from 'react-icons/ai'
@@ -22,12 +22,12 @@ const randomSong = songsCollections[randomSongIndex]
 const Audio = randomSong
 
 const Music = () => {
+  const player = useRef(null)
   const [playing, setplaying] = useState(true)
   const [loading, setloading] = useState(true)
-  const [loadFile, setloadFile] = useState(false)
 
   useEffect(() => {
-    setloadFile(true)
+    player.current.load(Audio)
   }, [])
 
   return (
@@ -36,7 +36,7 @@ const Music = () => {
         <ReactHowler
           src={Audio}
           volume={0.45}
-          preload={loadFile}
+          ref={player}
           playing={playing ? false : true}
           onLoad={() => setloading(false)}
         />

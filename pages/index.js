@@ -119,14 +119,14 @@ const Home = () => {
             Website 2.4 【once.】
           </BioSection>
           <BioSection>
-            <BioYear>2022-03</BioYear>
+            <BioYear>2022-04</BioYear>
             <Box
               as="b"
               color="ActiveCaption"
               _hover={{ color: useColorModeValue('#000000', '#FFFFFF') }}
             >
               <NextLink href="/blog/Release Notes" prefetch={false}>
-                Website 3.9.5 【once.】
+                Website 3.9.7 【once.】
               </NextLink>
               <Box
                 backgroundColor="#50e3c2"

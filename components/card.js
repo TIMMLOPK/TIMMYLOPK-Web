@@ -9,7 +9,15 @@ import {
 import Image from 'next/image'
 import NextLink from 'next/link'
 
-const Card = ({ children, name, href, _target, cardImage, buttonMessage, ...props }) => {
+const Card = ({
+  children,
+  name,
+  href,
+  _target,
+  cardImage,
+  buttonMessage,
+  ...props
+}) => {
   return (
     <Center py={6}>
       <Stack

@@ -16,7 +16,6 @@ import ThemeToggleButton from './theme-toggle-button'
 import { IoLogoGithub } from 'react-icons/io5'
 import { FaBlog } from 'react-icons/fa'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
-import { motion } from 'framer-motion'
 import Music from '../components/music'
 
 const MeunItem = ({ href, _target, children, ...props }) => {
@@ -68,11 +67,10 @@ const Navbar = props => {
   return (
     <Box
       position="fixed"
-      as="nav"
       w="100%"
       bg={useColorModeValue('#ffffff80', '#20202380')}
       css={{ backdropFilter: 'blur(8px)' }}
-      zIndex={1}
+      zIndex={20}
       {...props}
     >
       <Container
@@ -128,33 +126,23 @@ const Navbar = props => {
           <Box ml={2} display="inline-block">
             <Music />
           </Box>
-
-          <Box display={{ base: 'inline-flex', md: 'none' }}>
-            <motion.div
-              initial={{ y: [10, -10], opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 10, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              key={isOpen ? onclose : onOpen}
-            >
-              <IconButton
-                h="40px"
-                w="40px"
-                variant="ghost"
-                _active={{ bg: 'transparent' }}
-                style={{ boxShadow: 'none' }}
-                icon={isOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
-                onClick={isOpen ? onClose : onOpen}
-              />
-            </motion.div>
-          </Box>
-          <Fade in={isOpen} unmountOnExit={true}>
+          <IconButton
+            h="40px"
+            w="40px"
+            variant="ghost"
+            _active={{ bg: 'transparent' }}
+            style={{ boxShadow: 'none' }}
+            icon={isOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
+            onClick={isOpen ? onClose : onOpen}
+            display={{ base: 'inline-flex', md: 'none' }}
+          />
+          <Fade in={isOpen} unmountOnExit>
             <Stack
               h="100vh"
               display={{ base: 'block', md: 'none' }}
               flexDir="column"
             >
-              <SlideFade in={isOpen} offsetY={150} reverse={true}>
+              <SlideFade in={isOpen} offsetY={150} reverse>
                 <MeunItem href="/" onClick={onClose}>
                   Home
                 </MeunItem>

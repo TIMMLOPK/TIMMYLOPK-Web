@@ -66,12 +66,18 @@ const VoxelDog = () => {
       camera.lookAt(target)
       setCamera(camera)
 
-      const ambientLight = new THREE.AmbientLight()
+      const ambientLight = new THREE.AmbientLight(0xffffff, 1.5)
       scene.add(ambientLight)
 
       const controls = new OrbitControls(camera, renderer.domElement)
       controls.autoRotate = true
       controls.target = target
+      controls.enableZoom = false
+      controls.mouseButtons = {
+        LEFT: '',
+        RIGHT: ''
+      }
+      controls.autoRotateSpeed = 0.7
       setControls(controls)
 
       loadGLTFModel(scene, '/moon.glb', {
@@ -84,7 +90,7 @@ const VoxelDog = () => {
 
       let req = null
       let frame = 0
-      const animate = () => {
+      function animate() {
         req = requestAnimationFrame(animate)
 
         frame = frame <= 100 ? frame + 1 : frame

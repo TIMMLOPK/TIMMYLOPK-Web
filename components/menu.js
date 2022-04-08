@@ -6,15 +6,12 @@ import { Alert, AlertTitle, Button, CloseButton } from '@chakra-ui/react'
 import { CopyIcon } from '@chakra-ui/icons'
 
 const Bottombar = () => {
-  //share btn
   const url = window.location.href
 
   const [state, setState] = useState({
     value: url,
     copied: false
   })
-
-  //Back to top btn
 
   const scrollToTop = () => {
     window.scrollTo({
