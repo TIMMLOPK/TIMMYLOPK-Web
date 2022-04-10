@@ -19,7 +19,10 @@ const Logo = () => {
     <NextLink href="/" passHref>
       <LogoBox>
         <Image src={logoImg} width={20} height={20} alt="logo" priority />
-        <Link color={useColorModeValue('black', 'white')} textUnderlineOffset='inherit'>
+        <Link
+          color={useColorModeValue('black', 'white')}
+          textUnderlineOffset="inherit"
+        >
           <Text
             color={useColorModeValue('gray.800', 'whiteAlpha.900')}
             fontWeight="bold"

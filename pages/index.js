@@ -13,7 +13,13 @@ import {
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import { IoLogoInstagram, IoLogoGithub } from 'react-icons/io5'
 import Image from 'next/image'
-import { Paragraph, SplitText, Section,BioSection, BioYear } from '../components/word-tool'
+import {
+  Paragraph,
+  SplitText,
+  Section,
+  BioSection,
+  BioYear
+} from '../components/word-tool'
 
 const Home = () => {
   return (
