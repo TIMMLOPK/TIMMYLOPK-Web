@@ -1,10 +1,14 @@
 ---
 title: 'Release Notes'
-date: '15-3-2022'
+date: '10-4-2022'
 tag: ['All']
 ---
 
-# 3.9.5 Hightlight Update(Current Version)
+# 3.9.9 Hightlight Update(Crrent Version)
+
+## @Fix bugs
+
+# 3.9.5 Hightlight Update
 
 1.Display the music name when you hover the button.
 

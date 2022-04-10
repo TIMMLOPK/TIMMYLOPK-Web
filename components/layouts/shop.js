@@ -12,7 +12,6 @@ const Layout = ({ children, title }) => {
             <meta property="og:title" content={title} />
             <meta property="og:type" content="website" />
             <meta property="og:description" content={title} />
-            <meta property="og:image" content="/shopcard.png" />
           </Head>
         )}
 

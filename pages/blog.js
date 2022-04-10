@@ -9,7 +9,6 @@ import Layout from '../components/layouts/article'
 
 function Blog({ posts }) {
   const [update, setupdate] = useState('All')
-
   return (
     <Layout title="Blog">
       <Container>
@@ -29,9 +28,6 @@ function Blog({ posts }) {
             colorScheme="teal"
           >
             All
-          </Button>
-          <Button onClick={() => setupdate('update')} colorScheme="teal">
-            Update
           </Button>
           <Input placeholder="Developing..." disabled variant="filled" />
         </Stack>

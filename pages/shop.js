@@ -1,10 +1,9 @@
 import { Heading, Avatar, Box } from '@chakra-ui/react'
-import Paragraph from '../components/paragraph'
 import { motion } from 'framer-motion'
 import { Link } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
 import Layout from '../components/layouts/shop'
-import { SplitText } from '../components/split-word'
+import { SplitText, Paragraph } from '../components/word-tool'
 import { timeDiff } from '../utils/timeDiff'
 
 const Bottombar = dynamic(() => import('../components/menu'), { ssr: false })

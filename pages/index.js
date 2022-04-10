@@ -11,12 +11,9 @@ import {
   useColorModeValue
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
-import Paragraph from '../components/paragraph'
-import { BioSection, BioYear } from '../components/bio'
-import Section from '../components/section'
 import { IoLogoInstagram, IoLogoGithub } from 'react-icons/io5'
 import Image from 'next/image'
-import { SplitText } from '../components/split-word'
+import { Paragraph, SplitText, Section,BioSection, BioYear } from '../components/word-tool'
 
 const Home = () => {
   return (
@@ -126,7 +123,7 @@ const Home = () => {
               _hover={{ color: useColorModeValue('#000000', '#FFFFFF') }}
             >
               <NextLink href="/blog/Release Notes" prefetch={false}>
-                Website 3.9.7 【once.】
+                Website 3.9.9 【once.】
               </NextLink>
               <Box
                 backgroundColor="#50e3c2"

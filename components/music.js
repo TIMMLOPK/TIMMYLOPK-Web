@@ -37,6 +37,7 @@ const Music = () => {
           src={Audio}
           volume={0.45}
           ref={player}
+          preload={false}
           playing={playing ? false : true}
           onLoad={() => setloading(false)}
         />
