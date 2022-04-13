@@ -75,24 +75,25 @@ const Home = () => {
             Infomation
           </Heading>
           <Paragraph>
-            Hello! I am Timmy, a front-end developer.
-            I am excited for you to come.
-            We will surely have an amazing journey.
+            Hello! I am Timmy, a front-end developer. I am excited for you to
+            come. We will surely have an amazing journey.
           </Paragraph>
           <Paragraph>
-            Lionceu is a spaceship that attempts to fly to the moon. I am a software developer on this ship.
-            We will learn more things along the journey.
-            It departs from the earth every day and we are improving our engine so that we can fly swiftly in the universe.
-            The ship is attempting to fly to the moon now and it will fly even farther in the future.
-            Join us if you want to conquer the programming space.
+            Lionceu is a spaceship that attempts to fly to the moon. I am a
+            software developer on this ship. We will learn more things along the
+            journey. It departs from the earth every day and we are improving
+            our engine so that we can fly swiftly in the universe. The ship is
+            attempting to fly to the moon now and it will fly even farther in
+            the future. Join us if you want to conquer the programming space.
           </Paragraph>
           <Paragraph>
             It is an adventure of software development! Let us start today.
           </Paragraph>
           <Paragraph>
-            You may visit GitHub if you are interested in my ongoing and upcoming projects.
-            I have developed some works like Discord bot, profile website and meme generator. I am glad if you appreciate them.
-            Please feel free to tell me if you have advice or questions.
+            You may visit GitHub if you are interested in my ongoing and
+            upcoming projects. I have developed some works like Discord bot,
+            profile website and meme generator. I am glad if you appreciate
+            them. Please feel free to tell me if you have advice or questions.
             My contact information is in the SOCIAL MEDIA section.
           </Paragraph>
           <Box align="center" my={4}>
