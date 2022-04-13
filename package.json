@@ -18,7 +18,7 @@
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "cross-env": "^7.0.3",
-    "framer-motion": "^6.2.8",
+    "framer-motion": "^6.2.10",
     "gray-matter": "^4.0.3",
     "marked": "^4.0.12",
     "next": "^12.1.0",
