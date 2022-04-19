@@ -12,9 +12,7 @@ import {
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import Layout from '../../components/layouts/article'
 import styles from '../style.module.css'
-import dynamic from 'next/dynamic'
-
-const Menu = dynamic(() => import('../../components/menu'), { ssr: false })
+import Bottombar from '../../components/menu'
 
 function PostPage({ frontmatter: { title, date }, content }) {
   return (
@@ -48,7 +46,7 @@ function PostPage({ frontmatter: { title, date }, content }) {
           </Box>
         </Box>
       </Layout>
-      <Menu />
+      <Bottombar />
     </>
   )
 }

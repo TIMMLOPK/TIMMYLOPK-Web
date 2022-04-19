@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import VoxelDogLoader from '../voxel-dog-loader'
 
@@ -14,7 +13,7 @@ const LazyVoxelDog = dynamic(() => import('../voxel-dog'), {
   loading: () => <VoxelDogLoader />
 })
 
-const Layout = ({ children, title }) => {
+const Layout = ({ children }) => {
   return (
     <motion.article
       initial="hidden"
@@ -25,13 +24,6 @@ const Layout = ({ children, title }) => {
       position="relative"
     >
       <>
-        {title && (
-          <Head>
-            <title>{title} - once</title>
-            <meta name="twitter:title" content={title} />
-            <meta property="og:title" content={title} />
-          </Head>
-        )}
         <LazyVoxelDog />
         {children}
       </>

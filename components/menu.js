@@ -1,17 +1,11 @@
-import { Stack } from '@chakra-ui/layout'
 import { AiOutlineVerticalAlignTop } from 'react-icons/ai'
-import CopyToClipboard from 'react-copy-to-clipboard'
-import React, { useState } from 'react'
-import { Alert, AlertTitle, Button, CloseButton } from '@chakra-ui/react'
-import { CopyIcon } from '@chakra-ui/icons'
+import { Button, Stack, useClipboard } from '@chakra-ui/react'
+import { CopyIcon, CheckIcon } from '@chakra-ui/icons'
+import { useRouter } from 'next/router'
 
 const Bottombar = () => {
-  const url = window.location.href
-
-  const [state, setState] = useState({
-    value: url,
-    copied: false
-  })
+  const url = useRouter().asPath
+  const { onCopy, hasCopied } = useClipboard('https://www.lionceu.live' + url)
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -22,34 +16,25 @@ const Bottombar = () => {
 
   return (
     <>
-      <Stack position="fixed" bottom="11">
-        {state.copied ? (
-          <Alert status="info">
-            <AlertTitle>Copied</AlertTitle>
-            <CloseButton onClick={() => setState({ copied: false })} />
-          </Alert>
-        ) : null}
-
-        <Stack position="fixed" bottom="10" left="85%">
-          <CopyToClipboard
-            text={state.value}
-            onCopy={() => setState({ copied: true })}
-          >
-            <Button w="50px" h="50px" borderRadius="50%" boxShadow="lg">
-              <CopyIcon />
-            </Button>
-          </CopyToClipboard>
-
-          <Button
-            onClick={scrollToTop}
-            w="50px"
-            h="50px"
-            borderRadius="50%"
-            boxShadow="lg"
-          >
-            <AiOutlineVerticalAlignTop />
-          </Button>
-        </Stack>
+      <Stack position="fixed" bottom="10" left="85%">
+        <Button
+          w="50px"
+          h="50px"
+          borderRadius="50%"
+          boxShadow="lg"
+          onClick={onCopy}
+        >
+          {hasCopied ? <CheckIcon /> : <CopyIcon />}
+        </Button>
+        <Button
+          onClick={scrollToTop}
+          w="50px"
+          h="50px"
+          borderRadius="50%"
+          boxShadow="lg"
+        >
+          <AiOutlineVerticalAlignTop />
+        </Button>
       </Stack>
     </>
   )

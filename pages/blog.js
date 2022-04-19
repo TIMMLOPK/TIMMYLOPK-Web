@@ -3,39 +3,19 @@ import path from 'path'
 import matter from 'gray-matter'
 import Post from '../components/post'
 import { sortByDate } from '../utils/day'
-import { Button, Container, Heading, Input, Stack } from '@chakra-ui/react'
-import { useState } from 'react'
+import { Container, Heading } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 
 function Blog({ posts }) {
-  const [update, setupdate] = useState('All')
   return (
-    <Layout title="Blog">
+    <Layout>
       <Container>
         <Heading as="h3" fontSize={20} mb={4} position="relative">
           Astronaut&apos;s blog
         </Heading>
-        <Stack
-          direction={{ base: 'column', md: 'row' }}
-          display="flex"
-          width={{ base: 'full', md: 'auto' }}
-          mt={{ base: 4, md: 0 }}
-        >
-          <Button
-            onClick={() => {
-              setupdate('All')
-            }}
-            colorScheme="teal"
-          >
-            All
-          </Button>
-          <Input placeholder="Developing..." disabled variant="filled" />
-        </Stack>
-        {posts
-          .filter(post => post.frontmatter.tag.includes(update))
-          .map((posts, index) => (
-            <Post key={index} post={posts} />
-          ))}
+        {posts.map((posts, index) => (
+          <Post key={index} post={posts} />
+        ))}
       </Container>
     </Layout>
   )

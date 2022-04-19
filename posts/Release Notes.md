@@ -1,10 +1,10 @@
 ---
 title: 'Release Notes'
-date: '10-4-2022'
+date: '19-4-2022'
 tag: ['All']
 ---
 
-# 3.9.9 Hightlight Update(Crrent Version)
+# 3.9.10 Hightlight Update(Crrent Version)
 
 ## @Fix bugs
 

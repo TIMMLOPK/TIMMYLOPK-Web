@@ -7,7 +7,7 @@ import image2 from '../public/images/meme.png'
 
 const project = () => {
   return (
-    <Layout title="Project">
+    <Layout>
       <Container position="relative">
         <Stack pt={5}>
           <Heading fontSize="25px">Project Wall</Heading>
@@ -15,7 +15,7 @@ const project = () => {
             href="https://discord.lionceu.live/"
             name="TIMMYLOPK"
             cardImage={image1}
-            buttonMessage="Go to Web"
+            buttonMessage="Visit the website"
           >
             Discord bot
           </Card>
@@ -23,7 +23,7 @@ const project = () => {
             href="https://meme-maker-sec.vercel.app/"
             name="MEME Generator"
             cardImage={image2}
-            buttonMessage="Go to web"
+            buttonMessage="Visit the website"
           >
             MEME Generator
           </Card>
@@ -31,7 +31,7 @@ const project = () => {
             href="https://github.com/TIMMLOPK/once"
             name="CSS Website"
             cardImage={image1}
-            buttonMessage="Go to GitHub"
+            buttonMessage="Visit the repository"
           >
             A simple website by css
           </Card>
