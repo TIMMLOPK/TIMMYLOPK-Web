@@ -9,27 +9,28 @@ import {
   useColorModeValue,
   IconButton,
   Button,
-  Fade,
-  SlideFade
+  Flex
 } from '@chakra-ui/react'
 import ThemeToggleButton from './theme-toggle-button'
-import { IoLogoGithub } from 'react-icons/io5'
-import { FaBlog } from 'react-icons/fa'
-import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
+import { FiGithub } from 'react-icons/fi'
+import { FaBookmark } from 'react-icons/fa'
+import Meunbtn from './icons/Meunbtn'
 import Music from '../components/music'
+import { motion } from 'framer-motion'
 
-const MeunItem = ({ href, _target, children, ...props }) => {
+const MeunItem = ({ href, _target, children, path, ...props }) => {
+  const active = path === href
   return (
-    <NextLink href={href} passHref>
+    <NextLink href={href} passHref prefetch={false}>
       <Button
         variant="ghost"
         my={5}
-        pr="95px"
         w="100%"
+        bg={active ? 'rgba(255, 255, 255, 0.2)' : 'transparent'}
+        boxShadow={active ? '0 4px 30px rgba(0, 0, 0, 0.1)' : 'none'}
+        borderRadius="14px"
         target={_target}
-        _hover="none"
-        _active={{ bg: 'transparent' }}
-        style={{ boxShadow: 'none' }}
+        _hover={{ bg: 'transparent' }}
         {...props}
       >
         {children}
@@ -39,20 +40,18 @@ const MeunItem = ({ href, _target, children, ...props }) => {
 }
 const LinkItem = ({ href, path, _target, children, ...props }) => {
   const active = path === href
-  const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
   return (
-    <NextLink href={href} passHref>
+    <NextLink href={href} passHref prefetch={false}>
       <Button
         p={2}
-        bg={active ? '#B0E0E6' : ''}
-        color={active ? '#202023' : inactiveColor}
-        borderRadius="5px"
+        bg={active ? 'rgba(255, 255, 255, 0.2)' : 'transparent'}
+        boxShadow={active ? '0 4px 30px rgba(0, 0, 0, 0.1)' : 'none'}
         variant="ghost"
         pl={2}
-        transition="all 0.3s"
-        style={{ gap: 5, boxShadow: 'none' }}
+        style={{ gap: 5, width: '110px' }}
         target={_target}
-        _hover={active ? 'none' : undefined}
+        borderRadius="14px"
+        _hover={{ bg: 'transparent' }}
         {...props}
       >
         {children}
@@ -76,10 +75,9 @@ const Navbar = props => {
       <Container
         display="flex"
         p={2}
-        maxW="container.md"
+        maxW="container.xl"
         wrap="wrap"
         align="center"
-        justify="space-between"
       >
         <Stack align="center" mr={5}>
           <Heading size="md" mt="1">
@@ -105,7 +103,7 @@ const Navbar = props => {
             display="inline-flex"
             alignItems="center"
           >
-            <FaBlog />
+            <FaBookmark />
             Blog
           </LinkItem>
           <LinkItem
@@ -115,7 +113,7 @@ const Navbar = props => {
             display="inline-flex"
             alignItems="center"
           >
-            <IoLogoGithub />
+            <FiGithub />
             Github
           </LinkItem>
         </Stack>
@@ -132,39 +130,55 @@ const Navbar = props => {
             variant="ghost"
             _active={{ bg: 'transparent' }}
             style={{ boxShadow: 'none' }}
-            icon={isOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
+            icon={<Meunbtn isOpen={isOpen} />}
             onClick={isOpen ? onClose : onOpen}
             display={{ base: 'inline-flex', md: 'none' }}
           />
-          <Fade in={isOpen} unmountOnExit>
-            <Stack
-              h="100vh"
-              display={{ base: 'block', md: 'none' }}
-              flexDir="column"
-            >
-              <SlideFade in={isOpen} offsetY={150} reverse>
-                <MeunItem href="/" onClick={onClose}>
-                  Home
-                </MeunItem>
-                <MeunItem href="/project" onClick={onClose}>
-                  Project
-                </MeunItem>
-
-                <MeunItem href="/blog" onClick={onClose}>
-                  {' '}
-                  <FaBlog />
-                  Blog
-                </MeunItem>
-                <MeunItem href="https://github.com/TIMMLOPK" onClick={onClose}>
-                  {' '}
-                  <IoLogoGithub />
-                  Github
-                </MeunItem>
-              </SlideFade>
-            </Stack>
-          </Fade>
         </Box>
       </Container>
+      {isOpen && (
+        <Container alignItems="center">
+          <Flex
+            h="100vh"
+            display={{ base: 'flex', md: 'none' }}
+            flexDir="column"
+            position="relative"
+          >
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              variants={{
+                hidden: { opacity: 0, y: -100 },
+                visible: { opacity: 1, y: 0 },
+                exit: { opacity: 0, y: 100 }
+              }}
+              transition={{ type: 'spring', duration: 0.5 }}
+            >
+              <MeunItem href="/" onClick={onClose} path={path}>
+                Home
+              </MeunItem>
+              <MeunItem href="/project" onClick={onClose} path={path}>
+                Project
+              </MeunItem>
+              <MeunItem href="/blog" onClick={onClose} path={path}>
+                {' '}
+                <FaBookmark />
+                Blog
+              </MeunItem>
+              <MeunItem
+                href="https://github.com/TIMMLOPK"
+                onClick={onClose}
+                path={path}
+              >
+                {' '}
+                <FiGithub />
+                Github
+              </MeunItem>
+            </motion.div>
+          </Flex>
+        </Container>
+      )}
     </Box>
   )
 }

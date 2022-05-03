@@ -1,9 +1,10 @@
 import { Heading } from '@chakra-ui/react'
 import NextLink from 'next/link'
+import Layout from '../components/layouts/article'
 
 const Policy = () => {
   return (
-    <>
+    <Layout>
       <Heading>Privacy policy</Heading>
       <p>
         We respect your privacy and are committed to protecting it through our
@@ -366,7 +367,7 @@ const Policy = () => {
         applicable data protection laws.
       </p>
       <p>This document was last updated on February 21, 2022</p>
-    </>
+    </Layout>
   )
 }
 

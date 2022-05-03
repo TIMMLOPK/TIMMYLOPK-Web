@@ -7,11 +7,10 @@ import {
   Box,
   Button,
   List,
-  ListItem,
-  useColorModeValue
+  ListItem
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
-import { IoLogoInstagram, IoLogoGithub } from 'react-icons/io5'
+import { FiGithub, FiInstagram } from 'react-icons/fi'
 import Image from 'next/image'
 import {
   Paragraph,
@@ -25,13 +24,7 @@ const Home = () => {
   return (
     <Layout>
       <Container position="relative">
-        <Box
-          borderRadius="lg"
-          mb={6}
-          p={3}
-          textAlign="center"
-          bg={useColorModeValue('whiteAlpha.800', 'whiteAlpha.200')}
-        >
+        <Box as="h3" mb={6} p={3} textAlign="center">
           <SplitText
             initial={{ y: '100%' }}
             animate="visible"
@@ -48,7 +41,7 @@ const Home = () => {
           </SplitText>
         </Box>
 
-        <Box display={{ md: 'flex' }}>
+        <Box display="flex" alignItems="center">
           <Box flexGrow={1}>
             <Heading as="h2" variant="page-title" translate="no">
               Timmy
@@ -56,10 +49,12 @@ const Home = () => {
             <p>Developer of JavaScript</p>
           </Box>
           <Box
-            flexShrink={0}
             mt={{ base: 4, md: 0 }}
             ml={{ md: 6 }}
-            textAlign="center"
+            display="flex"
+            flexShrink={0}
+            border="3px solid"
+            borderRadius="50%"
           >
             <Image
               width="100px"
@@ -122,14 +117,10 @@ const Home = () => {
             Website 2.4 【once.】
           </BioSection>
           <BioSection>
-            <BioYear>2022-04</BioYear>
-            <Box
-              as="b"
-              color="ActiveCaption"
-              _hover={{ color: useColorModeValue('#000000', '#FFFFFF') }}
-            >
+            <BioYear>2022-05</BioYear>
+            <Box as="b" color="ActiveCaption" _hover={{ color: '#50e3c2' }}>
               <NextLink href="/blog/Release Notes" prefetch={false}>
-                Website 3.9.10 【once.】
+                Website 3.10.0 【once.】
               </NextLink>
               <Box
                 backgroundColor="#50e3c2"
@@ -154,7 +145,7 @@ const Home = () => {
               passHref
               prefetch={false}
             >
-              <Link>My First Website</Link>
+              <Link> → My First Website</Link>
             </NextLink>
             <h1>📷Photography</h1>
             <NextLink
@@ -162,9 +153,8 @@ const Home = () => {
               passHref
               prefetch={false}
             >
-              <Link>tw_wu_as_tim</Link>
+              <Link> → tw_wu_as_tim</Link>
             </NextLink>
-            <h1>🔭Explore More...</h1>
           </Paragraph>
         </Section>
 
@@ -178,7 +168,7 @@ const Home = () => {
                 <Button
                   variant="ghost"
                   colorScheme="teal"
-                  leftIcon={<IoLogoGithub />}
+                  leftIcon={<FiGithub />}
                 >
                   @TIMMLOPK
                 </Button>
@@ -193,7 +183,7 @@ const Home = () => {
                 <Button
                   variant="ghost"
                   colorScheme="teal"
-                  leftIcon={<IoLogoInstagram />}
+                  leftIcon={<FiInstagram />}
                 >
                   @tw_wu_as_tim
                 </Button>

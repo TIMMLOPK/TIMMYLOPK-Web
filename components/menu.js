@@ -16,7 +16,7 @@ const Bottombar = () => {
 
   return (
     <>
-      <Stack position="fixed" bottom="10" left="85%">
+      <Stack position="fixed" bottom="10" left="85%" zIndex={1}>
         <Button
           w="50px"
           h="50px"

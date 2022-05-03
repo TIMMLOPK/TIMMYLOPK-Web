@@ -2,39 +2,20 @@ import path from 'path'
 import fs from 'fs'
 import matter from 'gray-matter'
 import { marked } from 'marked'
-import {
-  Box,
-  Heading,
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink
-} from '@chakra-ui/react'
-import { ChevronRightIcon } from '@chakra-ui/icons'
+import { Box, Button, Heading } from '@chakra-ui/react'
 import Layout from '../../components/layouts/article'
 import styles from '../style.module.css'
 import Bottombar from '../../components/menu'
+import { useRouter } from 'next/router'
 
 function PostPage({ frontmatter: { title, date }, content }) {
+  const router = useRouter()
   return (
     <>
       <Layout>
-        <Breadcrumb
-          spacing="8px"
-          separator={<ChevronRightIcon color="gray.500" />}
-          position="relative"
-        >
-          <BreadcrumbItem>
-            <BreadcrumbLink href="#">Home</BreadcrumbLink>
-          </BreadcrumbItem>
-
-          <BreadcrumbItem>
-            <BreadcrumbLink href="/blog">Blog</BreadcrumbLink>
-          </BreadcrumbItem>
-
-          <BreadcrumbItem isCurrentPage>
-            <BreadcrumbLink>{title}</BreadcrumbLink>
-          </BreadcrumbItem>
-        </Breadcrumb>
+        <Button mb={5} onClick={() => router.back()} size="md">
+          ← Back
+        </Button>
         <Box position="relative">
           <Heading>{title}</Heading>
           <Box pt={5}>Posted on {date}</Box>

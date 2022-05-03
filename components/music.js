@@ -1,9 +1,8 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useRef } from 'react'
 import ReactHowler from 'react-howler'
-import { Button } from '@chakra-ui/button'
 import { AiFillPlayCircle } from 'react-icons/ai'
 import { motion } from 'framer-motion'
-import { Tooltip } from '@chakra-ui/react'
+import { Tooltip, Button, useColorModeValue } from '@chakra-ui/react'
 
 const songsCollections = [
   '/music/夜明けと蛍／天月-あまつき.mp3',
@@ -23,12 +22,11 @@ const Audio = randomSong
 
 const Music = () => {
   const player = useRef(null)
-  const [playing, setplaying] = useState(true)
-  const [loading, setloading] = useState(true)
+  const [playing, setplaying] = useState(false)
 
-  useEffect(() => {
-    player.current.load(Audio)
-  }, [])
+  const handlePlay = () => {
+    player.current.play()
+  }
 
   return (
     <>
@@ -38,8 +36,7 @@ const Music = () => {
           volume={0.45}
           ref={player}
           preload={false}
-          playing={playing ? false : true}
-          onLoad={() => setloading(false)}
+          playing={playing}
         />
       </div>
       <div>
@@ -50,14 +47,19 @@ const Music = () => {
         >
           <Tooltip
             label={Audio.replace('/music/', 'Playing: ').replace('.mp3', '')}
+            bg={useColorModeValue('#ffffff80', '#20202380')}
+            color={useColorModeValue('#00000080', '#ffffff80')}
+            fontSize="xs"
           >
             <Button
-              onClick={() => setplaying(!playing)}
+              onClick={() => {
+                setplaying(!playing)
+                handlePlay()
+              }}
               variant="ghost"
               _active={{ bg: 'transparent' }}
               style={{ boxShadow: 'none' }}
               _hover={{ bg: 'transparent' }}
-              isLoading={loading}
             >
               <AiFillPlayCircle />
             </Button>

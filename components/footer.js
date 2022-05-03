@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const Footer = () => {
   return (
-    <Box align="center" opacity={0.4} fontSize="sm">
+    <Box align="center" opacity={0.4} fontSize="sm" mt={5}>
       &copy; {new Date().getFullYear()} Timmy All Rights Reserved.
       <Stack>
         <Box as="button" align="center">
