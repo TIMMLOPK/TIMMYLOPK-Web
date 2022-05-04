@@ -10,6 +10,8 @@ import {
 import Image from 'next/image'
 import NextLink from 'next/link'
 import Bottombar from '../components/menu'
+import { AiOutlineNotification } from 'react-icons/ai'
+import { IconContext } from 'react-icons'
 
 const LogoMap = [
   {
@@ -54,11 +56,22 @@ const LinkItem = ({ href, children, ...props }) => {
     </NextLink>
   )
 }
+
 const shop = ({ data }) => {
   return (
     <>
       <Bottombar />
       <Box>
+        <Box bg="white" display={data.display_banner ? 'block' : 'none'}>
+          <Box display='flex' alignItems='center'>
+            <IconContext.Provider value={{ color: '#000' }}>
+              <AiOutlineNotification />
+            </IconContext.Provider>
+            <Text fontSize="xl" fontWeight="bold" color='black' ml={10}>
+              {data.content}
+            </Text>
+          </Box>
+        </Box>
         <Box
           position="relative"
           h={{ base: 250, md: 400 }}
@@ -117,9 +130,9 @@ const shop = ({ data }) => {
             </Box>
             <Box ml={5} mt={-8}>
               <Text>日本代購🤍💙</Text>
-              <Text>出團 78-82算 運費平分</Text>
-              <Text>買voice 73算(少量)75算</Text>
-              <Text>代購/中古 8-85算 包括但不限於:</Text>
+              <Text>{data.index_area_line1}</Text>
+              <Text>{data.index_area_line2}</Text>
+              <Text>{data.index_area_line3}</Text>
             </Box>
             <Box paddingTop="5%" textAlign="center">
               <SimpleGrid
@@ -177,11 +190,11 @@ const shop = ({ data }) => {
             <Text>
               (商品日元價格連稅＋日本國内運費(如有))*(本店匯率)+(手續費)+(國際運費)
             </Text>
-            <Text>本月匯率=0.08-0.085(視乎商品日元價格，每月匯率調整)</Text>
+            <Text>本月匯率={data.rate_monthly}(視乎商品日元價格，每月匯率調整)</Text>
             <Text>商品日元價格連稅</Text>
-            <Text>&lt;5000日元，手續費=$20</Text>
-            <Text>5000-10000日元，手續費=$10</Text>
-            <Text>&gt;10000日元，手續費=S0</Text>
+            <Text>&lt;5000日元，手續費=${data.fee_1}</Text>
+            <Text>5000-10000日元，手續費=${data.fee_2}</Text>
+            <Text>&gt;10000日元，手續費=${data.fee_3}</Text>
             <Text>
               -商品日元價格連稅&gt;5000日元,會隨金額提供更優惠的收費匯率，歡迎查詢
             </Text>
@@ -190,9 +203,7 @@ const shop = ({ data }) => {
               <Text>-客人需提供商品網上link/商品名稱</Text>
               <Text>-如商品需在指定時間搶購則以匯率0.1收費</Text>
               <Text>
-                (本店有專業搶購經驗，{data.data.attributes.num}
-                秒內售罄的商品都可搶購，不成功不收費)
-              </Text>
+                (本店有專業搶購經驗，15秒內售罄的商品都可搶購，不成功不收費)</Text>
             </Box>
             <Box
               position="absolute"
@@ -349,13 +360,13 @@ const shop = ({ data }) => {
 }
 
 export async function getStaticProps() {
-  const res = await fetch('https://database-lionceu.herokuapp.com/api/shop')
-  const data = await res.json()
+  const res = await fetch("https://database-lionceu.herokuapp.com/api/shops")
+  let data = await res.json()
   return {
     props: {
-      data
+      data: data.data[0].attributes
     },
-    revalidate: 60
+    revalidate: 120
   }
 }
 
