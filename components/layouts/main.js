@@ -2,20 +2,16 @@ import Head from 'next/head'
 import NavBar from '../navbar'
 import { Box, Container, useColorModeValue } from '@chakra-ui/react'
 import Footer from '../footer'
-import dynamic from 'next/dynamic'
-import VoxelDogLoader from '../voxel-dog-loader'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 
-const LazyVoxelDog = dynamic(() => import('../voxel-dog'), {
-  ssr: false,
-  loading: () => <VoxelDogLoader />
-})
-
 const Main = ({ children, router }) => {
   const page = useRouter().pathname
+
   const isShop = page === '/shop'
+
   const [isVisible, setIsVisible] = useState('flex')
+
   useEffect(() => {
     if (isShop) {
       setIsVisible('none')
@@ -23,6 +19,7 @@ const Main = ({ children, router }) => {
       setIsVisible('flex')
     }
   }, [isShop])
+
   return (
     <>
       <Box as="main" pb={8}>
@@ -41,9 +38,8 @@ const Main = ({ children, router }) => {
           <NavBar path={router.asPath} />
         </div>
         <Container maxW="container.md" pt={14}>
-          <Box display={isVisible}>
-            <LazyVoxelDog />
-          </Box>
+          {children}
+          <Footer />
           <div className="box">
             <div className="circle-box">
               <div className="circle-1" />
@@ -52,8 +48,6 @@ const Main = ({ children, router }) => {
           <div className="circle-box-2">
             <div className="circle-2" />
           </div>
-          {children}
-          <Footer />
         </Container>
       </Box>
       <style jsx>{`
@@ -62,6 +56,7 @@ const Main = ({ children, router }) => {
           top: 0 !important;
           left: 0;
           right: 0;
+          z-index: -999;
         }
         .circle-box {
           position: absolute;

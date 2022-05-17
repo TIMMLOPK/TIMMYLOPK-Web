@@ -120,7 +120,7 @@ const Home = () => {
             <BioYear>2022-05</BioYear>
             <Box as="b" color="ActiveCaption" _hover={{ color: '#50e3c2' }}>
               <NextLink href="/blog/Release Notes" prefetch={false}>
-                Website 3.10.0 【once.】
+                Website 3.10.1 【once.】
               </NextLink>
               <Box
                 backgroundColor="#50e3c2"
@@ -195,7 +195,5 @@ const Home = () => {
     </Layout>
   )
 }
-
-export { getServerSideProps } from '../components/theme-cookie'
 
 export default Home

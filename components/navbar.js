@@ -7,14 +7,13 @@ import {
   Heading,
   useDisclosure,
   useColorModeValue,
-  IconButton,
   Button,
   Flex
 } from '@chakra-ui/react'
 import ThemeToggleButton from './theme-toggle-button'
 import { FiGithub } from 'react-icons/fi'
 import { FaBookmark } from 'react-icons/fa'
-import Meunbtn from './icons/Meunbtn'
+import MeunBtn from './icons/Meunbtn'
 import Music from '../components/music'
 import { motion } from 'framer-motion'
 
@@ -124,16 +123,7 @@ const Navbar = props => {
           <Box ml={2} display="inline-block">
             <Music />
           </Box>
-          <IconButton
-            h="40px"
-            w="40px"
-            variant="ghost"
-            _active={{ bg: 'transparent' }}
-            style={{ boxShadow: 'none' }}
-            icon={<Meunbtn isOpen={isOpen} />}
-            onClick={isOpen ? onClose : onOpen}
-            display={{ base: 'inline-flex', md: 'none' }}
-          />
+          <MeunBtn isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
         </Box>
       </Container>
       {isOpen && (

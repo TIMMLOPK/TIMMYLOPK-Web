@@ -371,6 +371,4 @@ const Policy = () => {
   )
 }
 
-export { getServerSideProps } from '../components/theme-cookie'
-
 export default Policy

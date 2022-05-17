@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { useColorModeValue } from '@chakra-ui/react'
+import { IconButton, useColorModeValue } from '@chakra-ui/react'
 
 const path01Variants = {
   open: { d: 'M3.06061 2.99999L21.0606 21' },
@@ -13,11 +13,8 @@ const path02Variants = {
   closed: { d: 'M24 14.5L10 14.5' }
 }
 
-const MeunBtn = ({ isOpen }) => {
+const MeunBtn = ({ isOpen, onOpen, onClose }) => {
   const [animation, setAnimation] = useState(isOpen ? 'open' : 'closed')
-  const onClick = () => {
-    setAnimation('moving')
-  }
   useEffect(() => {
     if (isOpen) {
       setAnimation('open')
@@ -27,7 +24,15 @@ const MeunBtn = ({ isOpen }) => {
   }, [isOpen])
 
   return (
-    <button onClick={onClick}>
+    <IconButton
+      h="40px"
+      w="40px"
+      variant="ghost"
+      _active={{ bg: 'transparent' }}
+      style={{ boxShadow: 'none' }}
+      onClick={isOpen ? onClose : onOpen}
+      display={{ base: 'inline-flex', md: 'none' }}
+    >
       <svg width="24" height="24" viewBox="0 0 24 24">
         <motion.path
           stroke={useColorModeValue('#000', '#FFF')}
@@ -40,7 +45,7 @@ const MeunBtn = ({ isOpen }) => {
           variants={path02Variants}
         />
       </svg>
-    </button>
+    </IconButton>
   )
 }
 

@@ -4,7 +4,7 @@
 
 ## Info
 
-From from [https://www.craftz.dog/](https://www.craftz.dog/)
+Fork from [https://www.craftz.dog/](https://www.craftz.dog/)
 
 ## Stack
 

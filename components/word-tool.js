@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { chakra, shouldForwardProp, Box, Text } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 
 export function SplitText({ children, ...props }) {
@@ -22,33 +21,26 @@ export function SplitText({ children, ...props }) {
   })
 }
 
-const StyledDiv = chakra(motion.div, {
-  shouldForwardProp: prop => {
-    return shouldForwardProp(prop) || prop === 'transition'
-  }
-})
-
 export const Section = ({ children, delay = 0 }) => {
   return (
-    <StyledDiv
+    <motion.div
       initial={{ y: 10, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, delay }}
-      mb={6}
-      marginTop={10}
+      style={{ marginBottom: 6, marginTop: 15 }}
     >
       {children}
-    </StyledDiv>
+    </motion.div>
   )
 }
 
-export const Paragraph = styled(Text)`
+export const Paragraph = styled.div`
   text-align: justify;
   text-indent: 1em;
   margin-top: 5px;
 `
 
-export const BioSection = styled(Box)`
+export const BioSection = styled.div`
   padding-left: 3.2em;
   text-indent: -3.4em;
   margin-top: 5px;

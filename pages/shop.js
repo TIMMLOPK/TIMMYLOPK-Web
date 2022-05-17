@@ -3,15 +3,18 @@ import {
   Text,
   SimpleGrid,
   Avatar,
-  Button,
-  ButtonGroup,
-  Stack
+  Stack,
+  useColorModeValue
 } from '@chakra-ui/react'
 import Image from 'next/image'
 import NextLink from 'next/link'
-import Bottombar from '../components/menu'
+import dynamic from 'next/dynamic'
 import { AiOutlineNotification } from 'react-icons/ai'
-import { IconContext } from 'react-icons'
+import { motion } from 'framer-motion'
+
+const Bottombar = dynamic(() => import('../components/menu'), {
+  ssr: false
+})
 
 const LogoMap = [
   {
@@ -47,31 +50,36 @@ const LogoMap = [
     src: '/shop/melonbooks.svg'
   }
 ]
-const LinkItem = ({ href, children, ...props }) => {
-  return (
-    <NextLink href={href} passHref>
-      <ButtonGroup>
-        <Button {...props}>{children}</Button>
-      </ButtonGroup>
-    </NextLink>
-  )
-}
 
-const shop = ({ data }) => {
+const Shop = ({ data }) => {
   return (
     <>
-      <Bottombar />
-      <Box>
-        <Box bg="white" display={data.display_banner ? 'block' : 'none'}>
-          <Box display='flex' alignItems='center'>
-            <IconContext.Provider value={{ color: '#000' }}>
-              <AiOutlineNotification />
-            </IconContext.Provider>
-            <Text fontSize="xl" fontWeight="bold" color='black' ml={10}>
-              {data.content}
-            </Text>
-          </Box>
+      <Box
+        bg={useColorModeValue('gray.50', 'gray.900')}
+        alignItems="center"
+        justifyContent="center"
+        display={data.display_banner ? 'flex' : 'none'}
+        mb={data.display_banner ? '25px' : '0'}
+        borderRadius="14px"
+        height="50px"
+      >
+        <Box display="flex" alignItems="center" justifyContent="center">
+          <AiOutlineNotification />
+          <motion.span
+            initial={{ x: -5, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
+            style={{
+              marginLeft: 5
+            }}
+          >
+            <Text fontSize="1rem">{data.content}</Text>
+          </motion.span>
         </Box>
+      </Box>
+
+      <Bottombar inview />
+      <Box>
         <Box
           position="relative"
           h={{ base: 250, md: 400 }}
@@ -88,18 +96,24 @@ const shop = ({ data }) => {
             zIndex: -1
           }}
         >
-          <Text
-            fontSize="0.5%"
-            zIndex={22}
-            textColor="black"
-            pos="absolute"
-            bottom="0"
-            right="0"
+          <p
+            style={{
+              position: 'absolute',
+              bottom: 6,
+              right: 0,
+              color: '#000',
+              fontSize: '0.5px'
+            }}
           >
             Illustration: Sun KAl
-          </Text>
+          </p>
         </Box>
-        <Box bg="white" height={{ base: '550px', md: '400px' }} width="738">
+        <Box
+          bg="white"
+          height={{ base: '550px', md: '400px' }}
+          width="738"
+          mt={-1}
+        >
           <Box color="black">
             <Box textAlign="right" mr={3}>
               <Avatar src="shopicon.jpg" loading="lazy" size="sm" />
@@ -112,18 +126,28 @@ const shop = ({ data }) => {
                 >
                   @murasaki_jpstore
                 </Text>
-                <Image
-                  src="/shop/carosell.svg"
-                  width="20px"
-                  height="20px"
-                  alt="carosell"
-                />
-                <Image
-                  src="/shop/ig.svg"
-                  width="25px"
-                  height="25px"
-                  alt="ins"
-                />
+                <NextLink
+                  href="https://www.carousell.com.hk/u/murasaki_jpstore/"
+                  passHref
+                >
+                  <Image
+                    src="/shop/carosell.svg"
+                    width="20px"
+                    height="20px"
+                    alt="carosell"
+                  />
+                </NextLink>
+                <NextLink
+                  href="https://www.instagram.com/murasaki_jpstore/"
+                  passHref
+                >
+                  <Image
+                    src="/shop/ig.svg"
+                    width="25px"
+                    height="25px"
+                    alt="instagram"
+                  />
+                </NextLink>
               </Box>
               <Text>#上線≠覆DM</Text>
               <Text>#嚴禁棄單</Text>
@@ -156,7 +180,7 @@ const shop = ({ data }) => {
         </Box>
         <Box
           position="relative"
-          h={{ base: '2100px', md: '1850px' }}
+          h={{ base: '2100px', md: '1800px' }}
           _after={{
             content: '""',
             bgImage: 'url(/shop/bg.png)',
@@ -170,19 +194,7 @@ const shop = ({ data }) => {
             opacity: 0.9
           }}
         >
-          <Box margin="auto">
-            <Text as="b" fontSize={20} ml={15}>
-              傳送門
-            </Text>
-            <SimpleGrid columns={[3, null, 5]} mt={15}>
-              <LinkItem href="#1">代購須知</LinkItem>
-              <LinkItem href="#2">付款方式</LinkItem>
-              <LinkItem href="#3">交收方式</LinkItem>
-              <LinkItem href="#4">運送時效</LinkItem>
-              <LinkItem href="#5">風險披霹</LinkItem>
-            </SimpleGrid>
-          </Box>
-          <Box id="1" padding="15px" margin="5px">
+          <Box id="1" padding="15px" marginTop="-5px">
             <Text fontSize={25}>代購須知</Text>
             <Text fontSize={18} paddingBottom="15px">
               收費
@@ -190,7 +202,9 @@ const shop = ({ data }) => {
             <Text>
               (商品日元價格連稅＋日本國内運費(如有))*(本店匯率)+(手續費)+(國際運費)
             </Text>
-            <Text>本月匯率={data.rate_monthly}(視乎商品日元價格，每月匯率調整)</Text>
+            <Text>
+              本月匯率={data.rate_monthly}(視乎商品日元價格，每月匯率調整)
+            </Text>
             <Text>商品日元價格連稅</Text>
             <Text>&lt;5000日元，手續費=${data.fee_1}</Text>
             <Text>5000-10000日元，手續費=${data.fee_2}</Text>
@@ -203,11 +217,12 @@ const shop = ({ data }) => {
               <Text>-客人需提供商品網上link/商品名稱</Text>
               <Text>-如商品需在指定時間搶購則以匯率0.1收費</Text>
               <Text>
-                (本店有專業搶購經驗，15秒內售罄的商品都可搶購，不成功不收費)</Text>
+                (本店有專業搶購經驗，15秒內售罄的商品都可搶購，不成功不收費)
+              </Text>
             </Box>
             <Box
               position="absolute"
-              top="40"
+              top="35"
               right="0"
               display={{ base: 'none', md: 'flex' }}
             >
@@ -219,7 +234,7 @@ const shop = ({ data }) => {
               />
             </Box>
           </Box>
-          <Box id="2">
+          <Box id="2" padding="15px" marginTop="-5px">
             <Text fontSize={25} textAlign="right" mr={25}>
               付款方式
             </Text>
@@ -324,7 +339,7 @@ const shop = ({ data }) => {
             <Box
               display={{ base: 'none', md: 'flex' }}
               pos="absolute"
-              bottom="8rem"
+              bottom="10rem"
             >
               <Image
                 src="/shop/sec_2.png"
@@ -334,7 +349,7 @@ const shop = ({ data }) => {
               />
             </Box>
             <Box textAlign="right" lineHeight={2}>
-              <Text>風險披露</Text>
+              <Text fontSize={25}>風險披露</Text>
               <Text>-所有運輸風險(如日運,國際空運,順豐)</Text>
               <Text>均由顧客承擔</Text>
               <Text>-如貨物在運送途中有任何損壞</Text>
@@ -360,7 +375,7 @@ const shop = ({ data }) => {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("https://database-lionceu.herokuapp.com/api/shops")
+  const res = await fetch('https://database-lionceu.herokuapp.com/api/shops')
   let data = await res.json()
   return {
     props: {
@@ -370,4 +385,4 @@ export async function getStaticProps() {
   }
 }
 
-export default shop
+export default Shop

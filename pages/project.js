@@ -41,6 +41,4 @@ const project = () => {
   )
 }
 
-export { getServerSideProps } from '../components/theme-cookie'
-
 export default project
