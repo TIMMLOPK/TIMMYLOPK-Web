@@ -16,6 +16,7 @@ import { useRouter } from 'next/router'
 import { CgMenuMotion } from 'react-icons/cg'
 import { SunIcon } from './icons/Sunicon'
 import { MoonIcon } from './icons/Moonicon'
+import { useEffect, useState } from 'react'
 
 const Bottombar = ({ inview }) => {
   const url = useRouter().asPath
@@ -27,6 +28,24 @@ const Bottombar = ({ inview }) => {
       behavior: 'smooth'
     })
   }
+  // display scroll to top button
+  const [showScrollToTop, setShowScrollToTop] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY
+      if (scrollTop > 500) {
+        setShowScrollToTop(true)
+      } else {
+        setShowScrollToTop(false)
+      }
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
 
   const { toggleColorMode } = useColorMode()
   const SwitchIcon = useColorModeValue(MoonIcon, SunIcon)
@@ -35,8 +54,8 @@ const Bottombar = ({ inview }) => {
       <Stack
         position="fixed"
         bottom="10"
-        right={{ base: '10', md: '100' }}
         zIndex={1}
+        right={0}
       >
         <Menu>
           <MenuButton
@@ -48,6 +67,10 @@ const Bottombar = ({ inview }) => {
             boxShadow="lg"
             icon={<CgMenuMotion />}
             display={inview ? 'flex' : 'none'}
+            _dark={{
+              bg: 'gray.700',
+              color: 'white'
+            }}
           />
           <MenuList>
             <MenuItem as="a" href="#1">
@@ -75,22 +98,36 @@ const Bottombar = ({ inview }) => {
           borderRadius="50%"
           boxShadow="lg"
           display={inview ? 'flex' : 'none'}
-        />
+          _dark={{
+            bg: 'gray.700',
+            color: 'white'
+          }}
+         aria-label="Toggling Theme"
+          />
         <Button
           w="50px"
           h="50px"
           borderRadius="50%"
           boxShadow="lg"
           onClick={onCopy}
+          _dark={{
+            bg: 'gray.700',
+            color: 'white'
+          }}
         >
           {hasCopied ? <CheckIcon /> : <CopyIcon />}
         </Button>
         <Button
           onClick={scrollToTop}
+          display={showScrollToTop ? 'flex' : 'none'}
           w="50px"
           h="50px"
           borderRadius="50%"
           boxShadow="lg"
+          _dark={{
+            bg: 'gray.700',
+            color: 'white'
+          }}
         >
           <AiOutlineVerticalAlignTop />
         </Button>

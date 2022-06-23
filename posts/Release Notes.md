@@ -5,6 +5,10 @@ date: '03-5-2022'
 
 # Release Notes
 
+## 3.10.2
+
+@ Improvement 
+
 ## 3.10.1
 
 @ Fix bugs
