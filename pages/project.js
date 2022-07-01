@@ -20,7 +20,7 @@ const project = () => {
             Discord bot
           </Card>
           <Card
-            href="https://meme-maker-sec.vercel.app/"
+            href="https://meme.lionceu.live/"
             name="MEME Generator"
             cardImage={image2}
             buttonMessage="Visit the website"

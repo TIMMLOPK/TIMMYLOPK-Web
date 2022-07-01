@@ -41,7 +41,7 @@ const Card = ({
         >
           <Image
             src={cardImage}
-            width="230"
+            width="250"
             height="150"
             alt="Project"
             objectFit="cover"

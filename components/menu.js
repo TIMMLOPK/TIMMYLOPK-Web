@@ -46,17 +46,11 @@ const Bottombar = ({ inview }) => {
     }
   }, [])
 
-
   const { toggleColorMode } = useColorMode()
   const SwitchIcon = useColorModeValue(MoonIcon, SunIcon)
   return (
     <>
-      <Stack
-        position="fixed"
-        bottom="10"
-        zIndex={1}
-        right={0}
-      >
+      <Stack position="fixed" bottom="10" zIndex={1} right={0}>
         <Menu>
           <MenuButton
             as={IconButton}
@@ -102,8 +96,8 @@ const Bottombar = ({ inview }) => {
             bg: 'gray.700',
             color: 'white'
           }}
-         aria-label="Toggling Theme"
-          />
+          aria-label="Toggling Theme"
+        />
         <Button
           w="50px"
           h="50px"
