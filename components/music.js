@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react'
 import ReactHowler from 'react-howler'
 import { AiFillPlayCircle } from 'react-icons/ai'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { Tooltip, Button, useColorModeValue } from '@chakra-ui/react'
 
 const songsCollections = [
@@ -40,13 +40,13 @@ const Music = () => {
         />
       </div>
       <div>
-        <motion.div
+        <m.div
           whileTap={{ scale: 0.9 }}
           animate={{ scale: [0.5, 1.1] }}
           transition={{ type: 'spring', duration: 0.2 }}
         >
           <Tooltip
-            label={Audio.replace('/music/', 'Playing: ').replace('.mp3', '')}
+            label={Audio.replace('/music/', '').replace('.mp3', '')}
             bg={useColorModeValue('#ffffff80', '#20202380')}
             color={useColorModeValue('#00000080', '#ffffff80')}
             fontSize="xs"
@@ -64,7 +64,7 @@ const Music = () => {
               <AiFillPlayCircle />
             </Button>
           </Tooltip>
-        </motion.div>
+        </m.div>
       </div>
     </>
   )

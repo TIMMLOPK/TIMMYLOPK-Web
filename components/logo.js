@@ -1,6 +1,6 @@
 import NextLink from 'next/link'
 import Image from 'next/image'
-import { Link, Text, useColorModeValue } from '@chakra-ui/react'
+import { Text, useColorModeValue } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 
 import logoImg from '../public/images/avatar.png'
@@ -12,6 +12,14 @@ const LogoBox = styled.span`
   align-items: center;
   height: 30px;
   line-height: 20px;
+  cursor: pointer;
+
+  img {
+    transition: all 0.3s ease;
+  }
+  &:hover img {
+    transform: rotate(15deg);
+  }
 `
 
 const Logo = () => {
@@ -19,14 +27,13 @@ const Logo = () => {
     <NextLink href="/" passHref>
       <LogoBox>
         <Image src={logoImg} width={20} height={20} alt="logo" priority />
-        <Link color={useColorModeValue('black', 'white')}>
-          <Text
-            color={useColorModeValue('gray.800', 'whiteAlpha.900')}
-            fontWeight="bold"
-          >
-            once.
-          </Text>
-        </Link>
+        <Text
+          color={useColorModeValue('gray.800', 'whiteAlpha.900')}
+          fontWeight="bold"
+          textColor={useColorModeValue('black', 'white')}
+        >
+          once.
+        </Text>
       </LogoBox>
     </NextLink>
   )

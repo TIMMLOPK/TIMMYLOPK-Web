@@ -4,6 +4,13 @@ import { Box, Container, useColorModeValue } from '@chakra-ui/react'
 import Footer from '../footer'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
+import dynamic from 'next/dynamic'
+import VoxelDogLoader from '../voxel-dog-loader'
+
+const LazyVoxelDog = dynamic(() => import('../voxel-dog'), {
+  ssr: false,
+  loading: () => <VoxelDogLoader />
+})
 
 const Main = ({ children, router }) => {
   const page = useRouter().pathname
@@ -38,6 +45,9 @@ const Main = ({ children, router }) => {
           <NavBar path={router.asPath} />
         </div>
         <Container maxW="container.md" pt={14}>
+          <div style={{ display: isVisible }}>
+            <LazyVoxelDog />
+          </div>
           {children}
           <Footer />
           <div className="box">
@@ -68,8 +78,8 @@ const Main = ({ children, router }) => {
         .circle-1 {
           mix-blend-mode: multiply;
           position: absolute;
-          width: 200px;
-          height: 200px;
+          width: 150px;
+          height: 150px;
           border-radius: 40rem;
           background: radial-gradient(
             closest-side,
@@ -82,8 +92,8 @@ const Main = ({ children, router }) => {
         .circle-2 {
           mix-blend-mode: multiply;
           position: absolute;
-          width: 250px;
-          height: 250px;
+          width: 200px;
+          height: 200px;
           border-radius: 40rem;
           background: radial-gradient(
             closest-side,

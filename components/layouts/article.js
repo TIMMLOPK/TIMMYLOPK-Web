@@ -1,11 +1,4 @@
-import { motion } from 'framer-motion'
-import dynamic from 'next/dynamic'
-import VoxelDogLoader from '../voxel-dog-loader'
-
-const LazyVoxelDog = dynamic(() => import('../voxel-dog'), {
-  ssr: false,
-  loading: () => <VoxelDogLoader />
-})
+import { m } from 'framer-motion'
 
 const variants = {
   hidden: { opacity: 0, x: 0, y: 20 },
@@ -16,8 +9,7 @@ const variants = {
 const Layout = ({ children }) => {
   return (
     <>
-      <LazyVoxelDog />
-      <motion.article
+      <m.article
         initial="hidden"
         animate="enter"
         exit="exit"
@@ -26,7 +18,7 @@ const Layout = ({ children }) => {
         position="relative"
       >
         {children}
-      </motion.article>
+      </m.article>
     </>
   )
 }

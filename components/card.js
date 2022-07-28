@@ -4,11 +4,17 @@ import {
   Text,
   Button,
   useColorModeValue,
-  Heading
+  Heading,
+  chakra
 } from '@chakra-ui/react'
 import Image from 'next/image'
 import NextLink from 'next/link'
 import { motion } from 'framer-motion'
+
+const ImageWrapper = chakra(Image, {
+  baseStyle: { maxH: 300, maxW: 170 },
+  shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
+})
 
 const Card = ({
   children,
@@ -36,17 +42,18 @@ const Card = ({
           h="100%"
           direction={{ base: 'column', md: 'row' }}
           bg={useColorModeValue('white', 'black')}
-          boxShadow="dark-lg"
+          boxShadow="md"
           padding={4}
         >
-          <Image
+          <ImageWrapper
             src={cardImage}
-            width="250"
-            height="150"
+            width="240"
+            height="120"
             alt="Project"
             objectFit="cover"
             placeholder="blur"
             loading="lazy"
+            borderRadius="sm"
           />
           <Stack
             flex={1}
@@ -59,8 +66,8 @@ const Card = ({
             <Heading fontSize="4x1" fontFamily="body">
               {name}
             </Heading>
-            <Text fontWeight={500} color="gray.500" size="sm" mb={4}>
-              @{children}
+            <Text fontWeight={500} size="sm" mb={4} textColor="gray.500">
+              #{children}
             </Text>
             <Stack
               width="100%"

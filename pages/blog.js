@@ -3,19 +3,21 @@ import path from 'path'
 import matter from 'gray-matter'
 import Post from '../components/post'
 import { sortByDate } from '../utils/day'
-import { Container, Heading } from '@chakra-ui/react'
+import { Container, Heading, Stack } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 
 function Blog({ posts }) {
   return (
     <Layout>
       <Container>
-        <Heading as="h3" fontSize={20} mb={4} position="relative">
+        <Heading as="h3" fontSize={25} mb={4} position="relative">
           Astronaut&apos;s blog
         </Heading>
-        {posts.map((posts, index) => (
-          <Post key={index} post={posts} />
-        ))}
+        <Stack>
+          {posts.map((posts, index) => (
+            <Post key={index} post={posts} />
+          ))}
+        </Stack>
       </Container>
     </Layout>
   )

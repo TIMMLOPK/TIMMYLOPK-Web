@@ -28,7 +28,7 @@ const Bottombar = ({ inview }) => {
       behavior: 'smooth'
     })
   }
-  // display scroll to top button
+
   const [showScrollToTop, setShowScrollToTop] = useState(false)
 
   useEffect(() => {
@@ -50,7 +50,7 @@ const Bottombar = ({ inview }) => {
   const SwitchIcon = useColorModeValue(MoonIcon, SunIcon)
   return (
     <>
-      <Stack position="fixed" bottom="10" zIndex={1} right={0}>
+      <Stack position="fixed" bottom="10" zIndex={1} right={5}>
         <Menu>
           <MenuButton
             as={IconButton}

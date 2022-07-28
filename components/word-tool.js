@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import styled from '@emotion/styled'
 
 export function SplitText({ children, ...props }) {
@@ -9,13 +9,13 @@ export function SplitText({ children, ...props }) {
         key={children + i}
         style={{ display: 'inline-block', overflow: 'hidden' }}
       >
-        <motion.div
+        <m.div
           {...props}
           style={{ display: 'inline-block', willChange: 'transform' }}
           custom={i}
         >
           {word + (i !== words.length - 0 ? '\u00A0' : '')}
-        </motion.div>
+        </m.div>
       </div>
     )
   })
@@ -23,14 +23,14 @@ export function SplitText({ children, ...props }) {
 
 export const Section = ({ children, delay = 0 }) => {
   return (
-    <motion.div
+    <m.div
       initial={{ y: 10, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, delay }}
       style={{ marginBottom: 6, marginTop: 15 }}
     >
       {children}
-    </motion.div>
+    </m.div>
   )
 }
 

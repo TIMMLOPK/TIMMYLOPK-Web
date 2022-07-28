@@ -1,15 +1,14 @@
 import Layout from '../components/layouts/article'
 import NextLink from 'next/link'
 import {
-  Link,
   Container,
   Heading,
   Box,
   Button,
   List,
-  ListItem
+  ListItem,
+  Text
 } from '@chakra-ui/react'
-import { ChevronRightIcon } from '@chakra-ui/icons'
 import { FiGithub, FiInstagram } from 'react-icons/fi'
 import Image from 'next/image'
 import {
@@ -37,23 +36,24 @@ const Home = () => {
               })
             }}
           >
-            Hello,Welcome to the moon!
+            Hey, I&apos;m Timmy. ❣️
           </SplitText>
         </Box>
 
         <Box display="flex" alignItems="center">
           <Box flexGrow={1}>
-            <Heading as="h2" variant="page-title" translate="no">
+            <Heading variant="page-title" translate="no">
               Timmy
             </Heading>
-            <p>Developer of JavaScript</p>
+            <Box mt={3} fontSize="14px" mb={5}>
+              Developer / Student
+            </Box>
           </Box>
           <Box
             mt={{ base: 4, md: 0 }}
             ml={{ md: 6 }}
             display="flex"
             flexShrink={0}
-            border="3px solid"
             borderRadius="50%"
           >
             <Image
@@ -67,7 +67,7 @@ const Home = () => {
 
         <Section delay={0.1}>
           <Heading as="h3" variant="section-title">
-            Infomation
+            Introduction
           </Heading>
           <Paragraph>
             Hello! I am Timmy, a front-end developer. I am excited for you to
@@ -91,18 +91,45 @@ const Home = () => {
             them. Please feel free to tell me if you have advice or questions.
             My contact information is in the SOCIAL MEDIA section.
           </Paragraph>
-          <Box align="center" my={4}>
-            <NextLink href="/project" prefetch={false} passHref>
-              <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
-                Project
-              </Button>
-            </NextLink>
-          </Box>
         </Section>
 
-        <Section delay={0.2}>
+        <Section delay={0.3}>
           <Heading as="h3" variant="section-title">
-            Website Version 🚄
+            My Experience
+          </Heading>
+          <h1>💻 Developing</h1>
+          <Paragraph>
+            <List>
+              <ListItem>🚀JavaScript</ListItem>
+              <ListItem>🚀Rust</ListItem>
+              <ListItem>🚀Python</ListItem>
+              <ListItem>🪄React</ListItem>
+              <ListItem>🪄Next.js</ListItem>
+            </List>
+            <Box m={2}>
+              ↪ More information in{' '}
+              <NextLink href="/project" prefetch={false}>
+                Project
+              </NextLink>
+            </Box>
+          </Paragraph>
+          <h1>📷 Photography</h1>
+          <Paragraph>
+            <NextLink
+              href="https://www.instagram.com/tw_wu_as_tim/"
+              passHref
+              prefetch={false}
+            >
+              <Text textColor="blue.500" cursor="pointer">
+                → tw_wu_as_tim
+              </Text>
+            </NextLink>
+          </Paragraph>
+        </Section>
+
+        <Section delay={0.3}>
+          <Heading as="h3" variant="section-title">
+            Milestones
           </Heading>
           <BioSection>
             <BioYear>2021-09</BioYear>
@@ -120,7 +147,7 @@ const Home = () => {
             <BioYear>2022-07</BioYear>
             <Box as="b">
               <NextLink href="/blog/Release Notes" prefetch={false}>
-                Website 3.10.3 【once.】
+                Website 3.10.4 【once.】
               </NextLink>
               <Box
                 backgroundColor="#50e3c2"
@@ -136,35 +163,11 @@ const Home = () => {
 
         <Section delay={0.3}>
           <Heading as="h3" variant="section-title">
-            My Experience
-          </Heading>
-          <Paragraph>
-            <h1>💻Developing Works</h1>
-            <NextLink
-              href="https://github.com/TIMMLOPK/once"
-              passHref
-              prefetch={false}
-            >
-              <Link> → My First Website</Link>
-            </NextLink>
-            <h1>📷Photography</h1>
-            <NextLink
-              href="https://www.instagram.com/tw_wu_as_tim/"
-              passHref
-              prefetch={false}
-            >
-              <Link> → tw_wu_as_tim</Link>
-            </NextLink>
-          </Paragraph>
-        </Section>
-
-        <Section delay={0.3}>
-          <Heading as="h3" variant="section-title">
             SOICAL MEDIA
           </Heading>
           <List>
             <ListItem>
-              <Link href="https://github.com/TIMMLOPK/" target="_blank">
+              <NextLink href="https://github.com/TIMMLOPK/" target="_blank">
                 <Button
                   variant="ghost"
                   colorScheme="teal"
@@ -172,11 +175,11 @@ const Home = () => {
                 >
                   @TIMMLOPK
                 </Button>
-              </Link>
+              </NextLink>
             </ListItem>
 
             <ListItem>
-              <Link
+              <NextLink
                 href="https://www.instagram.com/tw_wu_as_tim/"
                 target="_blank"
               >
@@ -187,7 +190,7 @@ const Home = () => {
                 >
                   @tw_wu_as_tim
                 </Button>
-              </Link>
+              </NextLink>
             </ListItem>
           </List>
         </Section>

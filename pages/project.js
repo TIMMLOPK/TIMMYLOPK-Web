@@ -10,10 +10,20 @@ const project = () => {
     <Layout>
       <Container position="relative">
         <Stack pt={5}>
-          <Heading fontSize="25px">Project Wall</Heading>
+          <Heading as="h3" fontSize={25} mb={4} position="relative">
+            Project Wall
+          </Heading>
+          <Card
+            name="npm outdated.rs"
+            href="https://github.com/TIMMLOPK/npm-outdated-rs"
+            cardImage={image1}
+            buttonMessage="Visit the repository"
+          >
+            List outdated packages
+          </Card>
           <Card
             href="https://discord.lionceu.live/"
-            name="TIMMYLOPK"
+            name="ONCE"
             cardImage={image1}
             buttonMessage="Visit the website"
           >

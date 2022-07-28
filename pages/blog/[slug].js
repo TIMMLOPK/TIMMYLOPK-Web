@@ -18,7 +18,9 @@ function PostPage({ frontmatter: { title, date }, content }) {
         </Button>
         <Box position="relative">
           <Heading>{title}</Heading>
-          <Box pt={5}>Posted on {date}</Box>
+          <Box pt={7} pb={5} textColor="gray.400" fontWeight={500}>
+            Posted on {date}
+          </Box>
           <Box lineHeight="2.3" margin="10px 0">
             <Box
               dangerouslySetInnerHTML={{ __html: marked(content) }}
