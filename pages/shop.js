@@ -155,7 +155,7 @@ const Shop = ({ data }) => {
         </Box>
         <Box
           position="relative"
-          h={{ base: '2050px', md: '2050px' }}
+          h={{ base: '2150px', md: '2050px' }}
           _after={{
             content: '""',
             bgImage: 'url(/shop/bg.png)',
@@ -256,7 +256,7 @@ const Shop = ({ data }) => {
               <Box display={{ base: 'none', md: 'block' }}>
                 <Image src={Kanae} width="200%" height="300%" alt="Kanae" />
               </Box>
-              <Box lineHeight={2}>
+              <Box lineHeight={1.8}>
                 <Text fontSize={27} pb={2}>
                   交收方式
                 </Text>
