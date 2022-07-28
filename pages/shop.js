@@ -12,8 +12,8 @@ import dynamic from 'next/dynamic'
 import { AiOutlineNotification } from 'react-icons/ai'
 import { motion } from 'framer-motion'
 
-import Kuzuha from '../public/shop/kuzuha.png'
-import Kanae from '../public/shop/kanae.png'
+import Kuzuha from '../public/shop/Kuzuha.png'
+import Kanae from '../public/shop/Kanae.png'
 import Sec_1 from '../public/shop/sec_1.png'
 import Sec_2 from '../public/shop/sec_2.png'
 
