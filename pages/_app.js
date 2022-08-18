@@ -10,7 +10,7 @@ function Website({ Component, pageProps, router }) {
       <ChakraProvider theme={theme}>
         <Layout router={router}>
           <LazyMotion features={domMax}>
-            <AnimatePresence exitBeforeEnter initial>
+            <AnimatePresence initial mode="wait">
               <Component {...pageProps} key={router.route} />
             </AnimatePresence>
           </LazyMotion>

@@ -144,10 +144,10 @@ const Home = () => {
             Website 2.4 【once.】
           </BioSection>
           <BioSection>
-            <BioYear>2022-07</BioYear>
+            <BioYear>2022-08</BioYear>
             <Box as="b">
               <NextLink href="/blog/Release Notes" prefetch={false}>
-                Website 3.10.4 【once.】
+                Website 3.10.5 【once.】
               </NextLink>
               <Box
                 backgroundColor="#50e3c2"

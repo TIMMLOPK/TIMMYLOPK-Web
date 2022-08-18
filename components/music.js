@@ -1,7 +1,7 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useCallback } from 'react'
 import ReactHowler from 'react-howler'
 import { AiFillPlayCircle } from 'react-icons/ai'
-import { m } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Tooltip, Button, useColorModeValue } from '@chakra-ui/react'
 
 const songsCollections = [
@@ -24,9 +24,9 @@ const Music = () => {
   const player = useRef(null)
   const [playing, setplaying] = useState(false)
 
-  const handlePlay = () => {
+  const handlePlay = useCallback(() => {
     player.current.play()
-  }
+  }, [player])
 
   return (
     <>
@@ -40,7 +40,7 @@ const Music = () => {
         />
       </div>
       <div>
-        <m.div
+        <motion.div
           whileTap={{ scale: 0.9 }}
           animate={{ scale: [0.5, 1.1] }}
           transition={{ type: 'spring', duration: 0.2 }}
@@ -64,7 +64,7 @@ const Music = () => {
               <AiFillPlayCircle />
             </Button>
           </Tooltip>
-        </m.div>
+        </motion.div>
       </div>
     </>
   )

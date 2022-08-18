@@ -107,7 +107,7 @@ const Navbar = props => {
           </LinkItem>
           <LinkItem
             target="_blank"
-            href="https://github.com/TIMMLOPK"
+            href="https://github.com/TIMMLOPK/TIMMYLOPK-Web"
             path={path}
             display="inline-flex"
             alignItems="center"
@@ -157,7 +157,7 @@ const Navbar = props => {
                 Blog
               </MeunItem>
               <MeunItem
-                href="https://github.com/TIMMLOPK"
+                href="https://github.com/TIMMLOPK/TIMMYLOPK-Web"
                 onClick={onClose}
                 path={path}
               >
