@@ -1,6 +1,6 @@
 # LIONCEU
 
-[https://www.lionce.live/](https://www.lionceu.live/)
+[https://www.lionceu.live/](https://www.lionceu.live/)
 
 ## Info
 
