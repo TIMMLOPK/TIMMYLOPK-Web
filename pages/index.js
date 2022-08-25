@@ -47,10 +47,10 @@ const Home = () => {
         <div className="md:flex md:w-full md:justify-center md:items-center md:flex-col md:p-6">
           <h1 className="font-bold text-3xl">About me</h1>
           <br />
-          <p>Your life is not undefined.</p>
+          <strong>Your life is not undefined.</strong>
         </div>
         <div className="md:flex md:w-full md:justify-center md:items-center mt-2">
-          <p className="font-normal text-gray-600">
+          <p className="font-normal text-gray-600 dark:text-gray-300">
             Hello, I am a student come from Hong Kong.I am learning web
             development.
             <br />
@@ -70,42 +70,42 @@ const Home = () => {
         onChange={(inView) => setinview(inView && "lang")}
         threshold={0.5}
       >
-        <h1 className="font-bold text-2xl">Languages & Skills</h1>
+        <h1 className="font-bold text-2xl">📦 Languages & Skills</h1>
         <br />
         <div className="grid gap-5 md:grid-flow-col md:grid-rows-2 md:grid-cols-3 md:gap-8">
           <div>
             <Card
               icons={<SiRust />}
               name="Rust"
-              description="Rust is a systems programming language that is statically typed and compiled to machine code."
+              description="🪄I use it to build npm outdated checker."
             />
           </div>
           <div>
             <Card
               icons={<SiJavascript />}
               name="Javascript"
-              description="Javascript is a programming language that is used to create webpages and web applications."
+              description="My favorite language."
             />
           </div>
           <div>
             <Card
               icons={<SiPython />}
               name="Python"
-              description="Python is a programming language that is used to create webpages and web applications."
+              description="📦 Coming soon."
             />
           </div>
           <div>
             <Card
               icons={<SiReact />}
               name="React"
-              description="React is a library that is used to create webpages and web applications."
+              description="📦 Coming soon."
             />
           </div>
           <div>
             <Card
               icons={<SiNextdotjs />}
               name="Next.js"
-              description="Next.js is a library that is used to create webpages and web applications."
+              description="This page is built with Next.js 💙🤍"
             />
           </div>
         </div>
@@ -117,7 +117,7 @@ const Home = () => {
         onChange={(inView) => setinview(inView && "projects")}
         threshold={0.5}
       >
-        <h1 className="font-bold text-2xl">Projects</h1>
+        <h1 className="font-bold text-2xl">📁 Projects</h1>
         <br />
         <div>
           <ProjectCard

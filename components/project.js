@@ -3,12 +3,10 @@ import NextLink from "next/link";
 const ProjectCard = ({ title, description, link }) => {
   return (
     <div className="p-8 max-w-sm bg-gray-50 rounded-lg shadow-md dark:bg-black dark:text-white">
-      <a href="#">
         <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
           {title}
         </h5>
-      </a>
-      <p className="mb-3 font-normal text-gray-400">{description}</p>
+      <p className="mb-2 font-normal text-gray-400">{description}</p>
       <NextLink href={link}>
         <button className="mt-5 inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-black rounded-lg hover:opacity-75">
           View Project
