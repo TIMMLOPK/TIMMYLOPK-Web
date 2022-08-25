@@ -22,7 +22,11 @@ const Navbar = ({ show, inView }) => {
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
-    setActive(inView);
+    if (!inView) {
+      setActive("about")
+    } else {
+      setActive(inView);
+    }
     const nav = document.getElementById("navbar");
     if (nav) {
       nav.addEventListener("mouseenter", () => {
@@ -49,9 +53,8 @@ const Navbar = ({ show, inView }) => {
 
   return (
     <nav
-      className={`fixed top-1/3 bottom-1/3 ${
-        showNav ? "right-3" : "right-[-30px]"
-      } z-10 transition-all duration-200 ease-in-out`}
+      className={`fixed top-1/3 bottom-1/3 ${showNav ? "right-3" : "right-[-30px]"
+        } z-10 transition-all duration-200 ease-in-out`}
       id="navbar"
     >
       <div className="h-[340px] w-10 bg-black text-white rounded-md shadow-lg backdrop-filter backdrop-blur-lg bg-opacity-80 p-1">
@@ -63,9 +66,8 @@ const Navbar = ({ show, inView }) => {
                   scrollTo("about");
                   setActive("about");
                 }}
-                className={`${
-                  active === "about" ? "bg-yellow-500" : "bg-transparent"
-                } p-2 rounded-md`}
+                className={`${active === "about" ? "bg-yellow-500" : "bg-transparent"
+                  } p-2 rounded-md`}
               >
                 <SiAboutdotme />
               </button>
@@ -78,9 +80,8 @@ const Navbar = ({ show, inView }) => {
                   scrollTo("lang");
                   setActive("lang");
                 }}
-                className={`${
-                  active === "lang" ? "bg-yellow-500" : "bg-transparent"
-                } p-2 rounded-md`}
+                className={`${active === "lang" ? "bg-yellow-500" : "bg-transparent"
+                  } p-2 rounded-md`}
               >
                 <FcSettings />
               </button>
@@ -94,9 +95,8 @@ const Navbar = ({ show, inView }) => {
                   scrollTo("projects");
                   setActive("projects");
                 }}
-                className={`${
-                  active === "projects" ? "bg-yellow-500" : "bg-transparent"
-                } p-2 rounded-md`}
+                className={`${active === "projects" ? "bg-yellow-500" : "bg-transparent"
+                  } p-2 rounded-md`}
               >
                 <AiOutlineFolder />
               </button>
