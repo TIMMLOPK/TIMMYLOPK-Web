@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Card from "../components/card.js";
+import Card from "../components/langCard.js";
 import Layout from "../components/Layout/main.js";
 import {
   SiRust,
@@ -8,10 +8,17 @@ import {
   SiReact,
   SiNextdotjs,
 } from "react-icons/si";
+import { MdOutlineTouchApp } from "react-icons/md";
 import ProjectCard from "../components/project.js";
 import { InView } from "react-intersection-observer";
 import { useState } from "react";
 import Sparkles from "../components/AnimatedText.js";
+import Social from "../components/social.js";
+import {
+  DiscordLogoIcon,
+  GitHubLogoIcon,
+  InstagramLogoIcon,
+} from "@radix-ui/react-icons";
 
 const Home = () => {
   const [inview, setinview] = useState("about");
@@ -59,7 +66,7 @@ const Home = () => {
             upcoming projects. I have developed some works like Discord bot,
             profile website and meme generator. I am glad if you appreciate
             them. Please feel free to tell me if you have advice or questions.
-            My contact information is in the SOCIAL MEDIA section.
+            My contact information is in the <a href="#social">social media</a>
           </p>
         </div>
       </InView>
@@ -71,8 +78,11 @@ const Home = () => {
         threshold={0.5}
       >
         <h1 className="font-bold text-2xl">📦 Languages & Skills</h1>
+        <Social icon={<MdOutlineTouchApp />} isLink={false}>
+          Click them
+        </Social>
         <br />
-        <div className="grid gap-5 md:grid-flow-col md:grid-rows-2 md:grid-cols-3 md:gap-8">
+        <div className="grid gap-5 md:grid-flow-col md:grid-rows-3 md:gap-8">
           <div>
             <Card
               icons={<SiRust />}
@@ -125,6 +135,35 @@ const Home = () => {
             description="#Discord bot"
             link="https://discord.lionceu.live/"
           />
+        </div>
+      </InView>
+      <InView
+        className="min-h-screen p-6"
+        id="social"
+        as="section"
+        threshold={0.5}
+        onChange={(inView) => setinview(inView && "social")}
+      >
+        <h1 className="font-bold text-2xl">📱 Social Media</h1>
+        <br />
+        <div className="grid gap-8 md:grid-flow-col md:grid-rows-3 md:gap-20">
+          <Social
+            icon={<GitHubLogoIcon />}
+            url="https://github.com/TIMMLOPK"
+            isLink
+          >
+            TIMMLOPK
+          </Social>
+          <Social icon={<DiscordLogoIcon />} url="https://discord.com" isLink>
+            Timmy#2600
+          </Social>
+          <Social
+            icon={<InstagramLogoIcon />}
+            url="https://www.instagram.com/tw_wu_as_tim/"
+            isLink
+          >
+            tw_wu_as_tim
+          </Social>
         </div>
       </InView>
     </Layout>

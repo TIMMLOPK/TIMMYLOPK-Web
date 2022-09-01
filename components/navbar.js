@@ -1,7 +1,7 @@
 import Tooltip from "./tooltip";
 import { AiOutlineFolder } from "react-icons/ai";
 import { SiAboutdotme } from "react-icons/si";
-import { FcSettings } from "react-icons/fc";
+import { FcContacts, FcSettings } from "react-icons/fc";
 import { BsArrowBarRight } from "react-icons/bs";
 import { FiMoon, FiSun } from "react-icons/fi";
 import { useEffect, useState } from "react";
@@ -23,7 +23,7 @@ const Navbar = ({ show, inView }) => {
 
   useEffect(() => {
     if (!inView) {
-      setActive("about")
+      setActive("about");
     } else {
       setActive(inView);
     }
@@ -53,11 +53,12 @@ const Navbar = ({ show, inView }) => {
 
   return (
     <nav
-      className={`fixed top-1/3 bottom-1/3 ${showNav ? "right-3" : "right-[-30px]"
-        } z-10 transition-all duration-200 ease-in-out`}
+      className={`fixed top-1/4 ${
+        showNav ? "right-2" : "right-[-30px]"
+      } z-10 transition-all duration-200 ease-in-out`}
       id="navbar"
     >
-      <div className="h-[340px] w-10 bg-black text-white rounded-md shadow-lg backdrop-filter backdrop-blur-lg bg-opacity-80 p-1">
+      <div className="h-[400px] w-10 bg-black text-white rounded-md shadow-lg backdrop-filter backdrop-blur-lg bg-opacity-80 p-1">
         <div className="mt-6 flex flex-col items-center">
           <div>
             <Tooltip message="About">
@@ -66,8 +67,9 @@ const Navbar = ({ show, inView }) => {
                   scrollTo("about");
                   setActive("about");
                 }}
-                className={`${active === "about" ? "bg-yellow-500" : "bg-transparent"
-                  } p-2 rounded-md`}
+                className={`${
+                  active === "about" ? "bg-yellow-500" : "bg-transparent"
+                } p-2 rounded-md`}
               >
                 <SiAboutdotme />
               </button>
@@ -80,8 +82,9 @@ const Navbar = ({ show, inView }) => {
                   scrollTo("lang");
                   setActive("lang");
                 }}
-                className={`${active === "lang" ? "bg-yellow-500" : "bg-transparent"
-                  } p-2 rounded-md`}
+                className={`${
+                  active === "lang" ? "bg-yellow-500" : "bg-transparent"
+                } p-2 rounded-md`}
               >
                 <FcSettings />
               </button>
@@ -95,13 +98,31 @@ const Navbar = ({ show, inView }) => {
                   scrollTo("projects");
                   setActive("projects");
                 }}
-                className={`${active === "projects" ? "bg-yellow-500" : "bg-transparent"
-                  } p-2 rounded-md`}
+                className={`${
+                  active === "projects" ? "bg-yellow-500" : "bg-transparent"
+                } p-2 rounded-md`}
               >
                 <AiOutlineFolder />
               </button>
             </Tooltip>
           </div>
+
+          <div className="mt-8">
+            <Tooltip message="Social">
+              <button
+                onClick={() => {
+                  scrollTo("social");
+                  setActive("social");
+                }}
+                className={`${
+                  active === "social" ? "bg-yellow-500" : "bg-transparent"
+                } p-2 rounded-md`}
+              >
+                <FcContacts />
+              </button>
+            </Tooltip>
+          </div>
+
           <div className="mt-8">
             <button
               onClick={() => {
