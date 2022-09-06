@@ -22,11 +22,12 @@ const Bottombar = dynamic(() => import('../components/menu'), {
 })
 
 const Shop = ({ data }) => {
+  const bgColor = useColorModeValue('gray.50', 'gray.900')
   return (
     <>
       {data.display_banner && (
         <Box
-          bg={useColorModeValue('gray.50', 'gray.900')}
+          bg={bgColor}
           alignItems="center"
           justifyContent="center"
           display="flex"
