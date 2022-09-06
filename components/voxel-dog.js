@@ -11,33 +11,23 @@ function easeOutCirc(x) {
 const VoxelDog = () => {
   const refContainer = useRef()
   const [loading, setLoading] = useState(true)
-  const [renderer, setRenderer] = useState()
-  const [_camera, setCamera] = useState()
-  const [target] = useState(new THREE.Vector3(0, -0.5, 0))
-  const [initialCameraPosition] = useState(
-    new THREE.Vector3(
-      20 * Math.sin(0.2 * Math.PI),
-      10,
-      20 * Math.cos(0.2 * Math.PI)
-    )
-  )
-  const [scene] = useState(new THREE.Scene())
-  const [_controls, setControls] = useState()
+  const refRenderer = useRef()
 
   const handleWindowResize = useCallback(() => {
     const { current: container } = refContainer
+    const { current: renderer } = refRenderer
     if (container && renderer) {
       const scW = container.clientWidth
       const scH = container.clientHeight
 
       renderer.setSize(scW, scH)
     }
-  }, [renderer])
+  }, [])
 
   /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
     const { current: container } = refContainer
-    if (container && !renderer) {
+    if (container) {
       const scW = container.clientWidth
       const scH = container.clientHeight
 
@@ -49,7 +39,15 @@ const VoxelDog = () => {
       renderer.setSize(scW, scH)
       renderer.outputEncoding = THREE.sRGBEncoding
       container.appendChild(renderer.domElement)
-      setRenderer(renderer)
+      refRenderer.current = renderer
+      const scene = new THREE.Scene()
+
+      const target = new THREE.Vector3(0, -0.5, 0)
+      const initialCameraPosition = new THREE.Vector3(
+        20 * Math.sin(0.2 * Math.PI),
+        10,
+        20 * Math.cos(0.2 * Math.PI)
+      )
 
       // 640 -> 240
       // 8   -> 6
@@ -64,7 +62,6 @@ const VoxelDog = () => {
       )
       camera.position.copy(initialCameraPosition)
       camera.lookAt(target)
-      setCamera(camera)
 
       const ambientLight = new THREE.AmbientLight(0xffffff, 1.5)
       scene.add(ambientLight)
@@ -78,7 +75,6 @@ const VoxelDog = () => {
         RIGHT: ''
       }
       controls.autoRotateSpeed = 0.7
-      setControls(controls)
 
       loadGLTFModel(scene, '/moon.glb', {
         receiveShadow: false,
@@ -113,8 +109,8 @@ const VoxelDog = () => {
       }
 
       return () => {
-        console.log('unmount')
         cancelAnimationFrame(req)
+        renderer.domElement.remove()
         renderer.dispose()
       }
     }
@@ -125,7 +121,7 @@ const VoxelDog = () => {
     return () => {
       window.removeEventListener('resize', handleWindowResize, false)
     }
-  }, [renderer, handleWindowResize])
+  }, [handleWindowResize])
 
   return (
     <DogContainer ref={refContainer}>{loading && <DogSpinner />}</DogContainer>

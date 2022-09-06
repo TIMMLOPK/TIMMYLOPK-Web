@@ -13,7 +13,7 @@ function PostPage({ frontmatter: { title, date }, content }) {
   return (
     <>
       <Layout>
-        <Button mb={5} onClick={() => router.back()} size="md">
+        <Button mb={5} onClick={() => router.back()} size="sm">
           ← Back
         </Button>
         <Box position="relative">

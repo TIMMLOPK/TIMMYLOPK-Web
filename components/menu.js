@@ -29,6 +29,10 @@ const Bottombar = ({ inview }) => {
     })
   }
 
+  const scrollTo = id => {
+    const el = document.getElementById(id)
+    el.scrollIntoView(true, { behavior: 'smooth' })
+  }
   const [showScrollToTop, setShowScrollToTop] = useState(false)
 
   useEffect(() => {
@@ -51,53 +55,55 @@ const Bottombar = ({ inview }) => {
   return (
     <>
       <Stack position="fixed" bottom="10" zIndex={1} right={5}>
-        <Menu>
-          <MenuButton
-            as={IconButton}
-            aria-label="Options"
-            w="50px"
-            h="50px"
-            borderRadius="50%"
-            boxShadow="lg"
-            icon={<CgMenuMotion />}
-            display={inview ? 'flex' : 'none'}
-            _dark={{
-              bg: 'gray.700',
-              color: 'white'
-            }}
-          />
-          <MenuList>
-            <MenuItem as="a" href="#1">
-              代購須知
-            </MenuItem>
-            <MenuItem as="a" href="#2">
-              付款方式
-            </MenuItem>
-            <MenuItem as="a" href="#3">
-              交收方式
-            </MenuItem>
-            <MenuItem as="a" href="#4">
-              運送時效
-            </MenuItem>
-            <MenuItem as="a" href="#5">
-              風險披霹
-            </MenuItem>
-          </MenuList>
-        </Menu>
-        <IconButton
-          onClick={() => toggleColorMode()}
-          icon={<SwitchIcon />}
-          w="50px"
-          h="50px"
-          borderRadius="50%"
-          boxShadow="lg"
-          display={inview ? 'flex' : 'none'}
-          _dark={{
-            bg: 'gray.700',
-            color: 'white'
-          }}
-          aria-label="Toggling Theme"
-        />
+        {inview && (
+          <>
+            <Menu>
+              <MenuButton
+                as={IconButton}
+                aria-label="Options"
+                w="50px"
+                h="50px"
+                borderRadius="50%"
+                boxShadow="lg"
+                icon={<CgMenuMotion />}
+                _dark={{
+                  bg: 'gray.700',
+                  color: 'white'
+                }}
+              />
+              <MenuList>
+                <MenuItem onClick={() => scrollTo('代購須知')}>
+                  代購須知
+                </MenuItem>
+                <MenuItem onClick={() => scrollTo('付款方式')}>
+                  付款方式
+                </MenuItem>
+                <MenuItem onClick={() => scrollTo('交收方式')}>
+                  交收方式
+                </MenuItem>
+                <MenuItem onClick={() => scrollTo('運送時效')}>
+                  運送時效
+                </MenuItem>
+                <MenuItem onClick={() => scrollTo('風險披露')}>
+                  風險披霹
+                </MenuItem>
+              </MenuList>
+            </Menu>
+            <IconButton
+              onClick={() => toggleColorMode()}
+              icon={<SwitchIcon />}
+              w="50px"
+              h="50px"
+              borderRadius="50%"
+              boxShadow="lg"
+              _dark={{
+                bg: 'gray.700',
+                color: 'white'
+              }}
+              aria-label="Toggling Theme"
+            />
+          </>
+        )}
         <Button
           w="50px"
           h="50px"

@@ -2,7 +2,6 @@ import Head from 'next/head'
 import NavBar from '../navbar'
 import { Box, Container, useColorModeValue } from '@chakra-ui/react'
 import Footer from '../footer'
-import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 import VoxelDogLoader from '../voxel-dog-loader'
@@ -13,19 +12,16 @@ const LazyVoxelDog = dynamic(() => import('../voxel-dog'), {
 })
 
 const Main = ({ children, router }) => {
-  const page = useRouter().pathname
-
-  const isShop = page === '/shop'
-
-  const [isVisible, setIsVisible] = useState('flex')
+  const [isVisible, setIsVisible] = useState(true)
 
   useEffect(() => {
+    const isShop = router.asPath === '/shop'
     if (isShop) {
-      setIsVisible('none')
+      setIsVisible(false)
     } else {
-      setIsVisible('flex')
+      setIsVisible(true)
     }
-  }, [isShop])
+  }, [router])
 
   return (
     <>
@@ -41,13 +37,9 @@ const Main = ({ children, router }) => {
           <meta property="og:image" content="/images/card.png" />
           <title>once.</title>
         </Head>
-        <div style={{ display: isVisible }}>
-          <NavBar path={router.asPath} />
-        </div>
+        {isVisible && <NavBar path={router.asPath} />}
         <Container maxW="container.md" pt={14}>
-          <div style={{ display: isVisible }}>
-            <LazyVoxelDog />
-          </div>
+          {isVisible && <LazyVoxelDog />}
           {children}
           <Footer />
           <div className="box">

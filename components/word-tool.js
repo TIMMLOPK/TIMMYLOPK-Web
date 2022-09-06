@@ -1,14 +1,12 @@
 import { m } from 'framer-motion'
 import styled from '@emotion/styled'
+import { Box } from '@chakra-ui/react'
 
 export function SplitText({ children, ...props }) {
   let words = children.split(' ')
   return words.map((word, i) => {
     return (
-      <div
-        key={children + i}
-        style={{ display: 'inline-block', overflow: 'hidden' }}
-      >
+      <Box key={children + i} display="inline-block" overflow="hidden">
         <m.div
           {...props}
           style={{ display: 'inline-block', willChange: 'transform' }}
@@ -16,7 +14,7 @@ export function SplitText({ children, ...props }) {
         >
           {word + (i !== words.length - 0 ? '\u00A0' : '')}
         </m.div>
-      </div>
+      </Box>
     )
   })
 }

@@ -24,30 +24,31 @@ const Bottombar = dynamic(() => import('../components/menu'), {
 const Shop = ({ data }) => {
   return (
     <>
-      <Box
-        bg={useColorModeValue('gray.50', 'gray.900')}
-        alignItems="center"
-        justifyContent="center"
-        display={data.display_banner ? 'flex' : 'none'}
-        mb={data.display_banner ? '25px' : '0'}
-        borderRadius="14px"
-        height="50px"
-      >
-        <Box display="flex" alignItems="center" justifyContent="center">
-          <AiOutlineNotification />
-          <motion.span
-            initial={{ x: -5, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1 }}
-            style={{
-              marginLeft: 5
-            }}
-          >
-            <Text fontSize="1rem">{data.content}</Text>
-          </motion.span>
+      {data.display_banner && (
+        <Box
+          bg={useColorModeValue('gray.50', 'gray.900')}
+          alignItems="center"
+          justifyContent="center"
+          display="flex"
+          mb="25px"
+          borderRadius="14px"
+          height="50px"
+        >
+          <Box display="flex" alignItems="center" justifyContent="center">
+            <AiOutlineNotification />
+            <motion.span
+              initial={{ x: -5, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1 }}
+              style={{
+                marginLeft: 5
+              }}
+            >
+              <Text fontSize="1rem">{data.content}</Text>
+            </motion.span>
+          </Box>
         </Box>
-      </Box>
-
+      )}
       <Bottombar inview />
       <Box>
         <Box
@@ -66,17 +67,15 @@ const Shop = ({ data }) => {
             zIndex: -5
           }}
         >
-          <p
-            style={{
-              position: 'absolute',
-              bottom: 6,
-              right: 0,
-              color: '#BEBEBE',
-              fontSize: '0.5px'
-            }}
+          <Text
+            position="absolute"
+            bottom="2"
+            right="0"
+            color="#BEBEBE"
+            fontSize="0.5px"
           >
             Illustration: Sun KAl
-          </p>
+          </Text>
         </Box>
         <Box
           bg="white"
@@ -169,7 +168,7 @@ const Shop = ({ data }) => {
             opacity: 0.9
           }}
         >
-          <Box id="1" padding="15px" marginTop="-5px">
+          <Box id="代購須知" padding="15px" marginTop="-5px">
             <Text fontSize={27} pb={2}>
               代購須知
             </Text>
@@ -209,7 +208,7 @@ const Shop = ({ data }) => {
               <Image src={Kuzuha} alt="Kuzuha" />
             </Box>
           </Box>
-          <Box id="2" padding="15px" marginTop="15%">
+          <Box id="付款方式" padding="15px" marginTop="15%">
             <Text fontSize={27} textAlign="right" pb={2}>
               付款方式
             </Text>
@@ -251,7 +250,7 @@ const Shop = ({ data }) => {
               -過數後請傳送永久保存截圖
             </Text>
           </Box>
-          <Box id="3" padding="18px" margin="5px">
+          <Box id="交收方式" padding="18px" margin="5px">
             <Box display="flex">
               <Box display={{ base: 'none', md: 'block' }}>
                 <Image src={Kanae} width="200%" height="300%" alt="Kanae" />
@@ -277,7 +276,7 @@ const Shop = ({ data }) => {
               </Box>
             </Box>
           </Box>
-          <Box id="4" padding="15px" margin="5px">
+          <Box id="運送時效" padding="15px" margin="5px">
             <Box display="inline-flex">
               <Box lineHeight={2}>
                 <Text mt={20} fontSize={27} pb={2}>
@@ -303,14 +302,14 @@ const Shop = ({ data }) => {
               </Box>
             </Box>
           </Box>
-          <Box id="5" padding="15px" margin="5px">
+          <Box id="風險披露" padding="15px" margin="5px">
             <Box
               display={{ base: 'none', md: 'block' }}
               pos="absolute"
               bottom="7.5rem"
               zIndex={-1}
             >
-              <Image src={Sec_2} width="450%" height="300%" alt="Kuzuha" />
+              <Image src={Sec_2} width="480%" height="300%" alt="Kuzuha" />
             </Box>
             <Box textAlign="right" lineHeight={2}>
               <Text fontSize={27} pb={2}>
