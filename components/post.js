@@ -55,11 +55,6 @@ export default function Post({ post }) {
           </Stack>
         </Box>
       </Center>
-      <style jsx>{`
-        .posts-img {
-          border-radius: 5px;
-        }
-      `}</style>
     </>
   )
 }
