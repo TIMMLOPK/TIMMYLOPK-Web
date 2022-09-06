@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import NavBar from '../navbar'
-import { Box, Container, useColorModeValue } from '@chakra-ui/react'
+import { Box, Container } from '@chakra-ui/react'
 import Footer from '../footer'
 import { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
@@ -42,84 +42,8 @@ const Main = ({ children, router }) => {
           {isVisible && <LazyVoxelDog />}
           {children}
           <Footer />
-          <div className="box">
-            <div className="circle-box">
-              <div className="circle-1" />
-            </div>
-          </div>
-          <div className="circle-box-2">
-            <div className="circle-2" />
-          </div>
         </Container>
       </Box>
-      <style jsx>{`
-        .box {
-          position: absolute;
-          top: 0 !important;
-          left: 0;
-          right: 0;
-          z-index: -999;
-        }
-        .circle-box {
-          position: absolute;
-          top: 20;
-          overflow: visible;
-          opacity: ${useColorModeValue('0.5', '0.2')};
-          left: 7rem;
-        }
-        .circle-1 {
-          mix-blend-mode: multiply;
-          position: absolute;
-          width: 150px;
-          height: 150px;
-          border-radius: 40rem;
-          background: radial-gradient(
-            closest-side,
-            rgba(45, 212, 191, 1),
-            rgba(233, 168, 2, 0)
-          );
-          animation: traverse-up-right 10s ease-in-out infinite alternate;
-          z-index: -1;
-        }
-        .circle-2 {
-          mix-blend-mode: multiply;
-          position: absolute;
-          width: 200px;
-          height: 200px;
-          border-radius: 40rem;
-          background: radial-gradient(
-            closest-side,
-            rgba(45, 108, 190, 1),
-            rgba(230, 160, 2, 0)
-          );
-          animation: traverse-up-left 10s ease-in-out infinite alternate;
-          z-index: -1;
-        }
-
-        .circle-box-2 {
-          position: absolute;
-          top: 7rem;
-          overflow: visible;
-          opacity: ${useColorModeValue('0.5', '0.2')};
-          left: 0;
-        }
-        @keyframes traverse-up-right {
-          0% {
-            transform: translate(0, 0);
-          }
-          100% {
-            transform: translateX(-20%);
-          }
-        }
-        @keyframes traverse-up-left {
-          0% {
-            transform: translate(0, 0);
-          }
-          100% {
-            transform: translateY(-40%);
-          }
-        }
-      `}</style>
     </>
   )
 }
