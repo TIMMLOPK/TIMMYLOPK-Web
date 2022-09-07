@@ -23,7 +23,6 @@ import useEmblaCarousel from "embla-carousel-react";
 
 const Home = () => {
   const [inview, setinview] = useState("about");
-  const [emblaRef] = useEmblaCarousel();
   return (
     <Layout inView={inview}>
       <InView
