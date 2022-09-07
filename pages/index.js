@@ -8,20 +8,29 @@ import {
   SiReact,
   SiNextdotjs,
 } from "react-icons/si";
-import { MdOutlineTouchApp } from "react-icons/md";
-import ProjectCard from "../components/project.js";
-import { InView } from "react-intersection-observer";
-import { useState } from "react";
-import Sparkles from "../components/AnimatedText.js";
-import Social from "../components/social.js";
 import {
   DiscordLogoIcon,
   GitHubLogoIcon,
   InstagramLogoIcon,
 } from "@radix-ui/react-icons";
+import { MdOutlineTouchApp } from "react-icons/md";
+import ProjectCard from "../components/project.js";
+import { InView } from "react-intersection-observer";
+import { useState, useEffect } from "react";
+import Sparkles from "../components/AnimatedText.js";
+import Social from "../components/social.js";
+import TextTransition, { presets } from "react-text-transition";
 
 const Home = () => {
   const [inview, setinview] = useState("about");
+  const [index, setindex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setindex((index) => (index + 1) % TEXTS.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
   return (
     <Layout inView={inview}>
       <InView
@@ -31,10 +40,12 @@ const Home = () => {
         onChange={(inView) => setinview(inView && "about")}
         threshold={0.5}
       >
-        <h1 className="font-bold text-5xl md:text-6xl lg:text-7xl md:text-left">
-          <span className="text-yellow-500">Hello</span>
-          <br />I am <Sparkles>Timmy</Sparkles>
-        </h1>
+        <div className="">
+          <h1 className="font-bold text-5xl md:text-6xl lg:text-7xl md:text-left">
+            <span className="text-yellow-500">Hello</span>
+            <br />I am <Sparkles>Timmy</Sparkles>
+          </h1>
+        </div>
         <div className="absolute md:right-1/4 md:inset-y-1/3 invisible md:visible">
           <Image
             className="inline-block rounded-full"
@@ -82,7 +93,7 @@ const Home = () => {
           Click them
         </Social>
         <br />
-        <div className="grid gap-5 md:grid-flow-col md:grid-rows-3 md:gap-8">
+        <div className="grid gap-5 md:grid-flow-col md:grid-rows-3 md:gap-8 mt-8">
           <div>
             <Card
               icons={<SiRust />}
@@ -121,7 +132,7 @@ const Home = () => {
         </div>
       </InView>
       <InView
-        className="min-h-screen p-6 overflow-hidden"
+        className="min-h-screen p-6"
         id="projects"
         as="section"
         onChange={(inView) => setinview(inView && "projects")}
@@ -129,12 +140,14 @@ const Home = () => {
       >
         <h1 className="font-bold text-2xl">📁 Projects</h1>
         <br />
-        <ProjectCard title="ONCE" link="https://discord.lionceu.live/">
-          #Discord bot
-        </ProjectCard>
-        <ProjectCard title="Meme Generator" link="https://meme.lionceu.live/">
-          #Meme generator
-        </ProjectCard>
+        <div classNam="flex flex-col md:flex-row">
+          <ProjectCard title="ONCE" link="https://discord.lionceu.live/">
+            ONCE is a powerful multi-purpose Discord bot.
+          </ProjectCard>
+          <ProjectCard title="Meme Generator" link="https://meme.lionceu.live/">
+            #Meme generator
+          </ProjectCard>
+        </div>
       </InView>
       <InView
         className="min-h-screen p-6"
@@ -145,7 +158,15 @@ const Home = () => {
       >
         <h1 className="font-bold text-2xl">📱 Social Media</h1>
         <br />
-        <div className="grid gap-8 md:grid-flow-col md:grid-rows-3 md:gap-20">
+        <h3 className="text-xl font-bold text-gray-500 inline-flex mb-8">
+          Find me on
+          <TextTransition springConfig={presets.wobbly}>
+            <a href={SocialLinks[index]} className="text-blue-400 ml-3">
+              {TEXTS[index]}
+            </a>
+          </TextTransition>
+        </h3>
+        <div className="grid gap-8 md:grid-flow-col md:grid-rows-3 md:gap-15">
           <Social
             icon={<GitHubLogoIcon />}
             url="https://github.com/TIMMLOPK"
@@ -168,5 +189,13 @@ const Home = () => {
     </Layout>
   );
 };
+
+const TEXTS = ["Github", "Instagram", "Discord"];
+
+const SocialLinks = [
+  "https://github.com/TIMMLOPK/",
+  "https://www.instagram.com/tw_wu_as_tim/",
+  "https://discord.com",
+];
 
 export default Home;

@@ -15,21 +15,21 @@ const ProjectCard = ({ title, children, link }) => {
     >
       <motion.img
         src="https://www.lionceu.live/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcard.a42bd74b.png&w=256&q=75"
-        className="w-full object-cover rounded-lg"
+        className="w-full object-cover rounded-t-lg h-[150px]"
         onClick={() => setshowContent(!showContent)}
       />
       <motion.div
-        className="text-md font-medium text-gray-900 dark:text-white flex p-4"
+        className="text-sm font-medium text-gray-900 dark:text-white flex p-3"
         layout="position"
       >
-        <span className="flex items-center">{title}</span>
-        <a className="flex items-center ml-2 text-blue-400" href={link}>
+        <span className="flex items-center font-mono">{title}</span>
+        <a className="flex items-center ml-2" href={link}>
           <ExternalLinkIcon />
         </a>
       </motion.div>
       {showContent && (
         <motion.div
-          className="p-3 text-slate-500 dark:text-gray-400 text-sm"
+          className="p-3 text-slate-500 dark:text-gray-400 text-sm font-mono"
           layout="position"
         >
           {children}
