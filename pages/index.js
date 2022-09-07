@@ -19,9 +19,11 @@ import {
   GitHubLogoIcon,
   InstagramLogoIcon,
 } from "@radix-ui/react-icons";
+import useEmblaCarousel from "embla-carousel-react";
 
 const Home = () => {
   const [inview, setinview] = useState("about");
+  const [emblaRef] = useEmblaCarousel();
   return (
     <Layout inView={inview}>
       <InView
@@ -39,7 +41,7 @@ const Home = () => {
           <Image
             className="inline-block rounded-full"
             src="/icon.webp"
-            alt="Vercel Logo"
+            alt="Picture of the author"
             width={200}
             height={200}
           />
@@ -121,7 +123,7 @@ const Home = () => {
         </div>
       </InView>
       <InView
-        className="min-h-screen p-6"
+        className="min-h-screen p-6 overflow-hidden"
         id="projects"
         as="section"
         onChange={(inView) => setinview(inView && "projects")}
@@ -129,13 +131,12 @@ const Home = () => {
       >
         <h1 className="font-bold text-2xl">📁 Projects</h1>
         <br />
-        <div>
-          <ProjectCard
-            title="ONCE"
-            description="#Discord bot"
-            link="https://discord.lionceu.live/"
-          />
-        </div>
+        <ProjectCard title="ONCE" link="https://discord.lionceu.live/">
+          #Discord bot
+        </ProjectCard>
+        <ProjectCard title="Meme Generator" link="https://meme.lionceu.live/">
+          #Meme generator
+        </ProjectCard>
       </InView>
       <InView
         className="min-h-screen p-6"

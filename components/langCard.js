@@ -20,7 +20,7 @@ const Card = ({ icons, name, description }) => {
         enterTo="opacity-100 rotate-0 scale-100"
         leave="transform duration-200 transition ease-in-out"
         leaveFrom="opacity-100 rotate-0 scale-100 "
-        leaveTo="opacity-0 scale-95 "
+        leaveTo="opacity-0 scale-95"
       >
         <p className="text-slate-500 dark:text-gray-400 text-sm">
           {description}

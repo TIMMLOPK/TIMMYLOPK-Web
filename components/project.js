@@ -1,31 +1,41 @@
-import NextLink from "next/link";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { ExternalLinkIcon } from "@radix-ui/react-icons";
 
-const ProjectCard = ({ title, description, link }) => {
+const ProjectCard = ({ title, children, link }) => {
+  const [showContent, setshowContent] = useState(false);
+
   return (
-    <div className="p-8 max-w-sm bg-gray-100 rounded-lg shadow-md dark:bg-transparent dark:text-white dark:shadow-none dark:border border-gray-500">
-      <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
-        {title}
-      </h5>
-      <p className="mb-2 font-normal text-gray-400 mt-3">{description}</p>
-      <NextLink href={link}>
-        <button className="mt-5 inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-black rounded-lg hover:opacity-75 dark:bg-transparent">
-          View Project
-          <svg
-            aria-hidden="true"
-            className="ml-2 -mr-1 w-4 h-4"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fillRule="evenodd"
-              d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-              clipRule="evenodd"
-            ></path>
-          </svg>
-        </button>
-      </NextLink>
-    </div>
+    <motion.div
+      layout
+      className="bg-white rounded-lg shadow-lg dark:bg-wbg dark:text-white m-6 w-[300px] relative"
+      transition={{
+        layout: { duration: 0.5, type: "spring", stiffness: 300, damping: 30 },
+      }}
+    >
+      <motion.img
+        src="https://www.lionceu.live/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcard.a42bd74b.png&w=256&q=75"
+        className="w-full object-cover rounded-lg"
+        onClick={() => setshowContent(!showContent)}
+      />
+      <motion.div
+        className="text-md font-medium text-gray-900 dark:text-white flex p-4"
+        layout="position"
+      >
+        <span className="flex items-center">{title}</span>
+        <a className="flex items-center ml-2 text-blue-400" href={link}>
+          <ExternalLinkIcon />
+        </a>
+      </motion.div>
+      {showContent && (
+        <motion.div
+          className="p-3 text-slate-500 dark:text-gray-400 text-sm"
+          layout="position"
+        >
+          {children}
+        </motion.div>
+      )}
+    </motion.div>
   );
 };
 
