@@ -19,7 +19,6 @@ import {
   GitHubLogoIcon,
   InstagramLogoIcon,
 } from "@radix-ui/react-icons";
-import useEmblaCarousel from "embla-carousel-react";
 
 const Home = () => {
   const [inview, setinview] = useState("about");
