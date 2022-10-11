@@ -1,7 +1,5 @@
 # LIONCEU
 
-[https://www.lionceu.live/](https://www.lionceu.live/)
-
 ## Info
 
 Fork from [https://www.craftz.dog/](https://www.craftz.dog/)
